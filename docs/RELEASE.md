@@ -23,6 +23,8 @@ The source tree is stored in Git; the large firmware belongs in Releases.
 [GitHub's release documentation](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
 sets a limit of less than 2GiB per individual asset. The compressed image is
 checked against that limit before uploading. No personal stable IMG is uploaded.
+`tools/verify-release.py` also verifies XZ integrity and the unpacked IMG SHA256
+while recording the compressed asset SHA256 in the same streaming pass.
 
 The normal updater path for arbitrary upstream firmware is not validated by this
 adaptation. Keep a backup before experimenting with a different kernel/rootfs;

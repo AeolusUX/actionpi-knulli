@@ -1,4 +1,4 @@
-# v119 Distribution Edition
+# v119 Distribution Edition r2
 
 Unofficial Action Pi adaptation with the hardware-confirmed Mali menu/PPSSPP
 path, persistent brightness direction and PortMaster rotation correction.
