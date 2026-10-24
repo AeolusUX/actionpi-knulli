@@ -63,7 +63,7 @@ Flycast standalone HOME exit is not separately confirmed.
 
 ## Evidence and limits
 
-The v119 base was installed and confirmed working by the device owner. PortMaster
+The core functions were confirmed working on hardware by the device owner. PortMaster
 direction/size was separately confirmed on hardware before packaging. Public
 distribution defaults and file integrity were checked offline. On 2026-10-24,
 the owner downloaded the published v1.0.0 image, wrote it to an SD card,

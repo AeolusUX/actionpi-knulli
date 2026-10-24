@@ -4,7 +4,7 @@
 
 | Check | Evidence |
 | --- | --- |
-| v119 installed base | Owner confirmed normal operation after installation |
+| Core functions | Owner confirmed normal operation after installation |
 | Brightness | Owner confirmed complete shutdown/start and suspend/wake; runtime DT/PWM readback agreed |
 | ES↔PPSSPP | Automatic and manual launch/exit/menu return confirmed on the same boot |
 | PSP display/audio/input | Owner confirmed game and emulator UI, full-size orientation, sound and controls |

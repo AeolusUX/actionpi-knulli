@@ -46,7 +46,7 @@ Emulators의 PPSSPP 단독 실행도 게임 파일 없이 같은 Vulkan 메뉴�
 [공개 파일 목록](docs/PUBLIC_FILES.ko.md), [빌드 방법](docs/BUILD.ko.md),
 [시험 범위](docs/TESTING.ko.md), [문제 해결](docs/TROUBLESHOOTING.ko.md)을 함께 제공합니다.
 
-v119 기반 상태와 PortMaster 보정은 실기로 확인했으며 파일·설정·체크섬 검사도 수행했습니다.
+기본 기능과 PortMaster 보정은 실기로 확인했으며 파일·설정·체크섬 검사도 수행했습니다.
 2026년 10월 24일 사용자가 공개된 v1.0.0 이미지를 직접 내려받아 SD 카드에 기록하고
 실기에 설치한 뒤 정상 작동을 확인했습니다.
 KNULLI 보드 구성은 상위 프로젝트의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)을
