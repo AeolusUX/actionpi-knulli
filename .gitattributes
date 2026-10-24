@@ -5,3 +5,4 @@
 *.h text eol=lf
 *.S text eol=lf
 *.ld text eol=lf
+config/ports/Install.PortMaster.sh -text

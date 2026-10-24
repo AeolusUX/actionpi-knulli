@@ -1,5 +1,5 @@
 {
-  ".gitattributes": "a1e88cc0771295e1791806e3a3612d81640ca0c152a7c2b406c1873f1dc813f3",
+  ".gitattributes": "68792093eb60b220719ba30b6b02c4d3644cd11563605a9745680389428dbc37",
   ".gitignore": "673a507cfe069775eb04d0fa35092c877850f84578d0ac1e0a7ccc0344c10ec2",
   "CHANGELOG.md": "2c22fdf806422b8df8cdcac664dbbaf7dff97bc7fd6e90ed70fb676ba8a12d84",
   "LICENSE": "681aa8b0c176bde2e24ced776ada874bb5efb5a6a11563ad190707fe6e75308f",
@@ -25,7 +25,6 @@
   "release/distribution-v119.manifest.json": "e4414df6029fb755bd3e93009623bc14ff19f2c6b991be66bf8e52f092391faf",
   "release/IMAGE.sha256": "1fab13c4c9eedabbee3137f175f65b4ecb4de1a23f12a9824a618bcef8227322",
   "release/NOTES.md": "0533fce01316007a8d1cc906e69db0fdeb78696aebffeb3dd092b9212b1f517e",
-  "release/SOURCE_FILES.json": "1a08d0715378ff10428aa11a75c1d0c5bda730cffa97417b2645dbbb989d096f",
   "release/STANDALONE_ROUTE_PATCH.json": "7b8f50ec451c8c601c12f18b39d6a310fd6296fe993776e156f15c3305ccc907",
   "src/backlight_pwm_fix.py": "3ba083d06f4541c6a1379c698705951e823b622bad964a950a8a3faf22a84d8b",
   "src/display_repair.ld": "4ecf72ab3065bbe4ca10bfac65aad308aafc10eb519c92b55a61db2bd42b83d9",
