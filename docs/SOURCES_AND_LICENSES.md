@@ -12,7 +12,7 @@ or BIOS terms. Existing notices in vendored files are preserved.
 | Mali kernel driver | Radxa allwinner-bsp commit `2045a3ca2a01f088c0314dc924bda59d154e363e`, `modules/gpu/mali-valhall/driver` | Tracked upstream source vendored here; license.txt and file notices retained; candidate build inputs recorded |
 | Vendor Linux5.15.147 | Recovered config, binary identity and guarded repair source included | Exact original vendor tree/build provenance remains unidentified |
 | Public kernel candidate | Orange Pi commit `5b956b750422abd5e9e9c5523540d2aaf41a7939` | Used for header/layout/source comparison; not a substitute claim for exact vendor corresponding source |
-| KNULLI integration | [knulli-cfw/knulli-linux](https://github.com/knulli-cfw/knulli-linux), A527 history at `5a7cb1e8e4dd` | Upstream project and public board lead; complete exact source closure of inherited image not established |
+| KNULLI integration | [Action Pi board configuration](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi) on `knulli-main`; A527 history at `5a7cb1e8e4dd` | Board-integration base; complete exact source closure of inherited image not established |
 | SDL2 | [release-2.32.8](https://github.com/libsdl-org/SDL/tree/release-2.32.8) | Target SDL2.32.8 identified; new adapters are separate source files |
 | Flycast VL reference | [libretro/flycast commit4a913e0](https://github.com/libretro/flycast/tree/4a913e063c95d1fae98afc64645831de0bcad57e) | Recorded source reference for old signal/JIT investigation |
 | PPSSPP/Flycast/RetroArch/ES | Inherited KNULLI programs; adaptation source here wraps their launch/output behavior | Exact source/version closure for every inherited binary is not claimed |

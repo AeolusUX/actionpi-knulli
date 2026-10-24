@@ -51,8 +51,10 @@ checksums are recorded.
 - [Published file inventory](../docs/PUBLIC_FILES.md)
 - [Sources, licenses and unresolved provenance](../docs/SOURCES_AND_LICENSES.md)
 
-This modifies and packages an existing KNULLI image. The exact original vendor
-kernel source and some inherited binary provenance remain unresolved, so this
+This modifies and packages an existing KNULLI image. The KNULLI board-integration base is the upstream [Action Pi board configuration](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)
+on `knulli-main` (`board/allwinner/a527/helegany-action-pi`).
+The exact original vendor kernel source and some inherited binary provenance
+remain unresolved, so this
 repository does not provide a complete from-source firmware rebuild. The v119
 base, PortMaster correction and standalone PPSSPP routing were confirmed on
 hardware. The final public image also passed offline checks. On 2026-10-24, the
@@ -115,8 +117,10 @@ PPSSPP를 전환하는 관리 프로그램을 연결했습니다. 각 실행 경
 - [공개 파일 목록](../docs/PUBLIC_FILES.ko.md)
 - [소스·라이선스와 출처 확인이 남은 부분](../docs/SOURCES_AND_LICENSES.ko.md)
 
-기존 KNULLI 이미지를 수정·패키징한 배포판입니다. 원본 제조사 커널의 정확한 소스와
-일부 기존 바이너리의 출처는 아직 확인되지 않아, 이 저장소만으로 펌웨어 전체를
+기존 KNULLI 이미지를 수정·패키징한 배포판입니다. KNULLI 보드 구성은 상위 프로젝트의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)을
+기반으로 했습니다. 경로는 `knulli-main`의 `board/allwinner/a527/helegany-action-pi`입니다.
+다만 원본 제조사 커널의 정확한 소스와 일부 기존 바이너리의 출처는 아직 확인되지 않아,
+이 저장소만으로 펌웨어 전체를
 처음부터 빌드할 수 있는 상태는 아닙니다. v119 기반 기능, PortMaster 보정과 PPSSPP
 단독 실행 연결은 실기에서 확인했습니다. 최종 배포판 이미지의 오프라인 검증에 더해,
 2026년 10월 24일 사용자가 공개된 v1.0.0 이미지를 직접 내려받아 SD 카드에 기록하고

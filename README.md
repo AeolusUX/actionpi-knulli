@@ -69,6 +69,9 @@ distribution defaults and file integrity were checked offline. On 2026-10-24,
 the owner downloaded the published v1.0.0 image, wrote it to an SD card,
 installed it on the device and confirmed normal operation. See [test coverage](docs/TESTING.md).
 
+The KNULLI board-integration base is the upstream [Action Pi board configuration](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)
+on `knulli-main` (`board/allwinner/a527/helegany-action-pi`).
+
 The exact vendor source of the original 5.15.147 kernel has **not** been identified.
 The pinned public candidate is not described as that exact source. This repository
 contains the adaptation code, guarded repair source, recovered config, and pinned

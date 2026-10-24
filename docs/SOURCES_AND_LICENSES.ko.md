@@ -14,7 +14,7 @@
 | Mali 커널 드라이버 | Radxa allwinner-bsp 커밋 `2045a3ca2a01f088c0314dc924bda59d154e363e`, `modules/gpu/mali-valhall/driver` | 추적되는 상위 소스를 저장소에 포함. license.txt와 파일별 고지 보존. 후보 빌드 입력 기록 |
 | 제조사 Linux 5.15.147 | 복구 설정, 바이너리 식별 정보, 보호 조건을 둔 수정 소스 포함 | 정확한 원본 제조사 트리와 빌드 출처는 미확인 |
 | 공개 커널 후보 | Orange Pi 커밋 `5b956b750422abd5e9e9c5523540d2aaf41a7939` | 헤더·구조체 배치·소스 비교용. 제조사 바이너리의 정확한 대응 소스라고 주장하지 않음 |
-| KNULLI 통합 | [knulli-cfw/knulli-linux](https://github.com/knulli-cfw/knulli-linux), A527 이력 `5a7cb1e8e4dd` | 상위 프로젝트와 공개 보드 관련 단서. 기존 이미지 전체의 정확한 소스 대응은 확립되지 않음 |
+| KNULLI 통합 | `knulli-main`의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi), A527 이력 `5a7cb1e8e4dd` | 보드 구성 기반. 기존 이미지 전체의 정확한 소스 대응은 확립되지 않음 |
 | SDL2 | [release-2.32.8](https://github.com/libsdl-org/SDL/tree/release-2.32.8) | 대상 SDL 2.32.8 확인. 새 보정 기능은 별도 소스 파일로 제공 |
 | Flycast VL 참조 | [libretro/flycast 커밋 4a913e0](https://github.com/libretro/flycast/tree/4a913e063c95d1fae98afc64645831de0bcad57e) | 구형 시그널·JIT 조사에 사용한 소스 참조 |
 | PPSSPP/Flycast/RetroArch/ES | 기존 KNULLI 프로그램. 이 저장소의 수정 소스가 실행·출력 동작을 감쌈 | 기존 바이너리 각각의 정확한 소스·버전 대응을 모두 확보했다고 주장하지 않음 |
