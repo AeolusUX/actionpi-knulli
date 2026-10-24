@@ -55,7 +55,9 @@ This modifies and packages an existing KNULLI image. The exact original vendor
 kernel source and some inherited binary provenance remain unresolved, so this
 repository does not provide a complete from-source firmware rebuild. The v119
 base, PortMaster correction and standalone PPSSPP routing were confirmed on
-hardware; the final public image was checked offline and was not reflashed again.
+hardware. The final public image also passed offline checks. On 2026-10-24, the
+owner downloaded the published v119 r2 image, wrote it to an SD card, installed
+it on the device and confirmed normal operation.
 See [test coverage](../docs/TESTING.md).
 
 Raw IMG size: 6,069,178,368 bytes. Raw IMG SHA256:
@@ -116,8 +118,9 @@ PPSSPP를 전환하는 관리 프로그램을 연결했습니다. 각 실행 경
 기존 KNULLI 이미지를 수정·패키징한 배포판입니다. 원본 제조사 커널의 정확한 소스와
 일부 기존 바이너리의 출처는 아직 확인되지 않아, 이 저장소만으로 펌웨어 전체를
 처음부터 빌드할 수 있는 상태는 아닙니다. v119 기반 기능, PortMaster 보정과 PPSSPP
-단독 실행 연결은 실기에서 확인했습니다. 최종 배포판 이미지는 오프라인 검증했으며
-다시 구워서 확인하지는 않았습니다. [검증 범위](../docs/TESTING.ko.md)
+단독 실행 연결은 실기에서 확인했습니다. 최종 배포판 이미지의 오프라인 검증에 더해,
+2026년 10월 24일 사용자가 공개된 v119 r2 이미지를 직접 내려받아 SD 카드에 기록하고
+실기에 설치한 뒤 정상 작동을 확인했습니다. [검증 범위](../docs/TESTING.ko.md)
 
 압축 해제한 IMG 크기: 6,069,178,368바이트. IMG SHA256:
 `322efb6a52025372ef3c063fc840e6e296b4ff2a93860132a18ac578a4783842`.

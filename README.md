@@ -65,8 +65,9 @@ Flycast standalone HOME exit is not separately confirmed.
 
 The v119 base was installed and confirmed working by the device owner. PortMaster
 direction/size was separately confirmed on hardware before packaging. Public
-distribution defaults and file integrity were checked offline; the final public
-variant was not flashed again. See [test coverage](docs/TESTING.md).
+distribution defaults and file integrity were checked offline. On 2026-10-24,
+the owner downloaded the published v119 r2 image, wrote it to an SD card,
+installed it on the device and confirmed normal operation. See [test coverage](docs/TESTING.md).
 
 The exact vendor source of the original 5.15.147 kernel has **not** been identified.
 The pinned public candidate is not described as that exact source. This repository
