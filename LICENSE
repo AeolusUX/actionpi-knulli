@@ -1,0 +1,16 @@
+Licensing scope for this mixed-source repository
+
+Original adaptation glue authored for this project (the runtime Python/shell
+helpers, original rotation adapters, documentation and original packaging logic)
+is available under the MIT terms in LICENSES/MIT.txt.
+
+Kernel-derived display cleanup/repair material, including src/display_repair.S,
+kernel/display-cleanup/ and the corresponding derived repair logic, remains
+under the applicable Linux GPL-2.0 terms. Original upstream notices take priority.
+
+third_party/mali-valhall/ retains its upstream license.txt and per-file notices,
+including GPL-2.0 WITH Linux-syscall-note declarations where present.
+
+This scope does not relicense inherited KNULLI/Linux/emulator binaries, vendor
+Mali userspace, stock Wi-Fi firmware/modules, BIOS files or other third-party
+content of the firmware image. See docs/SOURCES_AND_LICENSES.md.

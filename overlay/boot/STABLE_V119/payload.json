@@ -1,0 +1,17 @@
+{
+  "version": "v119",
+  "edition": "distribution",
+  "payloads": {
+    "settings.tar.gz": "f822065b5c826eb93dc2e8c6e8a74381f65acc36a57d8ac516508284c2a6ed64"
+  },
+  "defaults": {
+    "language": "en_US",
+    "wifi_enabled": false,
+    "saved_wifi_credentials": false
+  },
+  "bios": "additional personal BIOS bundle excluded; original base-system BIOS unchanged",
+  "ports_removed": [
+    "Restore original menu",
+    "PPSSPP Vulkan test shortcut"
+  ]
+}

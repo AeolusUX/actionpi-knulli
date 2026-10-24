@@ -1,0 +1,20 @@
+{
+  "changes": [
+    {
+      "symbol": "CONFIG_AW_GPU_TYPE",
+      "actual": "\"NONE\"",
+      "candidate": null
+    },
+    {
+      "symbol": "CONFIG_ENC_SW2001",
+      "actual": "y",
+      "candidate": null
+    },
+    {
+      "symbol": "CONFIG_JOYSTICK_RGP",
+      "actual": "y",
+      "candidate": null
+    }
+  ],
+  "count": 3
+}

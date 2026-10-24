@@ -1,0 +1,179 @@
+{
+  "kernel_before_sha256": "32068a6db3f71748880acd356241884f0243eaad90a7f1fb4e96e52fa12f786b",
+  "kernel_after_sha256": "52eb2334f61bad08c82cd0d5a27f11f93596b686b06019bc6948c7ef6a03847d",
+  "external_branch_refs": [
+    {
+      "pc": "0xc12168",
+      "target": "0x7777d0"
+    }
+  ],
+  "debug_callback_address_refs": [
+    "0x777fa8"
+  ],
+  "emulation": [
+    {
+      "kind": "logo",
+      "getter_rc": -1,
+      "dimensions": [
+        720,
+        960,
+        720,
+        960
+      ],
+      "events": [
+        "get_logo"
+      ],
+      "passed": true
+    },
+    {
+      "kind": "logo",
+      "getter_rc": 0,
+      "dimensions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        "get_logo"
+      ],
+      "passed": true
+    },
+    {
+      "kind": "logo",
+      "getter_rc": 0,
+      "dimensions": [
+        720,
+        960,
+        720,
+        960
+      ],
+      "events": [
+        "get_logo",
+        "fb_core_init"
+      ],
+      "passed": true
+    },
+    {
+      "kind": "logo",
+      "getter_rc": 0,
+      "dimensions": [
+        720,
+        960,
+        720,
+        960
+      ],
+      "events": [
+        "get_logo",
+        "fb_core_init"
+      ],
+      "passed": true
+    },
+    {
+      "kind": "cleanup",
+      "getter_rc": 0,
+      "dimensions": [
+        720,
+        960,
+        720,
+        960
+      ],
+      "events": [
+        "lock",
+        "release_client",
+        "unlock"
+      ],
+      "passed": true
+    },
+    {
+      "kind": "failure",
+      "getter_rc": 0,
+      "dimensions": [
+        720,
+        960,
+        720,
+        960
+      ],
+      "events": [
+        "lock",
+        "release_client",
+        "unlock"
+      ],
+      "passed": true
+    },
+    {
+      "kind": "exit",
+      "getter_rc": 0,
+      "dimensions": [
+        720,
+        960,
+        720,
+        960
+      ],
+      "events": [
+        "unregister_fb",
+        "lock",
+        "release_client",
+        "unlock",
+        "free_fb"
+      ],
+      "passed": true
+    },
+    {
+      "kind": "empty_exit",
+      "getter_rc": 0,
+      "dimensions": [
+        720,
+        960,
+        720,
+        960
+      ],
+      "events": [],
+      "passed": true
+    }
+  ],
+  "patches": [
+    {
+      "offset": "0x7777d0",
+      "size": 188,
+      "old": "3f2303d5ff0301d1024138d5e3130091fd7b02a9fd830091f35303a9f40301aaf30300aa412042f9e10f00f9010080d2e2030091e1230091ff7f0029ffff00a990edff97e30b40b9c27600b04280199183030034e41740b9e303032ae19f41299f800071e4079f1a44040829e617402940e00091e40300b2e10314aa051800b907180229037c02a9041800f9531c00f91dffff97014138d5e30f40f9222042f9630002eb020080d241010054fd7b42a9f35343a9ff030191bf2303d5",
+      "new": "3f2303d5ff4301d1fd7b02a9fd830091f35303a9f52300f9f30300aaf40301aaff7f00a9ff7f0229e1030091e2430091e353009193edff9760030035e18b402901030034e2020034e3134229a302003484020034e50340b9e60f40b9df800071e6079f1abf000071e603861ad57600b0b5621a91b30200f9a6060129a20e0229a41a00b9a57e02a9e60300b2a61a00f9e00315aae10314aa1bffff9702000014a0028012f52340f9f35343a9fd7b42a9ff430191bf2303d5c0035fd6"
+    },
+    {
+      "offset": "0x7778a4",
+      "size": 76,
+      "old": "3f2303d5fd7bbea9fd030091f30b00f9d37600b073821991600640f9fcbaf297600640f900a441f97e010094c9010094600640f942c7f297f30b40f900008052fd7bc2a8bf2303d5c0035fd6",
+      "new": "3f2303d5fd7bbea9fd030091f30b00f9d37600b0603643f9000100b4fcbaf297603643f901a441f9ca010094603643f97f3603f942c7f297f30b40f9fd7bc2a8bf2303d500008052c0035fd6"
+    },
+    {
+      "offset": "0x7778f0",
+      "size": 88,
+      "old": "c07600b0006046b940000035c0035fd63f2303d5fd7bbfa9412f00d0fd0300911f0400710d010054a044009021c00f91000024913c3b1294fd7bc1a8bf2303d5c0035fd621c00f91a044009000c02491353b1294f9ffff17",
+      "new": "3f2303d5fd7bbea9fd030091f35301a933000191600240f914000491e00314aae0bc129460420091010840a9220400f9410000f9000000a9e00313aa2ebdf597e00314aacbba1294f35341a9fd7bc2a8bf2303d5c0035fd6"
+    },
+    {
+      "offset": "0x777fac",
+      "size": 4,
+      "old": "00c02391",
+      "new": "00503b91"
+    },
+    {
+      "offset": "0x777ff4",
+      "size": 4,
+      "old": "00008052",
+      "new": "3ffeff17"
+    },
+    {
+      "offset": "0x7776bc",
+      "size": 8,
+      "old": "e06246b960040035",
+      "new": "61a641f94d020094"
+    }
+  ],
+  "image": "C:\\Users\\2nd\\Documents\\Codex\\2026-09-16\\actionpi-vulkan-continuation\\outputs\\action-pi-knulli-sd-display-cleanup-test-v116.img",
+  "source_sha256": "b1398c425ea699eb8939859a27759532eaa78f81d5caef01f9675b17c0233330",
+  "image_sha256": "9bb1e9c1185e7aa69c11f6a5072ded8e2a7606099537db26696e0b02872f0675",
+  "image_size": 6069178368,
+  "differing_bytes": 298,
+  "scope": "Offline verified test image, not hardware tested. Normal Panfrost startup preserved."
+}

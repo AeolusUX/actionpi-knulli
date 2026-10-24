@@ -1,0 +1,83 @@
+{
+  "version": "v119",
+  "edition": "distribution",
+  "image": "action-pi-knulli-sd-distribution-v119-r2.img",
+  "bytes": 6069178368,
+  "sha256": "322efb6a52025372ef3c063fc840e6e296b4ff2a93860132a18ac578a4783842",
+  "source_stable_sha256": "fd4734ef2769dbcd6520f14aab2aa0c8086db5e90aa557283a8c2ddbddcd0812",
+  "source_preserved": true,
+  "defaults": {
+    "language": "en_US",
+    "wifi_enabled": false,
+    "saved_wifi_credentials": false
+  },
+  "bios": "additional personal BIOS bundle excluded; original base-system BIOS unchanged",
+  "base_rootfs_sha256_unchanged": "55b2466c3be1d03de7e4177af5c877a47a3873c21b90b945addddd058a3fd5df",
+  "removed_ports": [
+    "Restore original menu",
+    "PPSSPP Vulkan test shortcut"
+  ],
+  "removed_userdata_items": [
+    "system/.bash_history",
+    "system/.config/pulse",
+    "system/.config/pulse/cookie",
+    "system/bluetooth",
+    "system/bluetooth/bluetooth.tar",
+    "system/cache",
+    "system/cache/ppsspp",
+    "system/cache/ppsspp/UCES01401.vkshadercache",
+    "system/cache/ppsspp/UCJS10038.vkshadercache",
+    "system/cache/ppsspp/UCKS45084.vkshadercache",
+    "system/configs/emulationstation/es_log.txt",
+    "system/configs/emulationstation/es_log.txt.bak",
+    "system/configs/emulationstation/imagecache.db",
+    "system/configs/emulationstation/recovery",
+    "system/configs/emulationstation/tmp",
+    "system/configs/emulationstation/tmp/cookies.txt",
+    "system/configs/ppsspp/PSP/SYSTEM/DUMP",
+    "system/configs/ppsspp/PSP/SYSTEM/DUMP/log.txt",
+    "system/configs/ppsspp/PSP/SYSTEM/ppsspp_retroachievements.dat",
+    "system/configs/retroarch/playlists",
+    "system/configs/retroarch/playlists/builtin",
+    "system/configs/retroarch/playlists/builtin/content_history.lpl",
+    "system/configs/retroarch/playlists/builtin/content_image_history.lpl",
+    "system/configs/retroarch/playlists/builtin/content_music_history.lpl",
+    "system/configs/retroarch/playlists/builtin/content_video_history.lpl",
+    "system/knulli-machine-id",
+    "system/machine-id",
+    "system/upgrade/update_response.json",
+    "roms/ports/PPSSPP Vulkan.sh",
+    "roms/ports/Restore original menu.sh"
+  ],
+  "removed_boot_files": [
+    "ACTIONPI_FIXES/flycastvl-fault/done.json",
+    "ACTIONPI_FIXES/flycastvl-fault/faults.json",
+    "ACTIONPI_FIXES/flycastvl-fault/maps.txt",
+    "ACTIONPI_FIXES/flycastvl-fault/stack-0.bin",
+    "ACTIONPI_FIXES/flycastvl-fault/stack-1.bin",
+    "ACTIONPI_FIXES/flycastvl-fault/stack-2.bin",
+    "ACTIONPI_FIXES/observer-selfcheck/done.json",
+    "ACTIONPI_FIXES/observer-selfcheck/faults.json",
+    "ACTIONPI_FIXES/observer-selfcheck/maps.txt",
+    "ACTIONPI_FIXES/observer-selfcheck/stack-0.bin",
+    "PPSSPP_VULKAN/rotation-check/metadata.json",
+    "PPSSPP_VULKAN/rotation-check/scanout.ppm",
+    "PPSSPP_VULKAN/rotation-check/state-after.txt",
+    "PPSSPP_VULKAN/rotation-check/state-before.txt",
+    "STABLE_V119/bios.tar.gz"
+  ],
+  "portmaster": "direction and size confirmed on device; scoped private PySDL2 rotation DLL plus persistent launch preparation included",
+  "payloads": {
+    "settings.tar.gz": "f822065b5c826eb93dc2e8c6e8a74381f65acc36a57d8ac516508284c2a6ed64"
+  },
+  "privacy_cleanup": {
+    "zeroed_free_bytes": 3289493504,
+    "files_tail_scrubbed": 122,
+    "deleted_records_scrubbed": 26
+  },
+  "validation": "source SHA256 during clone, changed script syntax, exact old-file guards, changed-file readback, unchanged payload metadata, final image SHA256; existing live tests not repeated",
+  "packaging_revision": 2,
+  "previous_image_sha256": "63a94904adbc803982a2577eff75127907e233347c0e051ad172d9bfd1edf5f9",
+  "standalone_ppsspp": "ES Emulators entry uses the same Vulkan supervisor with no ROM argument; owner confirmed Vulkan, direction/size and exit/menu return",
+  "payload_preservation": "settings and BIOS payloads unchanged from source edition"
+}

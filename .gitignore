@@ -1,0 +1,17 @@
+/build/
+*.img
+*.img.*
+*.ko
+*.o
+*.so
+*.so.*
+*.xz
+*.zip
+*.tar
+*.tar.gz
+__pycache__/
+*.pyc
+*.log
+*known-hosts*
+*private*
+!docs/PUBLIC_FILES.md

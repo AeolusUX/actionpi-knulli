@@ -1,0 +1,19 @@
+{
+  "MALI_MENU_TRIAL/mali_session.py": {
+    "before": "98ef513d23c82065042bc53106bce861a4d14bd7af69b59633b22f1366985f36",
+    "after": "43d58844c0ceee8eb36fd70b578073c92968b23a13ba138cfc847bc2634d64b4"
+  },
+  "MALI_MENU_TRIAL/mali_emulatorlauncher.py": {
+    "before": "7a5089374adccc4ba2422cb817f403c2d7ed456e6d7b7d96a3c3c05175066ee3",
+    "after": "0fb440eb90e274b03b1bbca33f2aadb9fc01aeeca0fd627db82fd3c1368141e1"
+  },
+  "MALI_MENU_TRIAL/v116_ppsspp_session.py": {
+    "before": "6ae222bce59187d61d5652eb4fc98116075e3fdcbee6a73412ebbc641b304f3a",
+    "after": "2636418b81143b94f3147e703c3df418d418efc09f931098998cedaf217a4455"
+  },
+  "ACTIONPI_FIXES/v116_ppsspp_session.py": {
+    "before": "74c6a152cb3d969b7a8a4a395782421510a937acfb624a27f23c8ac77e29b90c",
+    "after": "20f4298ae9fc8f87dd21e20dc0cc76b3ff5eb09baf2a75e2a9dc5dedd1137a64"
+  }
+}
+

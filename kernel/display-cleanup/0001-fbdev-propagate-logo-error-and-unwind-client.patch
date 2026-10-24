@@ -1,0 +1,71 @@
+--- a/bsp/drivers/drm/sunxi_fbdev_core.c
++++ b/bsp/drivers/drm/sunxi_fbdev_core.c
+@@ -39,8 +39,13 @@
+ {
+ 	struct sunxi_logo_info logo;
+ 	unsigned int w, h;
+-
+-	sunxi_drm_get_logo_info(drm, &logo, &w, &h);
++	int ret;
++
++	ret = sunxi_drm_get_logo_info(drm, &logo, &w, &h);
++	if (ret)
++		return ret;
++	if (!w || !h || !logo.width || !logo.height)
++		return -EINVAL;
+ 	if (logo.phy_addr) {
+ 		info->format = logo.bpp == 32 ?
+ 				  ARGB8888 : RGB888;
+@@ -77,6 +82,8 @@
+ 
+ int sunxi_fbdev_exit(void)
+ {
++	if (!__fb_info)
++		return 0;
+ 	fb_core_exit(&create_info);
+ 	return 0;
+ }
+@@ -321,6 +328,7 @@
+ int fb_core_init(struct fb_create_info *create, struct display_channel_state *out_state)
+ {
+ 	int ret;
++	bool client_registered = false;
+ 	void *virtual_addr;
+ 	struct fb_info *info;
+ 	unsigned long device_addr;
+@@ -338,11 +346,12 @@
+ 		fb_debug_inf("platform_fb_init fail\n");
+ 		goto free_fb;
+ 	}
++	client_registered = true;
+ 	ret = platform_fb_memory_alloc(info->par, &virtual_addr, &device_addr, width,
+ 						height * FB_BUFFER_CNT, create->format);
+ 	if (ret < 0) {
+ 		fb_debug_inf("platform_fb_memory_alloc fail\n");
+-		goto exit_fb;
++		goto free_fb;
+ 	}
+ 
+ 	fb_init_var(info->par, &info->var, create->format, width, height);
+@@ -357,9 +366,10 @@
+ 	fb_debug_inf("fb vir 0x%p phy 0x%8lx\n", virtual_addr, device_addr);
+ 	return 0;
+ 
+-exit_fb:
+-	platform_fb_exit(create, info->par);
+ free_fb:
++	/* Unlink/release the embedded client before freeing its allocation. */
++	if (client_registered)
++		platform_fb_exit(create, info->par);
+ 	framebuffer_release(info);
+ 	return ret;
+ }
+@@ -370,5 +380,6 @@
+ 	platform_fb_exit(create, __fb_info->par);
+ 	platform_fb_memory_free(__fb_info->par);
+ 	framebuffer_release(__fb_info);
+-	return 0;
+-}
++	__fb_info = NULL;
++	return 0;
++}

@@ -1,0 +1,14 @@
+{
+  "candidate_commit": "5b956b750422abd5e9e9c5523540d2aaf41a7939",
+  "files": {
+    "sunxi_fbdev_core.c": {
+      "baseline_sha256": "0ffc6be166ee9f6eec00c405804b1543ae5db5d419c52c5ffb17ac3aeef307f6",
+      "prepared_sha256": "0ef6a276d347d2e25e7abeed610219431c63f334904f8e75b3bf3e93684a9bbe"
+    },
+    "sunxi_fbdev_platform.c": {
+      "baseline_sha256": "1cdbd4fd38311e4758cd7af625764f40d8a9086ba30774a9ccc532428b3026e2",
+      "prepared_sha256": "1cdbd4fd38311e4758cd7af625764f40d8a9086ba30774a9ccc532428b3026e2"
+    }
+  },
+  "platform_cleanup": "Unmodified source; nonempty unregister implementation is REQUIRED with core change. Actual vendor binary has empty helpers."
+}

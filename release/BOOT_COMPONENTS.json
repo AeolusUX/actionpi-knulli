@@ -1,0 +1,30 @@
+{
+  "PPSSPP_VULKAN/mali_candidate.ko": {
+    "bytes": 28321000,
+    "sha256": "a771b7b870a9669f51f7b372ca3ccdcdee356f691e5e6202f1e86755bd1c6fe9"
+  },
+  "PPSSPP_VULKAN/rotation/libvulkan.so.1": {
+    "bytes": 72296,
+    "sha256": "ec634ed63b65825be1638aa46e7b2948af78a389688052b1064bbfda2be6d0d3"
+  },
+  "PPSSPP_VULKAN/rotation/sdl_output_rotation.so": {
+    "bytes": 71816,
+    "sha256": "4d79d0d83cda2d9a33a9d52878814dc94c8196da347493551146243423e5a5ce"
+  },
+  "MALI_MENU_TRIAL/retroarch_output_rotation.so": {
+    "bytes": 71776,
+    "sha256": "61a86d4c415f07d1611f9a8a397397e6a398b432710fc870291c634f0e4ce51b"
+  },
+  "ACTIONPI_FIXES/mali_menu_audit.so": {
+    "bytes": 72936,
+    "sha256": "8549b8aa1a2714243891c3481518dcfb0c2a686beb55d441c7127f37e82c7e94"
+  },
+  "ACTIONPI_FIXES/flycast_gl_rotation.so": {
+    "bytes": 74432,
+    "sha256": "bf4abc09a7f794a697a6d51c47940d1332b60e4a5f6619654d35d48fc642b163"
+  },
+  "ACTIONPI_FIXES/portmaster-sdl/libSDL2.so": {
+    "bytes": 71824,
+    "sha256": "9e269786cfe202ec68c007a0afa4857e7d557b37d845151eac2f4d17044bb2bd"
+  }
+}
