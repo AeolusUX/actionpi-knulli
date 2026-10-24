@@ -10,8 +10,10 @@ the cleared free space efficiently.
    the downloaded assets present; on Windows use `Get-FileHash -Algorithm SHA256`.
 3. Use a flashing program that accepts XZ, or extract the IMG first.
 4. Write the whole SD card, then insert it into the Action Pi and power on.
-5. Allow first-install expansion and settings restoration to complete. Each has
-   its own reboot. A black interval during installation is expected.
+5. **On first installation, a black screen after the boot image is normal. Allow
+   about 5 minutes: SHARE expansion and settings installation will automatically
+   restart the device once or twice before the menu appears. There is no need to
+   worry; keep the power on and wait for setup to finish.**
 6. Add your games/needed additional BIOS. Enable Wi-Fi and enter your network
    details when downloads are needed.
 

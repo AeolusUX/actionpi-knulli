@@ -17,10 +17,11 @@ Use the `.img.xz` asset and matching SHA256 file. Extract the image if your flas
 application does not accept XZ, then write the image to the **whole SD card**.
 Writing an image replaces the selected card's contents.
 
-On first installation, SHARE expands and the device restarts. The settings
-installer runs afterward and restarts once more. Wait for the menu; a black
-screen during first-time installation is expected. Subsequent PSP launches do
-not require a reboot. See [installation and release details](docs/RELEASE.md).
+**On first installation, a black screen after the boot image is normal. Please
+allow about 5 minutes: the device will automatically restart once or twice while
+expanding SHARE and installing settings, then show the menu. There is no need to
+worry; leave the power on and wait for setup to finish.** Subsequent PSP launches
+do not require a reboot. See [installation and release details](docs/RELEASE.md).
 
 ## Distribution defaults
 

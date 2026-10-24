@@ -2,9 +2,11 @@
 
 ## First installation restarts twice
 
-Expected: SHARE expansion causes the first restart. S12 installs sanitized
-settings afterward and causes the second. Wait for the menu. This is separate
-from the old failed Mali tests that used a reboot after every game.
+A black screen after the boot image is normal during first installation. Allow
+about 5 minutes and keep the power on: the device will automatically restart once
+or twice before the menu appears. There is no need to worry during this setup.
+SHARE expansion and the S12 settings installer account for these restarts; normal
+game launches and exits do not require a reboot.
 
 ## Wi-Fi is off or PortMaster cannot download
 

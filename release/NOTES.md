@@ -12,8 +12,15 @@ path, persistent brightness direction and PortMaster rotation correction.
 - Existing brightness, preferences, emulator output, suspend/reconnect and audio
   improvements retained. Hold SELECT+START about one second to leave PPSSPP.
 
-Write the whole SD image. First installation performs SHARE expansion/reboot,
-then settings installation/reboot. Normal game round trips do not require reboot.
+Write the whole SD image. **On first installation, a black screen after the boot
+image is normal. Allow about 5 minutes: the device will automatically restart
+once or twice while expanding SHARE and installing settings, then show the menu.
+There is no need to worry; keep the power on and wait for setup to finish.**
+Normal game round trips do not require reboot.
+
+**첫 설치 시 부팅 이미지 이후 검정화면만 보여도 걱정하지 않으셔도 됩니다. 약 5분
+기다리면 한두 차례 자동으로 재부팅한 뒤 메뉴가 표시됩니다. 전원을 끄지 말고
+설치가 끝날 때까지 기다려 주세요.**
 
 The base v119 and PortMaster correction were confirmed on hardware. This final
 public variant was checked offline and not reflashed again. Exact vendor kernel
