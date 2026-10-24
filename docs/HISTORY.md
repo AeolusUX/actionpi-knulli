@@ -1,5 +1,7 @@
 # Development history and reasons for the final design
 
+[English](HISTORY.md) · [한국어](HISTORY.ko.md)
+
 ## 1. Keep a bootable baseline
 
 The original aim was PPSSPP Vulkan, rather than Vulkan in every emulator. An early

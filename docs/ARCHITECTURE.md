@@ -1,5 +1,7 @@
 # Runtime architecture
 
+[English](ARCHITECTURE.md) · [한국어](ARCHITECTURE.ko.md)
+
 Target guard: `/boot/boot/knulli.board` must be `helegany-action-pi`; kernel is
 the specifically guarded, repaired 5.15.147 binary. Equal version strings alone
 are not a compatibility test. These files are not instructions to install the

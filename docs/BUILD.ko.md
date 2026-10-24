@@ -1,0 +1,84 @@
+# 빌드와 재현 가능 범위
+
+[English](BUILD.md) · [한국어](BUILD.ko.md)
+
+## 이 저장소에서 다시 빌드할 수 있는 범위
+
+현재 실행 스크립트, 회전 보정 C 소스, 고정한 Mali 드라이버 소스, 복구한 커널 설정,
+화면 수정용 어셈블리·링커 스크립트와 과거 이미지 변환 도구를 포함합니다.
+완성 바이너리 이미지만 배포하는 대신 수정 내용을 공개하기 위한 구성입니다.
+
+그러나 원본 제조사 커널이나 기존 루트 파일시스템의 모든 프로그램에 대해 완전하고
+검증된 대응 소스 트리를 제공하는 것은 **아닙니다**. 이 저장소만으로 펌웨어 전체를
+처음부터 빌드할 수는 없습니다. 과거 패키징 도구는 공개 배포 파일에 없는 로컬 이전
+이미지를 참조합니다. 작업 기록으로 포함한 것이며, 공개 환경에서 명령 하나로 전체
+이미지를 만드는 도구라고 안내하지 않습니다.
+
+## 사용자 공간 보조 기능 빌드
+
+Linux 또는 WSL과 AArch64 Linux 컴파일러를 사용합니다. 작업 때 기록한 도구는
+Arm GNU 13.3.Rel1 / GCC 13.3.1이며 대상은 `aarch64-none-linux-gnu`입니다.
+
+```sh
+export CROSS_COMPILE=aarch64-none-linux-gnu-
+SDL2_LIB=/path/to/target/libSDL2-2.0.so.0.3200.8 sh tools/build-runtime.sh
+```
+
+SDL2 입력은 PC의 x86_64 라이브러리가 아니라 대상 기기의 ARM64 라이브러리여야 합니다.
+배포 이미지에서 변경하지 않은 `boot/knulli` 루트 파일시스템을 mtools와 unsquashfs로
+열어 추출할 수 있습니다. PortMaster 래퍼는 원래 라이브러리의 SONAME에 연결하고,
+별도로 감싸지 않은 함수는 원래 라이브러리로 전달합니다. 스크립트는 `build/` 아래에
+보조 기능을 만들며 장치에 기록하거나 IMG를 변경하지 않습니다. 컴파일러 버전이 바뀌면
+결과 파일의 해시도 달라질 수 있습니다.
+
+커널 보조 코드는 별도로 어셈블·링크할 수 있습니다.
+
+```sh
+${CROSS_COMPILE}as -march=armv8.1-a src/display_repair.S -o build/repair.o
+${CROSS_COMPILE}ld -T src/display_repair.ld build/repair.o -o build/repair.elf
+```
+
+링커 스크립트는 원래 함수가 차지할 수 있는 크기를 강제합니다.
+`tools/historical/make_display_test_image.py`에는 원본 바이트·해시 확인 조건,
+분기 검증, Unicorn 모의 실행 사례와 Android 체크섬 재생성 과정이 있습니다.
+공개 후보 소스에 대한 수정은 `kernel/display-cleanup/`에 있습니다. 해당 플랫폼
+소스에는 실제로 동작하는 정리 함수 구현도 있어야 합니다. 두 방식은 같은 수정 의도를
+서로 다르게 표현한 것이며, 서로 교환해 넣는 모듈 두 개가 아닙니다.
+
+## Mali 모듈 빌드 입력
+
+고정한 드라이버 소스는 `third_party/mali-valhall/`에 포함되어 있습니다.
+
+```sh
+make -C third_party/mali-valhall/drivers/gpu/arm/midgard \
+  KDIR=/path/to/reviewed-kernel-build ARCH=arm64 \
+  CROSS_COMPILE=aarch64-none-linux-gnu- \
+  CONFIG_MALI_MIDGARD=m CONFIG_MALI_PLATFORM_NAME=sunxi \
+  CONFIG_MALI_CSF_SUPPORT=n CONFIG_MALI_GATOR_SUPPORT=y CONFIG_MALI_DEVFREQ=y
+```
+
+기록한 후보 옵션 전체와 컴파일 명령은 `kernel/`에 있습니다. 이 자료는 당시 실험
+구성을 식별하는 것이며, 새로 준비한 임의의 커널 헤더가 기기의 제조사 커널과 일치한다고
+보장하지는 않습니다. `Module.symvers`, 생성된 헤더, 공개 심볼 이름, 구조체 배치와
+실제 동작이 맞아야 합니다. 강제 로드나 가짜 symvers 파일로 이 검증을 대신하지 마세요.
+
+공개 커널 후보는 다음 커밋입니다.
+`orangepi-xunlong/linux-orangepi@5b956b750422abd5e9e9c5523540d2aaf41a7939`.
+이것은 기록된 모듈 재빌드에 사용한 헤더·소스 후보이며, 원본 커널의 정확한 소스라고
+입증된 것은 아닙니다. 복구 설정과 정규화한 후보 설정은 제조사 심볼에서 차이가 있으므로
+`candidate-config-delta.json`도 함께 보존해야 합니다.
+
+## 이미지 패키징 작업 기록
+
+`tools/historical/build_distribution_v119.py`는 실제 공개 배포판 변환 과정을 기록합니다.
+설정과 복구 사본에서 개인정보를 정리하고, 추가 BIOS 압축 파일만 제거하고,
+PortMaster 훅을 포함하며, 기본 루트 파일시스템을 유지합니다. 이어서 FAT의 비어 있는
+클러스터, 파일 끝 여유 공간과 삭제된 디렉터리 항목을 정리합니다. 변경 파일,
+알려진 개인 인증 정보의 잔여물과 최종 이미지 체크섬도 확인합니다. 이전 커널·PWM
+도구도 포함했습니다. 해시 확인 조건은 의도된 보호 장치이므로, 무관한 펌웨어를
+통과시키기 위해 제거하면 안 됩니다.
+
+공개 IMG는 최종 설치된 오버레이 구성을 조사할 때 사용할 수 있는 기준 산출물입니다.
+`release/BOOT_COMPONENTS.json`에는 배포한 바이너리 보정 파일과 Mali 모듈의 정확한
+해시가 연결되어 있습니다. 이러한 검증 범위는 소스에서 펌웨어 전체를 완전히 재현할 수
+있다는 주장보다 제한적입니다.

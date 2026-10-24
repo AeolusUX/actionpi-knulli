@@ -1,5 +1,7 @@
 # Sources, licenses and provenance
 
+[English](SOURCES_AND_LICENSES.md) · [한국어](SOURCES_AND_LICENSES.ko.md)
+
 This firmware is a collection of separately licensed components. A repository
 license for original glue does not replace Linux, Arm, SDL, emulator, firmware
 or BIOS terms. Existing notices in vendored files are preserved.

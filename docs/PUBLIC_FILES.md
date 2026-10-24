@@ -1,5 +1,7 @@
 # Public file boundaries
 
+[English](PUBLIC_FILES.md) · [한국어](PUBLIC_FILES.ko.md)
+
 Published code is staged using an explicit allowlist from the **public distribution**.
 The original private working directory and complete conversation are not uploaded.
 

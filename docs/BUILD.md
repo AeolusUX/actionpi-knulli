@@ -1,5 +1,7 @@
 # Build and reproduction status
 
+[English](BUILD.md) · [한국어](BUILD.ko.md)
+
 ## What can be rebuilt here
 
 The repository includes the current runtime scripts, rotation C source, pinned
