@@ -25,7 +25,7 @@
   "release/BOOT_COMPONENTS.json": "315cfaefc9af606044857f38e66c25c96d3b853b836841bd687e7566fab9d1e6",
   "release/distribution-v119.manifest.json": "e4414df6029fb755bd3e93009623bc14ff19f2c6b991be66bf8e52f092391faf",
   "release/IMAGE.sha256": "1fab13c4c9eedabbee3137f175f65b4ecb4de1a23f12a9824a618bcef8227322",
-  "release/NOTES.md": "bd252c057624ef19f94438a0043f3b43b0cc608034a29384cccb4c1f9c1e6ae8",
+  "release/NOTES.md": "2063f931e51169464eab48051b89641ac0f22f65f44a37a7cec5094d055476c7",
   "release/SHA256SUMS": "a7e8a540c411b61f4312b05fadbf28423003450408da383846073baf018593ff",
   "release/STANDALONE_ROUTE_PATCH.json": "7b8f50ec451c8c601c12f18b39d6a310fd6296fe993776e156f15c3305ccc907",
   "src/backlight_pwm_fix.py": "3ba083d06f4541c6a1379c698705951e823b622bad964a950a8a3faf22a84d8b",

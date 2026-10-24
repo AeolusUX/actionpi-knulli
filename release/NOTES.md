@@ -3,8 +3,6 @@
 Unofficial Action Pi adaptation with the hardware-confirmed Mali menu/PPSSPP
 path, persistent brightness direction and PortMaster rotation correction.
 
-- English defaults; Wi-Fi initially off with no personal saved network.
-- Additional personal BIOS collection excluded; **original base-system BIOS retained**.
 - No game ROMs. Removed legacy restore-menu and hardcoded PSP test Ports entries.
 - PortMaster installer retained; its GUI receives scoped direction/size correction.
 - Revision2: ES Emulators/PPSSPP standalone menu uses the same Vulkan supervisor
