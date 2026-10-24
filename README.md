@@ -57,8 +57,8 @@ personal images or their Wi-Fi configuration.
 - Korean/Seoul preferences remain selectable and persistent, although this public
   edition starts in English. Speaker LINEOUT gain is adjusted from 23 to 25.
 
-Hold **SELECT+START for about one second** to exit PPSSPP. HOME exit is enabled
-for RetroArch but deliberately disabled for PPSSPP after a quit regression.
+Hold **SELECT+START for about one second** to exit PPSSPP. Emulator exit using
+the top HOME key works in RetroArch and is disabled in PPSSPP after a quit regression.
 Flycast standalone HOME exit is not separately confirmed.
 
 ## Evidence and limits

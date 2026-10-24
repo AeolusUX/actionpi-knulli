@@ -20,7 +20,7 @@ The original private working directory and complete conversation are not uploade
 
 ## Excluded
 
-- Personal v115/v119/v120 images, the private BIOS archive and private captures.
+- Personal images, the private BIOS archive and private captures.
 - Saved personal Wi-Fi SSIDs/passwords and recovery copies containing them.
 - GitHub credentials, browser session material, authentication screenshots,
   known-hosts files and SSH private/host keys.

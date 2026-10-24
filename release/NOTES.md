@@ -15,7 +15,7 @@ and PPSSPP Vulkan running on the same boot.
   suspend/wake with Wi-Fi reconnection, and audio improvements.
 - No game ROMs included. Legacy restore-menu and PPSSPP test Ports entries removed.
 - Hold **SELECT+START for about one second** to exit PPSSPP and return to the menu.
-  HOME exit works in RetroArch; it is disabled in PPSSPP.
+  Emulator exit using the top HOME key works in RetroArch and is disabled in PPSSPP.
 
 ### Installation and first boot
 
@@ -84,7 +84,7 @@ Vulkan을 같은 부팅 상태에서 사용하도록 구성했습니다.
   오디오 개선을 적용했습니다.
 - 게임 ROM은 포함하지 않습니다. 이전 메뉴 복원 및 PPSSPP 시험용 Ports 항목은 제거했습니다.
 - PPSSPP 종료는 **SELECT+START를 약 1초간 함께 누르면** 메뉴로 돌아옵니다.
-  HOME 종료는 RetroArch에서 작동하며 PPSSPP에서는 비활성화되어 있습니다.
+  상단의 HOME키를 이용한 에뮬레이터 종료는 RetroArch에서 작동하며 PPSSPP에서는 비활성화되어 있습니다.
 
 ### 설치와 첫 부팅
 

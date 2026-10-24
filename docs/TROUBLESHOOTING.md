@@ -19,9 +19,9 @@ private copy of its downloaded application data.
 
 ## PSP exit / HOME
 
-Use SELECT+START held for about one second. PPSSPP HOME exit is disabled after a
-quit hang/fallback regression. RetroArch HOME works. Do not diagnose absent
-PPSSPP HOME handling as a missing input driver.
+Use SELECT+START held for about one second. Emulator exit using the top HOME key
+works in RetroArch and is disabled in PPSSPP after a quit hang/fallback regression.
+Do not diagnose absent PPSSPP HOME handling as a missing input driver.
 
 ## PortMaster sideways after an update
 

@@ -18,8 +18,9 @@
 
 ## PSP 종료와 HOME 버튼
 
-SELECT+START를 약 1초간 함께 눌러 주세요. PPSSPP의 HOME 종료는 종료 중 멈춤과
-대체 경로로 복구되는 문제가 있어 비활성화했습니다. RetroArch HOME 종료는 작동합니다.
+SELECT+START를 약 1초간 함께 눌러 주세요. 상단의 HOME키를 이용한 에뮬레이터 종료는
+RetroArch에서 작동하며 PPSSPP에서는 비활성화되어 있습니다. PPSSPP는 종료 중 멈춤과
+대체 경로로 복구되는 문제가 있어 이 기능을 꺼 두었습니다.
 PPSSPP에서 HOME이 작동하지 않는 것을 입력 드라이버 누락으로 판단하지 마세요.
 
 ## 업데이트 후 PortMaster 화면이 옆으로 나올 때

@@ -22,7 +22,7 @@
 - 게임 ROM은 없습니다. 필요한 추가 BIOS는 SHARE의 `bios`에 직접 넣습니다.
 - Ports의 원본 메뉴 복원 항목과 특정 게임을 실행하던 PPSSPP 테스트 항목은 제거했습니다.
 - Install.PortMaster는 유지하며, 설치 후 PortMaster 실행 시 방향 보정이 적용됩니다.
-- 개인용 v120과 기존 개인 이미지·Wi-Fi 정보는 이 저장소에 올리지 않습니다.
+- 개인용 이미지와 Wi-Fi 정보는 이 저장소에 올리지 않습니다.
 
 ## 주요 수정
 
@@ -36,8 +36,8 @@ D패드, 절전과 Wi-Fi 재연결, 밝기 방향과 길게 누름을 수정했�
 밝기는 실제 부팅에 쓰이는 DTB와 하드웨어 신호를 함께 바로잡았으며,
 완전 종료 후 시작과 절전 복귀 모두 실기로 확인했습니다.
 
-PPSSPP 종료는 **SELECT+START 약 1초**입니다. RetroArch HOME 종료는 동작하지만,
-PPSSPP HOME은 종료 오류 때문에 꺼둔 상태입니다.
+PPSSPP 종료는 **SELECT+START 약 1초**입니다. 상단의 HOME키를 이용한 에뮬레이터 종료는
+RetroArch에서 작동하며 PPSSPP에서는 종료 오류 때문에 비활성화되어 있습니다.
 Emulators의 PPSSPP 단독 실행도 게임 파일 없이 같은 Vulkan 메뉴를 엽니다.
 
 ## 작업 기록과 공개 범위
