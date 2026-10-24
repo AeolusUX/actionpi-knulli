@@ -1,5 +1,7 @@
 # Verification scope
 
+[English](TESTING.md) · [한국어](TESTING.ko.md)
+
 | Check | Evidence |
 | --- | --- |
 | v119 installed base | Owner confirmed normal operation after installation |

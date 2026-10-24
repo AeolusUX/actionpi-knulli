@@ -1,5 +1,7 @@
 # Installing and checking the public release
 
+[English](RELEASE.md) · [한국어](RELEASE.ko.md)
+
 The release asset is XZ-compressed to avoid shipping gigabytes of empty card
 space. The unpacked image remains 6,069,178,368 bytes. Removing files from a disk
 image does not automatically shrink its partition layout; compression represents
