@@ -1,7 +1,7 @@
 {
-  "version": "v119",
+  "version": "v1.0.0",
   "edition": "distribution",
-  "image": "action-pi-knulli-sd-distribution-v119-r2.img",
+  "image": "action-pi-knulli-v1.0.0.img",
   "bytes": 6069178368,
   "sha256": "322efb6a52025372ef3c063fc840e6e296b4ff2a93860132a18ac578a4783842",
   "source_stable_sha256": "fd4734ef2769dbcd6520f14aab2aa0c8086db5e90aa557283a8c2ddbddcd0812",
@@ -79,5 +79,8 @@
   "packaging_revision": 2,
   "previous_image_sha256": "63a94904adbc803982a2577eff75127907e233347c0e051ad172d9bfd1edf5f9",
   "standalone_ppsspp": "ES Emulators entry uses the same Vulkan supervisor with no ROM argument; owner confirmed Vulkan, direction/size and exit/menu return",
-  "payload_preservation": "settings and BIOS payloads unchanged from source edition"
+  "payload_preservation": "settings and BIOS payloads unchanged from source edition",
+  "internal_build": "v119-r2",
+  "public_installation_confirmation": "2026-10-24: owner downloaded the published image, wrote it to an SD card, installed it and confirmed normal operation",
+  "public_version_rename": "Image bytes and SHA256 unchanged from internal v119 r2; personal v120 unchanged"
 }

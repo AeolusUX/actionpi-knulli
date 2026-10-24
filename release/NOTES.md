@@ -1,8 +1,8 @@
-# v119 Distribution Edition r2
+# Action Pi KNULLI v1.0.0
 
 ## English
 
-Unofficial KNULLI adaptation for the Helegany Action Pi, with a Mali-based menu
+Unofficial KNULLI adaptation for the Helegaly Action Pi, with a Mali-based menu
 and PPSSPP Vulkan running on the same boot.
 
 ### Features
@@ -56,7 +56,7 @@ kernel source and some inherited binary provenance remain unresolved, so this
 repository does not provide a complete from-source firmware rebuild. The v119
 base, PortMaster correction and standalone PPSSPP routing were confirmed on
 hardware. The final public image also passed offline checks. On 2026-10-24, the
-owner downloaded the published v119 r2 image, wrote it to an SD card, installed
+owner downloaded the published v1.0.0 image, wrote it to an SD card, installed
 it on the device and confirmed normal operation.
 See [test coverage](../docs/TESTING.md).
 
@@ -69,7 +69,7 @@ Use `SHA256SUMS` to verify the compressed download before extracting/flashing.
 
 ## 한국어
 
-Helegany Action Pi용 비공식 KNULLI 수정 배포판입니다. Mali 기반 메뉴와 PPSSPP
+Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. Mali 기반 메뉴와 PPSSPP
 Vulkan을 같은 부팅 상태에서 사용하도록 구성했습니다.
 
 ### 주요 기능
@@ -119,7 +119,7 @@ PPSSPP를 전환하는 관리 프로그램을 연결했습니다. 각 실행 경
 일부 기존 바이너리의 출처는 아직 확인되지 않아, 이 저장소만으로 펌웨어 전체를
 처음부터 빌드할 수 있는 상태는 아닙니다. v119 기반 기능, PortMaster 보정과 PPSSPP
 단독 실행 연결은 실기에서 확인했습니다. 최종 배포판 이미지의 오프라인 검증에 더해,
-2026년 10월 24일 사용자가 공개된 v119 r2 이미지를 직접 내려받아 SD 카드에 기록하고
+2026년 10월 24일 사용자가 공개된 v1.0.0 이미지를 직접 내려받아 SD 카드에 기록하고
 실기에 설치한 뒤 정상 작동을 확인했습니다. [검증 범위](../docs/TESTING.ko.md)
 
 압축 해제한 IMG 크기: 6,069,178,368바이트. IMG SHA256:

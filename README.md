@@ -1,6 +1,6 @@
 # Action Pi KNULLI adaptation
 
-Unofficial KNULLI adaptation for **Helegany Action Pi**, documenting the work needed
+Unofficial KNULLI adaptation for **Helegaly Action Pi**, documenting the work needed
 to run a Mali-based EmulationStation menu and PPSSPP Vulkan on the same boot.
 This is a community adaptation, not an official KNULLI release or a universal
 TrimUI Smart Pro S firmware.
@@ -11,7 +11,7 @@ TrimUI Smart Pro S firmware.
 
 ## Download and install
 
-Download **v119 Distribution Edition** from
+Download **Action Pi KNULLI v1.0.0** from
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases).
 Use the `.img.xz` asset and matching SHA256 file. Extract the image if your flashing
 application does not accept XZ, then write the image to the **whole SD card**.
@@ -66,7 +66,7 @@ Flycast standalone HOME exit is not separately confirmed.
 The v119 base was installed and confirmed working by the device owner. PortMaster
 direction/size was separately confirmed on hardware before packaging. Public
 distribution defaults and file integrity were checked offline. On 2026-10-24,
-the owner downloaded the published v119 r2 image, wrote it to an SD card,
+the owner downloaded the published v1.0.0 image, wrote it to an SD card,
 installed it on the device and confirmed normal operation. See [test coverage](docs/TESTING.md).
 
 The exact vendor source of the original 5.15.147 kernel has **not** been identified.

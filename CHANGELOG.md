@@ -1,7 +1,8 @@
 # Release and development milestones
 
 These are curated milestones, not a fabricated historical Git commit log.
-Version numbers are adaptation checkpoints, not upstream KNULLI versions.
+Development checkpoint numbers are internal, not upstream KNULLI versions.
+Public release numbering starts at **v1.0.0**.
 
 | Checkpoint | Outcome |
 | --- | --- |
@@ -16,8 +17,12 @@ Version numbers are adaptation checkpoints, not upstream KNULLI versions.
 | v119 Distribution r2 / personal v120 r2 | ES Emulators/PPSSPP standalone entry routed through the existing Vulkan supervisor; no ROM required; owner confirmed output and menu return |
 | Personal v120 | Private successor to personal v119, including BIOS/settings and PortMaster fix; not a public asset |
 
-The public asset is named **v119 Distribution Edition** because it was packaged
-from that confirmed public baseline. Its PortMaster follow-up is included even
-though the original personal v119 IMG predates that follow-up. Personal v119 was
-subsequently removed from the current personal stable list; this does not rename
-or withdraw the separate public distribution asset.
+## First public release: v1.0.0 — 2026-10-24
+
+Public v1.0.0 is the unchanged image previously labeled internally as
+v119 Distribution Edition r2. The release title, tag, filenames and documentation
+now use v1.0.0; the IMG and XZ bytes and their SHA256 values are unchanged.
+The owner downloaded the published image, wrote it to an SD card and confirmed
+installation and normal operation. Personal v120 remains unchanged and private.
+Historical checkpoint names, runtime paths and packaging tools retain their
+original identifiers so they still describe the actual work.

@@ -175,4 +175,5 @@ The session runner omits only the game argument in UI mode. Normal PSP path and
 extension validation, Vulkan environment, rotation, opacity, preferences and
 SELECT+START handling remain shared. One installation restart reloaded the
 resident supervisor. The owner confirmed Vulkan, direction/size and menu return.
-The correction is packaged in distribution v119 r2 and personal v120 r2.
+The correction is packaged in public v1.0.0 (internal build v119 r2) and personal v120 r2.
+Public version numbering starts at v1.0.0; this rename does not change image bytes.

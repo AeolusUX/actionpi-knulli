@@ -6,7 +6,7 @@
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
-**v119 Distribution Edition**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
+**Action Pi KNULLI v1.0.0**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
 압축 이미지를 지원하지 않는 프로그램에서는 먼저 압축을 풀고 SD 전체에 굽습니다.
 선택한 SD의 내용은 지워집니다.
 
@@ -47,7 +47,7 @@ Emulators의 PPSSPP 단독 실행도 게임 파일 없이 같은 Vulkan 메뉴�
 [시험 범위](docs/TESTING.ko.md), [문제 해결](docs/TROUBLESHOOTING.ko.md)을 함께 제공합니다.
 
 v119 기반 상태와 PortMaster 보정은 실기로 확인했으며 파일·설정·체크섬 검사도 수행했습니다.
-2026년 10월 24일 사용자가 공개된 v119 r2 이미지를 직접 내려받아 SD 카드에 기록하고
+2026년 10월 24일 사용자가 공개된 v1.0.0 이미지를 직접 내려받아 SD 카드에 기록하고
 실기에 설치한 뒤 정상 작동을 확인했습니다.
 정확한 원본 커널 소스가 확인되지 않은 부분과 소스 출처가 불완전한 바이너리는
 [출처·라이선스 문서](docs/SOURCES_AND_LICENSES.ko.md)에 구분했습니다.

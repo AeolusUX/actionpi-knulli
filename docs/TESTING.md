@@ -17,7 +17,7 @@
 | Public defaults | Offline archive assertions for English, Wi-Fi0, no saved personal network and removed Ports entries |
 | Source/base integrity | Source IMG checksum, modified-file readback, unchanged rootfs checksum and final IMG checksum |
 | Private data cleanup | Sanitized settings/recovery copies, cleared free clusters/slack, known-credential raw scan |
-| Final public variant | On 2026-10-24, owner downloaded the published v119 r2 image, wrote it to an SD card, installed it on the device and confirmed normal operation |
+| Final public variant | On 2026-10-24, owner downloaded the published v1.0.0 image, wrote it to an SD card, installed it on the device and confirmed normal operation |
 
 No claim is made that every game, every PortMaster port, every emulator backend,
 all suspend scenarios, all driver ABI behavior or unrelated board variants were
