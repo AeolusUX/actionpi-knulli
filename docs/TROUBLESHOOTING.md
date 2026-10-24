@@ -1,5 +1,7 @@
 # Troubleshooting
 
+[English](TROUBLESHOOTING.md) · [한국어](TROUBLESHOOTING.ko.md)
+
 ## First installation restarts twice
 
 A black screen after the boot image is normal during first installation. Allow

@@ -42,12 +42,12 @@ Emulators의 PPSSPP 단독 실행도 게임 파일 없이 같은 Vulkan 메뉴�
 
 ## 작업 기록과 공개 범위
 
-[작업 이력](docs/HISTORY.md), [구조](docs/ARCHITECTURE.md),
-[공개 파일 목록](docs/PUBLIC_FILES.md), [빌드 방법](docs/BUILD.md),
-[시험 범위](docs/TESTING.md), [문제 해결](docs/TROUBLESHOOTING.md)을 함께 제공합니다.
+[작업 이력](docs/HISTORY.ko.md), [구조](docs/ARCHITECTURE.ko.md),
+[공개 파일 목록](docs/PUBLIC_FILES.ko.md), [빌드 방법](docs/BUILD.ko.md),
+[시험 범위](docs/TESTING.ko.md), [문제 해결](docs/TROUBLESHOOTING.ko.md)을 함께 제공합니다.
 
 v119 기반 상태와 PortMaster 보정은 실기로 확인했습니다. 마지막 공개용 이미지의
 새 설치 시험은 반복하지 않았고 파일·설정·체크섬 검사를 수행했습니다.
 정확한 원본 커널 소스가 확인되지 않은 부분과 소스 출처가 불완전한 바이너리는
-[출처·라이선스 문서](docs/SOURCES_AND_LICENSES.md)에 구분했습니다.
+[출처·라이선스 문서](docs/SOURCES_AND_LICENSES.ko.md)에 구분했습니다.
 모든 구성요소를 이 저장소만으로 완전히 재빌드할 수 있다고 주장하지 않습니다.
