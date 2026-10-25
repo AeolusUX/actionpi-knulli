@@ -55,3 +55,7 @@ Do not upload your whole private settings directory or game files.
 ## v1.0.1 Wi-Fi report
 
 If Wi-Fi fails, leave that boot unchanged and run tools/ActionPi-WiFi-Diagnostic.sh after copying it into SHARE/roms/ports. Wait about two minutes after the menu appears before collecting a failed-start snapshot. It does not scan, toggle Wi-Fi, restart services or reset hardware. A timestamped ZIP appears beside the script. A working-first-boot report and failed-after-reboot report are especially useful together. SSID/password/MAC/IP, raw configuration and raw dmesg are excluded. Compare live script hashes with the release component/source records; a helper existing on BOOT does not prove that the live S08 called it.
+
+## Ozone or menu-startup issues
+
+v1.0.1 forced ordinary cores through SDL2 and retained a stale menu BOOT expectation. v1.0.2 fixes both paths. Use the complete v1.0.2 image rather than swapping BOOT alone or removing the safety guard. This does not establish compatibility with every later PortMaster version, individual port or board variant.

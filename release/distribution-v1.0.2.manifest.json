@@ -1,0 +1,37 @@
+{
+  "version": "v1.0.2",
+  "image": "action-pi-knulli-v1.0.2.img",
+  "bytes": 6069178368,
+  "sha256": "18cfbf89a81dd4245caee0d557e8b12bf00c8627e01d81b7b2ac28b210143cc9",
+  "source_image": "action-pi-knulli-v1.0.1-ozone-fix.img",
+  "source_sha256": "bb67ac0245bc1a9e23eb6e1e5cc49739fa42e69f1728097647967886499ae193",
+  "changes_from_ozone_image": {
+    "MALI_MENU_TRIAL/mali_menu_trial.py": "1f000a44916e61c554b746f1c073446ecef08a2ba0c76e10e8521b55a0028d6e",
+    "MALI_MENU_TRIAL/manifest.json": "68df5beaa60512fad37d3de946f2b38e62d624c0755a680ca0ef3d3298390779"
+  },
+  "changes_from_v101": [
+    "Ordinary/standalone RetroArch Ozone with GL/gl_sdl",
+    "Scoped GLES3 context helper keeps existing full-frame rotation",
+    "Menu guard BOOT hash and manifest synchronized with recovery BOOT"
+  ],
+  "checks": {
+    "normal_boot_guard_passed": true,
+    "armed_boot_guard_rejected": true,
+    "old_guard_mismatch_reproduced": true,
+    "ozone_hashes_match_final_home_device": true,
+    "guard_change_matches_reported_exact_source_edit": true,
+    "complete_boot_reference_chain": true,
+    "changed_file_readback": true,
+    "unchanged_bytes_compared": 6058651648,
+    "protected_images_unchanged": true
+  },
+  "hardware_evidence": "Home SSH update reached healthy Mali boot; user subsequently confirmed all final changes working on 2026-10-25",
+  "scope": "Corresponding runtime fixes tested on device; this newly packaged public IMG was not independently downloaded and flashed",
+  "preserved": [
+    "Wi-Fi, Mali/PPSSPP, PortMaster and prior rotations",
+    "English/clean public defaults",
+    "base system BIOS policy and absence of private cores/ROMs/network data",
+    "all previous public/personal images"
+  ],
+  "published": false
+}

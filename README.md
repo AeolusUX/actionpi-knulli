@@ -11,7 +11,7 @@ TrimUI Smart Pro S firmware.
 
 ## Download and install
 
-Download **Action Pi KNULLI v1.0.1** from
+Download **Action Pi KNULLI v1.0.2** from
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases).
 Use the `.img.xz` asset and matching SHA256 file. Extract the image if your flashing
 application does not accept XZ, then write the image to the **whole SD card**.
@@ -101,4 +101,13 @@ that helped establish the vendor-stack direction.
 
 ## v1.0.1 update
 
-Wi-Fi reboot persistence, AIC/RTL8723DS support, emulator/tool/game rotation and PortMaster runtime-menu fixes are included. Emulator directions were all confirmed on hardware by the maintainer; test8 Wi-Fi after reboot was confirmed in device feedback. The public IMG is unchanged from normal test8. [Full changes](release/NOTES.md#what-changed-in-v101).
+Wi-Fi reboot persistence, AIC/RTL8723DS support, emulator/tool/game rotation and PortMaster runtime-menu fixes are included. Emulator directions were all confirmed on hardware by the maintainer; test8 Wi-Fi after reboot was confirmed in device feedback. The public IMG is unchanged from normal test8. [Full changes](CHANGELOG.md).
+
+## v1.0.2 changes
+
+- **RetroArch Ozone restored:** ordinary cores and standalone RetroArch now use GL/gl_sdl rather than forced SDL2 video, with Ozone selected for those sessions.
+- **Rotation retained:** a small, scoped GLES3-context helper lets the existing full-frame adapter rotate both gameplay and Ozone. Existing hardware-core output settings and other applications are retained.
+- **Menu startup fixed:** synchronize the menu guard's expected normal BOOT hash and its manifest with the Wi-Fi recovery BOOT. This fixes the stale check that could reject menu startup and trigger recovery. The safety check remains enabled.
+- Retain the cumulative Wi-Fi reboot/startup fixes, emulator/SDLPoP/OD-Commander orientation, PortMaster runtime-list fixes, Mali menu and PPSSPP Vulkan.
+
+The final runtime changes reached a healthy Mali menu after the home-device SSH update. Wi-Fi reconnected, and ordinary-core/standalone RetroArch checks completed. The owner then confirmed all final changes working on 2026-10-25. This newly packaged public IMG was not independently downloaded and reflashed; not every core, game, port or board variant was retested. [Release notes](release/NOTES.md).

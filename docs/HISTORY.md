@@ -183,3 +183,12 @@ Public version numbering starts at v1.0.0; this rename does not change image byt
 The early test images could connect once and lose Wi-Fi after reboot. A passive failed-boot report identified SDIO 024c:d723 with no bound driver. Its live S06 matched the old AIC-only recovery BOOT and its S08 matched the original rootfs, while the new helper file was present but unused. Mali restore/arm rewrote the active BOOT from that older copy. The preparation marker also existed under /var/run rather than /run. Internal test8 synchronized both BOOT copies and their hashes and corrected the marker; the user then confirmed Wi-Fi after reboot on 2026-10-25. Public v1.0.1 uses the unchanged normal-test8 bytes.
 
 This release also carries the N64/Saturn/OpenBOR/standalone RetroArch launch corrections, SDLPoP and OD-Commander adapters, scoped PortMaster game rotation, and runtime-list metadata fixes. Emulator directions were all verified on hardware by the maintainer. These internal test names remain development history, not public release numbers.
+
+## v1.0.2: Ozone and the menu BOOT guard
+
+- **RetroArch Ozone restored:** ordinary cores and standalone RetroArch now use GL/gl_sdl rather than forced SDL2 video, with Ozone selected for those sessions.
+- **Rotation retained:** a small, scoped GLES3-context helper lets the existing full-frame adapter rotate both gameplay and Ozone. Existing hardware-core output settings and other applications are retained.
+- **Menu startup fixed:** synchronize the menu guard's expected normal BOOT hash and its manifest with the Wi-Fi recovery BOOT. This fixes the stale check that could reject menu startup and trigger recovery. The safety check remains enabled.
+- Retain the cumulative Wi-Fi reboot/startup fixes, emulator/SDLPoP/OD-Commander orientation, PortMaster runtime-list fixes, Mali menu and PPSSPP Vulkan.
+
+The final runtime changes reached a healthy Mali menu after the home-device SSH update. Wi-Fi reconnected, and ordinary-core/standalone RetroArch checks completed. The owner then confirmed all final changes working on 2026-10-25. This newly packaged public IMG was not independently downloaded and reflashed; not every core, game, port or board variant was retested.

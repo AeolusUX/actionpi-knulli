@@ -15,10 +15,14 @@ def ra_args(args):
     args=list(args);core=''
     for i,x in enumerate(args[:-1]):
         if x in ('-L','--libretro'):core=Path(args[i+1]).name.removesuffix('_libretro.so')
-    driver='gl' if core in HW else 'sdl2'
+    # Use the existing complete-frame GLES rotation for game AND Ozone.
+    # SDL2 video cannot draw Ozone in the bundled RetroArch build.
+    driver='gl'
     cfg=Path('/run/actionpi-ra-output-%s.cfg'%os.getpid())
-    text='video_driver = "'+driver+'"\n'
-    if driver=='gl':text+='video_context_driver = "gl_sdl"\n'
+    text='video_driver = "gl"\nvideo_context_driver = "gl_sdl"\n'
+    # Recover ordinary/standalone sessions even if an earlier fallback saved RGUI.
+    # Hardware-core menu preferences and persistent config files stay unchanged.
+    if core not in HW:text+='menu_driver = "ozone"\n'
     cfg.write_text(text)
     # Keep pre-existing append configs and their order, rather than discarding them.
     for i,x in enumerate(args):
@@ -33,7 +37,13 @@ def run(name,args):
         preload(env)
         if name=='retroarch':
             args,core,driver=ra_args(args)
-            if core in HW:env['SDL_NO_SIGNAL_HANDLERS']='1'
+            env['SDL_NO_SIGNAL_HANDLERS']='1'
+            if core not in HW:
+                # Software cores normally request GLES2; the shared rotation FBO needs GLES3.
+                env['ACTIONPI_RA_GLES3_CONTEXT']='1'
+                helper=str(BASE/'retroarch_gles3_context.so')
+                libs=[p for p in env['LD_PRELOAD'].split(':') if Path(p).name!='retroarch_gles3_context.so']
+                env['LD_PRELOAD']=':'.join([helper,*libs])
             print('ACTIONPI_APP_OUTPUT retroarch driver='+driver+' core='+core,file=sys.stderr,flush=True)
         elif name in ('mupen64plus','yabasanshiro'):env['SDL_NO_SIGNAL_HANDLERS']='1'
     os.execve(real,[str(Path('/usr/bin')/name),*args],env)

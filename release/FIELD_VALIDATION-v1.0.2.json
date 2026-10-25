@@ -1,0 +1,15 @@
+{
+  "version": "v1.0.2",
+  "date": "2026-10-25",
+  "runtime": "Home-device SSH update with final Wi-Fi/Ozone and corrected menu guard reached healthy Mali autostart",
+  "remote_checks": [
+    "Wi-Fi reconnected after reboot",
+    "GL/gl_sdl/Ozone configuration and GLES3 helper loaded",
+    "ordinary FCEUmm game and standalone RetroArch returned to ES after remote termination"
+  ],
+  "user_confirmation": "User subsequently confirmed all final changes applied and working perfectly, including Ozone",
+  "previous_confirmations_retained": "Emulator orientation, PortMaster runtime/management UI, SDLPoP, OD-Commander",
+  "new_public_img_reflash": "Not independently repeated after packaging",
+  "scope": "Does not establish every core, port, game or hardware variant",
+  "private_data": "No device IP, credentials, screenshots, private BIOS collection or user CRC cores published"
+}

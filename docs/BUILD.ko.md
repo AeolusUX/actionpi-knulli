@@ -90,3 +90,7 @@ PortMaster 훅을 포함하며, 기본 루트 파일시스템을 유지합니다
 내부 test8에서는 test7 BOOT의 본문과 S06/S08을 유지하고 Mali 가드가 없는 일반 기준 사본을 만든 뒤 실제 manager.modified()로 활성 Mali 번들을 생성했습니다. 복구 매니페스트·BOOT_SHA·BASE_SHA를 함께 맞추고 시작 helper의 SHARE 마커 경로만 수정했습니다. 실제 restore/arm 함수를 임시 파일에서 세 차례 실행했으며 트랜잭션 복원과 /run·/var/run이 분리된 경우를 확인했습니다. 이 검사는 실제 블록 장치나 GPU에 적용한 시험이 아닙니다.
 
 추가된 보정 소스는 src/app_sdl_rotation.c, src/app_gl_rotation.c, src/od_commander_rotation.c이며 실행 스크립트와 유효 S06/S08은 overlay/에 공개했습니다. 두 BOOT와 내장 8723ds 모듈을 포함한 해시는 release/BOOT_COMPONENTS.json에 있습니다. 업로드 전에 XZ 무결성과 압축 전후 체크섬을 확인하며, 펌웨어 전체를 새로 소스 빌드했다는 뜻은 아닙니다.
+
+## v1.0.2 제작
+
+v1.0.1에 Ozone 런처·GLES3 보조 라이브러리·ACTIONPI_FIXES manifest를 반영하고, 메뉴 guard의 BOOT 상수와 MALI_MENU_TRIAL manifest를 normal BOOT에 맞췄습니다. 기존 IMG와 개인 데이터를 바꾸지 않는 사본에서 작업했습니다. 올바른 normal BOOT의 검사 통과, armed BOOT의 거부와 옛 검사값 불일치 재현을 실제 guard 함수에 파일 입출력 대역을 연결해 확인했습니다. 최종 파일 재읽기 및 변경 영역 외 바이트 비교·SHA256을 수행했습니다. 기존 클린 기본값 자료는 변경하지 않았습니다. 새 보조 파일은 tools/build-runtime.sh에 포함됩니다. XZ 무결성·압축/해제 해시는 한 번의 스트리밍 검사로 기록합니다.

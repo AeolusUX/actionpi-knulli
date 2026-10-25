@@ -79,3 +79,7 @@ Wi-Fi를 단순히 절전에서 깨어났다는 이유로 켜지는 않습니다
 S06은 AIC 경로를 유지하면서 순정 8723ds도 등록합니다. S08은 준비 작업을 예약하고, 실제 SHARE·/var/run/knulli.share.mounted·설치 완료와 필요한 무선 인터페이스를 기다린 뒤 최신 userdata 설정을 읽습니다. 기존에 켜진 무선 장치·서비스는 보존합니다. 앞 단계 전원 보완은 별개이며 상태 표시만으로 실제 네트워크 접속 성공을 뜻하지는 않습니다.
 
 SDL Renderer·GLES 코어·OD-Commander 소프트웨어 Surface 경로를 구분해 보정합니다. PortMaster는 전용 SDL과 포트 게임용 제한적 preload를 사용하며, 설치 소스의 알려진 런타임 목록 처리 구문만 보완합니다.
+
+## v1.0.2 Ozone과 전체 BOOT 검증 연결
+
+일반 코어/단독 RetroArch는 gl/gl_sdl/ozone을 마지막 추가 설정으로 받습니다. 해당 프로세스에만 retroarch_gles3_context.so → app_output_rotation.so 순으로 연결해 SDL 주 버전 요청을 최소 3으로 맞춥니다. 기존 하드웨어 코어의 영상 설정은 유지합니다. 메뉴 guard의 BOOT 상수는 normal 복원 BOOT의 SHA256과 같아야 하며, 활성 armed BOOT를 요구하는 검사가 아닙니다. manager BOOT_SHA·autostart BASE_SHA·복원 manifest·메뉴 guard/manifest를 함께 갱신해야 합니다.

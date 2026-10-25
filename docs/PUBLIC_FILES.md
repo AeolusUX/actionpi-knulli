@@ -48,3 +48,10 @@ The source tree is small enough to inspect and clone without downloading firmwar
 - release/distribution-v1.0.1.manifest.json and current component/source inventories and asset hashes.
 
 Personal CRC-core images, game ROMs, screenshots containing network details and personal stable images are not release assets.
+
+## Added or refreshed for v1.0.2
+
+- src/retroarch_gles3_context.c and its ARM64 command in tools/build-runtime.sh.
+- overlay/boot/ACTIONPI_FIXES/actionpi_app_launcher.py and MALI_MENU_TRIAL/mali_menu_trial.py.
+- release/distribution-v1.0.2.manifest.json, FIELD_VALIDATION-v1.0.2.json and current image/asset/source hashes.
+- User CRC cores and prior personal BIOS/settings are not public assets.

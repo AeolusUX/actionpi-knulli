@@ -20,7 +20,7 @@ the cleared free space efficiently.
    details when downloads are needed.
 
 Raw image SHA256:
-`b5d2193e0b88808c7457d8d714d422f8b927630e06bac432bf8067ea31377c42`.
+`18cfbf89a81dd4245caee0d557e8b12bf00c8627e01d81b7b2ac28b210143cc9`.
 The public manifest and binary component hashes are in `release/`.
 
 The source tree is stored in Git; the large firmware belongs in Releases.

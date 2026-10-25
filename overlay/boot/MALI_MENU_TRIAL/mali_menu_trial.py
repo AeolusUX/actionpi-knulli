@@ -8,7 +8,7 @@ from pathlib import Path
 
 BASE=Path(__file__).resolve().parent
 KERNEL='52eb2334f61bad08c82cd0d5a27f11f93596b686b06019bc6948c7ef6a03847d'
-BOOT='eb313e883c54ab7e3fec85148df1c5c4770b008cd95cd554da4f337819dcb5c8'
+BOOT='fca98e6206df6d3f9b4b6a7fae05c2bfc75043d933ef4213ad960d4d430fbe63'
 ENV='c6ce5d571c2b42835458ef082dc867ba1c71f4941426462f02d9faba606266ce'
 def require(ok,text):
     if not ok: raise RuntimeError(text)

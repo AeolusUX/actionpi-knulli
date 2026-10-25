@@ -76,3 +76,7 @@ normalizer. Whole-image recovery is preferable to mixing historical experiments.
 S06 preserves the AIC path and registers stock 8723ds. S08 queues the deferred startup helper. It waits for persistent SHARE, the `/var/run/knulli.share.mounted` marker, installation completion and a bound interface as applicable, reads current userdata settings, and preserves existing radio/service use. The earlier power helper remains separate. Status files report requested operations rather than proving network access.
 
 App wrappers distinguish SDL renderers, GLES-backed cores and OD-Commander software window surfaces. PortMaster gets its own SDL adapter and scoped game preload; installed Python sources are patched only at known runtime-list patterns.
+
+## v1.0.2 Ozone and the complete BOOT reference chain
+
+Ordinary-core/standalone RetroArch receives final gl/gl_sdl/ozone overrides. Only these processes preload retroarch_gles3_context.so before app_output_rotation.so, requesting at least GLES3 while preserving other SDL attributes. Existing hardware-core output settings remain. The menu guard expects the normal recovery BOOT hash, not the armed active BOOT. Keep manager BOOT_SHA, autostart BASE_SHA, recovery manifests and the menu guard/manifest synchronized.

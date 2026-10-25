@@ -1,8 +1,8 @@
 {
-  "asset": "action-pi-knulli-v1.0.1.img.xz",
-  "bytes": 2025687372,
-  "sha256": "afa543615a3073e49d638cfb20be40cd13fa348e96b115071128bfd0866395ce",
+  "asset": "action-pi-knulli-v1.0.2.img.xz",
+  "bytes": 2025698500,
+  "sha256": "ad1dc01253a79e67f2375c2c3a96ed5b7856bf6670325d858d46f921d1a6f941",
   "image_bytes": 6069178368,
-  "image_sha256": "b5d2193e0b88808c7457d8d714d422f8b927630e06bac432bf8067ea31377c42",
+  "image_sha256": "18cfbf89a81dd4245caee0d557e8b12bf00c8627e01d81b7b2ac28b210143cc9",
   "xz_integrity": "passed"
 }

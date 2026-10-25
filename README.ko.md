@@ -6,7 +6,7 @@
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
-**Action Pi KNULLI v1.0.1**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
+**Action Pi KNULLI v1.0.2**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
 압축 이미지를 지원하지 않는 프로그램에서는 먼저 압축을 풀고 SD 전체에 굽습니다.
 선택한 SD의 내용은 지워집니다.
 
@@ -58,4 +58,13 @@ KNULLI 보드 구성은 상위 프로젝트의 [Action Pi 보드 설정](https:/
 
 ## v1.0.1 변경 사항
 
-AIC·RTL8723DS Wi-Fi 지원과 재부팅 후 연결, 에뮬레이터·도구·지원되는 포트 게임의 회전 보정, PortMaster 런타임 메뉴 오류를 수정했습니다. 에뮬레이터 방향은 제작자가 실기로 모두 확인했고, test8의 재부팅 후 Wi-Fi 연결도 실기 후기로 확인했습니다. 공개판 IMG는 test8 일반판과 동일합니다. [전체 수정 내역](release/NOTES.md#v101-수정-내역).
+AIC·RTL8723DS Wi-Fi 지원과 재부팅 후 연결, 에뮬레이터·도구·지원되는 포트 게임의 회전 보정, PortMaster 런타임 메뉴 오류를 수정했습니다. 에뮬레이터 방향은 제작자가 실기로 모두 확인했고, test8의 재부팅 후 Wi-Fi 연결도 실기 후기로 확인했습니다. 공개판 IMG는 test8 일반판과 동일합니다. [전체 수정 내역](CHANGELOG.md).
+
+## v1.0.2 변경 사항
+
+- **RetroArch Ozone 복원:** 일반 코어와 단독 RetroArch를 강제 SDL2 출력 대신 GL/gl_sdl로 실행하고 해당 실행에 Ozone을 지정했습니다.
+- **회전 보정 유지:** 해당 RetroArch 실행에만 GLES3 컨텍스트 보조 파일을 연결해 게임과 Ozone 메뉴를 기존 전체 프레임 회전 경로로 표시합니다. 기존 하드웨어 코어 출력 설정과 다른 앱은 유지했습니다.
+- **메뉴 시작 오류 수정:** 메뉴 guard의 normal BOOT 기대값과 해당 manifest를 Wi-Fi 복원 BOOT에 맞췄습니다. 옛 검사값 때문에 메뉴 시작을 거부하고 복구 부팅으로 넘어갈 수 있던 문제를 고쳤으며 안전 검사 자체는 유지했습니다.
+- 재부팅 후 Wi-Fi·시작 순서, 에뮬레이터·SDLPoP·OD-Commander 방향, PortMaster 런타임 목록 처리, Mali 메뉴·PPSSPP Vulkan 등 누적 수정도 유지했습니다.
+
+집 실기에 SSH로 최종 수정을 적용한 뒤 Mali 메뉴의 정상 시작과 재부팅 후 Wi-Fi 재연결을 확인했습니다. 일반 코어·단독 RetroArch 실행 검사 후, 2026년 10월 25일 사용자가 최종 수정 전체의 정상 작동을 확인했습니다. 새로 패키징한 공개 IMG를 게시 후 다시 내려받아 굽는 시험은 별도로 반복하지 않았으며, 모든 코어·게임·포트·보드 변형을 전부 재시험한 것은 아닙니다. [전체 수정 내역](release/NOTES.md).

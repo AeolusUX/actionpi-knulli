@@ -50,3 +50,7 @@ Build toolchain archive SHA256 recorded during preparation:
 ## v1.0.1 Wi-Fi provenance
 
 The AIC binaries are retained from the recorded stock-firmware integration. The 8723ds module is the stock-firmware binary already reviewed for the 5.15.147 target; its alias includes SDIO vendor 024c/device d723. This release wires those existing modules into persistent boot copies rather than claiming to have authored or rebuilt their complete vendor sources. Binary hashes are recorded in release/BOOT_COMPONENTS.json. The unresolved original vendor-kernel/source provenance described above still applies.
+
+## v1.0.2 helper
+
+retroarch_gles3_context.c is an MIT-licensed adaptation helper written for this integration. It adjusts the scoped SDL context-major request without replacing SDL or RetroArch. Existing unresolved provenance/licensing items remain unchanged.

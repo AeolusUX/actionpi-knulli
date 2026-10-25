@@ -46,5 +46,33 @@
   "PPSSPP_VULKAN/autostart-backup/BOOT.IMG": {
     "bytes": 26349568,
     "sha256": "fca98e6206df6d3f9b4b6a7fae05c2bfc75043d933ef4213ad960d4d430fbe63"
+  },
+  "ACTIONPI_FIXES/actionpi_app_launcher.py": {
+    "bytes": 4283,
+    "sha256": "67402b8c97f66ac47bb16b9a40059316af64f5818d73b1156521cfcb74725a90"
+  },
+  "ACTIONPI_FIXES/retroarch_gles3_context.so": {
+    "bytes": 71240,
+    "sha256": "93612a1238a399b775184e9452a1f6eac95cceca5524d010f810795f770f4b84"
+  },
+  "ACTIONPI_FIXES/manifest.json": {
+    "bytes": 2636,
+    "sha256": "840ca41031c5372b1e130b7e57229cb9274ced8b84cd6554d2dd2ce2df999588"
+  },
+  "MALI_MENU_TRIAL/mali_menu_trial.py": {
+    "bytes": 8242,
+    "sha256": "1f000a44916e61c554b746f1c073446ecef08a2ba0c76e10e8521b55a0028d6e"
+  },
+  "MALI_MENU_TRIAL/manifest.json": {
+    "bytes": 1656,
+    "sha256": "68df5beaa60512fad37d3de946f2b38e62d624c0755a680ca0ef3d3298390779"
+  },
+  "PPSSPP_VULKAN/manager-before-session.py": {
+    "bytes": 10422,
+    "sha256": "2e3b3705d6d2ebc2aff70f032320146a7732865230a126b9f5c687517bd8d0f2"
+  },
+  "PPSSPP_VULKAN/mali_autostart.py": {
+    "bytes": 8938,
+    "sha256": "e7fa15e1801ac7a1c86d139818b8c5759c195d4278bc5e8840d2b15e21b2c44b"
   }
 }

@@ -4,6 +4,8 @@
 
 | Check | Evidence |
 | --- | --- |
+| v1.0.2 final device runtime | Healthy menu/reboot Wi-Fi after SSH update and guard fix; owner subsequently confirmed all final changes, including Ozone, working |
+| Newly packaged v1.0.2 IMG | File readback, complete BOOT references, unaffected bytes and XZ/image hashes checked; a fresh IMG reflash was not independently repeated |
 | v1.0.1 source firmware | On 2026-10-25, user feedback confirmed test8 Wi-Fi still works after reboot; public IMG bytes match normal test8 |
 | Emulator directions | Maintainer confirmed all emulator screen directions on hardware |
 | PortMaster menus | Runtime manager and port-management display confirmed; full update/download/install matrix not exhaustively retested |
@@ -32,3 +34,7 @@ different milestones; the history distinguishes them.
 The kernel repair's modeled ARM64 tests check selected calls, error paths,
 callee-saved state and cleanup ordering. They do not emulate the complete device,
 allocator, concurrency, power management or electrical panel.
+
+## v1.0.2
+
+The final runtime changes reached a healthy Mali menu after the home-device SSH update. Wi-Fi reconnected, and ordinary-core/standalone RetroArch checks completed. The owner then confirmed all final changes working on 2026-10-25. This newly packaged public IMG was not independently downloaded and reflashed; not every core, game, port or board variant was retested.
