@@ -36,3 +36,15 @@ tails plus 26 deleted records, so removing a filename was not the only cleanup.
 
 The downloadable IMG belongs in GitHub **Releases**, not the Git source history.
 The source tree is small enough to inspect and clone without downloading firmware.
+
+## Added or refreshed for v1.0.1
+
+- overlay/etc/init.d/S06modprobe and S08connman: effective boot startup code.
+- overlay/usr/bin/emulatorlauncher: renderer-aware application routing.
+- overlay/boot/ACTIONPI_FIXES/: current common app, PortMaster runtime, OD-Commander and Wi-Fi helpers.
+- overlay/boot/PPSSPP_VULKAN/: updated active manager/autostart integrity link.
+- src/app_sdl_rotation.c, app_gl_rotation.c and od_commander_rotation.c: adapter source; no compiled userspace adapter is needed in Git.
+- tools/ActionPi-WiFi-Diagnostic.sh and wifi-diagnostic.py: passive report collector, compatible with this release.
+- release/distribution-v1.0.1.manifest.json and current component/source inventories and asset hashes.
+
+Personal CRC-core images, game ROMs, screenshots containing network details and personal stable images are not release assets.

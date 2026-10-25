@@ -51,3 +51,7 @@ Remove SSIDs, passwords, MACs and other private details from reports before post
 Include release filename/checksum, device model, the emulator/backend, exact
 trigger, whether it occurs before/after suspend, and whether the menu recovers.
 Do not upload your whole private settings directory or game files.
+
+## v1.0.1 Wi-Fi report
+
+If Wi-Fi fails, leave that boot unchanged and run tools/ActionPi-WiFi-Diagnostic.sh after copying it into SHARE/roms/ports. Wait about two minutes after the menu appears before collecting a failed-start snapshot. It does not scan, toggle Wi-Fi, restart services or reset hardware. A timestamped ZIP appears beside the script. A working-first-boot report and failed-after-reboot report are especially useful together. SSID/password/MAC/IP, raw configuration and raw dmesg are excluded. Compare live script hashes with the release component/source records; a helper existing on BOOT does not prove that the live S08 called it.

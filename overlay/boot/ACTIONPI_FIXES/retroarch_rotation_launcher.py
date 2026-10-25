@@ -10,19 +10,12 @@ def rotated_popen(args,*pos,**kwargs):
         from actionpi_portmaster_fix import prepare
         prepare()
     is_ra=bool(command) and (command[0]=='/usr/bin/retroarch' or command[:4]==['nice','-n','-4','/usr/bin/retroarch'])
-    cfg=Path('/tmp/actionpi-retroarch-sdl2-audio.cfg')
-    shim=None
-    if is_ra and cfg.exists() and 'video_driver = "sdl2"' in cfg.read_text():
-        shim='/boot/MALI_MENU_TRIAL/retroarch_output_rotation.so'
-    if (is_ra and cfg.exists() and 'video_driver = "gl"' in cfg.read_text()) or '/usr/bin/flycast' in command:
-        shim='/boot/ACTIONPI_FIXES/flycast_gl_rotation.so'
-    if shim:
-        env=dict(kwargs.get('env') or os.environ)
-        env['LD_PRELOAD']=shim+(':'+env['LD_PRELOAD'] if env.get('LD_PRELOAD') else '')
-        if any(name+'_libretro.so' in x for name in ('flycastvl','flycast-xtreme') for x in command):
-            # SDL evdev emergency cleanup otherwise re-raises JIT memory faults,
-            # discarding the original siginfo/ucontext needed by old Flycast.
-            env['SDL_NO_SIGNAL_HANDLERS']='1'
+    is_port=any('/roms/ports/' in x and x.endswith('.sh') for x in command)
+    is_pm=any(Path(x).name in ('PortMaster.sh','Install.PortMaster.sh') for x in command)
+    if is_port and not is_pm:
+        sys.path.insert(0,'/boot/ACTIONPI_FIXES')
+        from actionpi_app_launcher import preload
+        env=preload(dict(kwargs.get('env') or os.environ))
         kwargs['env']=env
     child=Popen(args,*pos,**kwargs)
     if command[:3]==['nice','-n','-4'] and len(command)>3:

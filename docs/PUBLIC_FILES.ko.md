@@ -37,3 +37,15 @@ FAT 여유 공간 3,289,493,504바이트를 0으로 채우고, 파일 끝 여유
 
 다운로드할 IMG는 Git 소스 이력 대신 GitHub **Releases**에 둡니다.
 소스 저장소는 펌웨어 전체를 내려받지 않고도 살펴보고 복제할 수 있는 크기로 유지합니다.
+
+## v1.0.1 추가·갱신 파일
+
+- overlay/etc/init.d/S06modprobe·S08connman: 실제 부팅 시작 코드.
+- overlay/usr/bin/emulatorlauncher: 렌더러에 맞춘 실행 경로.
+- overlay/boot/ACTIONPI_FIXES/: 공통 앱·PortMaster 런타임·OD-Commander·Wi-Fi helper 최신본.
+- overlay/boot/PPSSPP_VULKAN/: 활성 manager/autostart의 갱신된 해시 연결.
+- src/app_sdl_rotation.c·app_gl_rotation.c·od_commander_rotation.c: 보정 소스. 컴파일된 사용자 공간 라이브러리를 Git에 넣지는 않습니다.
+- tools/ActionPi-WiFi-Diagnostic.sh·wifi-diagnostic.py: 이번 공개판에서도 쓸 수 있는 읽기 전용 진단.
+- release/distribution-v1.0.1.manifest.json과 현재 구성/소스 목록·자산 체크섬.
+
+개인 CRC 코어판·게임 ROM·네트워크 정보가 보이는 사진·개인용 안정판은 공개 자산에 넣지 않습니다.

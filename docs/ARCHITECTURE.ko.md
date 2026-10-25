@@ -71,3 +71,11 @@ Wi-Fi를 단순히 절전에서 깨어났다는 이유로 켜지는 않습니다
 보관해 주세요. 체크섬으로 보호되어 있으며 다른 이미지의 백업과 서로 바꿔 쓸 수 없습니다.
 새 엄격한 정상화 기능을 유지한 채 예전 PWM 장치 트리 플래그만 복원하지 마세요.
 과거 실험의 일부를 섞기보다는 전체 이미지로 복원하는 편이 적절합니다.
+
+## v1.0.1 Wi-Fi와 부팅 사본 연결
+
+활성 번들은 `/boot/partitions/BOOT.IMG`입니다. Mali의 restore_boot·arm_boot는 `/boot/PPSSPP_VULKAN/autostart-backup/BOOT.IMG`를 기준으로 이를 다시 쓰며 트랜잭션 복원도 같은 기준을 사용합니다. Wi-Fi 수정을 두 사본에 넣고 복구 매니페스트의 BOOT 해시, manager의 BOOT_SHA, autostart의 BASE_SHA를 함께 맞춥니다. Mali 부팅 인자는 바꾸지 않았습니다.
+
+S06은 AIC 경로를 유지하면서 순정 8723ds도 등록합니다. S08은 준비 작업을 예약하고, 실제 SHARE·/var/run/knulli.share.mounted·설치 완료와 필요한 무선 인터페이스를 기다린 뒤 최신 userdata 설정을 읽습니다. 기존에 켜진 무선 장치·서비스는 보존합니다. 앞 단계 전원 보완은 별개이며 상태 표시만으로 실제 네트워크 접속 성공을 뜻하지는 않습니다.
+
+SDL Renderer·GLES 코어·OD-Commander 소프트웨어 Surface 경로를 구분해 보정합니다. PortMaster는 전용 SDL과 포트 게임용 제한적 preload를 사용하며, 설치 소스의 알려진 런타임 목록 처리 구문만 보완합니다.

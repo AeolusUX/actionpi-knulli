@@ -177,3 +177,9 @@ SELECT+START handling remain shared. One installation restart reloaded the
 resident supervisor. The owner confirmed Vulkan, direction/size and menu return.
 The correction is packaged in public v1.0.0 (internal build v119 r2) and personal v120 r2.
 Public version numbering starts at v1.0.0; this rename does not change image bytes.
+
+## v1.0.1: Wi-Fi recovery-copy diagnosis and wider rotation
+
+The early test images could connect once and lose Wi-Fi after reboot. A passive failed-boot report identified SDIO 024c:d723 with no bound driver. Its live S06 matched the old AIC-only recovery BOOT and its S08 matched the original rootfs, while the new helper file was present but unused. Mali restore/arm rewrote the active BOOT from that older copy. The preparation marker also existed under /var/run rather than /run. Internal test8 synchronized both BOOT copies and their hashes and corrected the marker; the user then confirmed Wi-Fi after reboot on 2026-10-25. Public v1.0.1 uses the unchanged normal-test8 bytes.
+
+This release also carries the N64/Saturn/OpenBOR/standalone RetroArch launch corrections, SDLPoP and OD-Commander adapters, scoped PortMaster game rotation, and runtime-list metadata fixes. Emulator directions were all verified on hardware by the maintainer. These internal test names remain development history, not public release numbers.

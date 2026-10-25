@@ -46,3 +46,7 @@ the actual evidence and gaps; it is not a certification of that claim.
 
 Build toolchain archive SHA256 recorded during preparation:
 `322f0b4482fc0d9fa0bb468134841f08d8c554c54ff5aa29a13a7a24bf7e1eb5`.
+
+## v1.0.1 Wi-Fi provenance
+
+The AIC binaries are retained from the recorded stock-firmware integration. The 8723ds module is the stock-firmware binary already reviewed for the 5.15.147 target; its alias includes SDIO vendor 024c/device d723. This release wires those existing modules into persistent boot copies rather than claiming to have authored or rebuilt their complete vendor sources. Binary hashes are recorded in release/BOOT_COMPONENTS.json. The unresolved original vendor-kernel/source provenance described above still applies.

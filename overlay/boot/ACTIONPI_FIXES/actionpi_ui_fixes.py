@@ -6,6 +6,11 @@ BASE=Path('/boot/ACTIONPI_FIXES')
 
 def install():
     assert Path('/boot/boot/knulli.board').read_text().strip()=='helegany-action-pi'
+    # ACTIONPI_OD_SURFACE_BOOT
+    from actionpi_od_rotation import install as install_od
+    install_od()
+    from actionpi_app_launcher import install as install_apps
+    install_apps()
     p=Path('/usr/bin/knulli-brightness');text=p.read_text()
     if '# ACTIONPI_INVERTED_BACKLIGHT' in text:
         start=text.index('  # ACTIONPI_INVERTED_BACKLIGHT')

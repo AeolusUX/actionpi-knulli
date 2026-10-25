@@ -6,7 +6,7 @@
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
-**Action Pi KNULLI v1.0.0**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
+**Action Pi KNULLI v1.0.1**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
 압축 이미지를 지원하지 않는 프로그램에서는 먼저 압축을 풀고 SD 전체에 굽습니다.
 선택한 SD의 내용은 지워집니다.
 
@@ -55,3 +55,7 @@ KNULLI 보드 구성은 상위 프로젝트의 [Action Pi 보드 설정](https:/
 정확한 원본 커널 소스가 확인되지 않은 부분과 소스 출처가 불완전한 바이너리는
 [출처·라이선스 문서](docs/SOURCES_AND_LICENSES.ko.md)에 구분했습니다.
 모든 구성요소를 이 저장소만으로 완전히 재빌드할 수 있다고 주장하지 않습니다.
+
+## v1.0.1 변경 사항
+
+AIC·RTL8723DS Wi-Fi 지원과 재부팅 후 연결, 에뮬레이터·도구·지원되는 포트 게임의 회전 보정, PortMaster 런타임 메뉴 오류를 수정했습니다. 에뮬레이터 방향은 제작자가 실기로 모두 확인했고, test8의 재부팅 후 Wi-Fi 연결도 실기 후기로 확인했습니다. 공개판 IMG는 test8 일반판과 동일합니다. [전체 수정 내역](release/NOTES.md#v101-수정-내역).

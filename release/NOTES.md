@@ -1,9 +1,20 @@
-# Action Pi KNULLI v1.0.0
+# Action Pi KNULLI v1.0.1
 
 ## English
 
 Unofficial KNULLI adaptation for the Helegaly Action Pi, with a Mali-based menu
 and PPSSPP Vulkan running on the same boot.
+
+### What changed in v1.0.1
+
+- **Wi-Fi after reboot:** retain the existing AIC support and add the stock RTL8723DS path. The active BOOT and the normal/recovery BOOT used by Mali now contain the same Wi-Fi loader and startup code. Their integrity hashes are updated together, preventing the old AIC-only loader from returning on the next boot.
+- **Wi-Fi startup:** wait for persistent SHARE settings and a driver-bound radio, then use the current settings. Correct the readiness marker to `/var/run/knulli.share.mounted`. Automatically started workers preserve already active Wi-Fi and existing ConnMan services.
+- **Emulator orientation:** extend direction/size correction to standalone RetroArch, N64/Mupen64Plus, Saturn/YabaSanshiro and OpenBOR. The maintainer confirmed all emulator screen directions on hardware. Align the hardware N64/Saturn RetroArch launch paths with their GLES backends rather than the incompatible forced SDL2 route.
+- **Other screens:** correct SDLPoP and OD-Commander, and apply scoped rotation to supported SDL/GLES PortMaster games. Compatibility with every individual port is not claimed.
+- **PortMaster menus:** fix crashes caused by runtime metadata being a list rather than a single string, including runtime-manager display, port information, requirements and download-size calculation paths. Handle both `pylibs.zip` and already extracted installed sources; apply the correction when PortMaster is launched after installation.
+- Keep the existing Mali menu, PPSSPP Vulkan, settings persistence, input, brightness and suspend/resume improvements.
+
+On 2026-10-25, device-test feedback confirmed Wi-Fi still works after reboot with the test8 firmware. This public release promotes the normal test8 image **without changing its IMG bytes**. Emulator orientation was confirmed on hardware by the maintainer. PortMaster runtime-manager and port-management screens were also confirmed; every game, full update, forced update, runtime download and future PortMaster version was not exhaustively retested. See [verification scope](../docs/TESTING.md).
 
 ### Features
 
@@ -57,13 +68,14 @@ The exact original vendor kernel source and some inherited binary provenance
 remain unresolved, so this
 repository does not provide a complete from-source firmware rebuild. The core
 functions, PortMaster correction and standalone PPSSPP routing were confirmed on
-hardware. The final public image also passed offline checks. On 2026-10-24, the
-owner downloaded the published v1.0.0 image, wrote it to an SD card, installed
-it on the device and confirmed normal operation.
+hardware. For v1.0.1, the maintainer confirmed all emulator screen directions on hardware,
+and test8 device feedback confirmed Wi-Fi after reboot on 2026-10-25. The public
+normal-edition IMG is byte-identical to its test8 source; this is not a separate
+post-publication download-and-reflash test.
 See [test coverage](../docs/TESTING.md).
 
 Raw IMG size: 6,069,178,368 bytes. Raw IMG SHA256:
-`322efb6a52025372ef3c063fc840e6e296b4ff2a93860132a18ac578a4783842`.
+`b5d2193e0b88808c7457d8d714d422f8b927630e06bac432bf8067ea31377c42`.
 Use `SHA256SUMS` to verify the compressed download before extracting/flashing.
 [Detailed installation guide](../docs/RELEASE.md)
 
@@ -73,6 +85,17 @@ Use `SHA256SUMS` to verify the compressed download before extracting/flashing.
 
 Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. Mali 기반 메뉴와 PPSSPP
 Vulkan을 같은 부팅 상태에서 사용하도록 구성했습니다.
+
+### v1.0.1 수정 내역
+
+- **재부팅 후 Wi-Fi 검색·연결 문제 수정:** 기존 AIC 지원을 유지하면서 순정 RTL8723DS 드라이버 시작 경로를 추가했습니다. 실제 부팅 파일과 Mali가 재부팅·복원에 사용하는 기준 사본을 함께 갱신하고 검증 해시도 맞춰, 다음 부팅에서 옛 AIC 전용 로더로 돌아가던 문제를 고쳤습니다.
+- **Wi-Fi 시작 순서 보완:** SHARE 저장 공간과 무선 장치가 준비된 뒤 최신 설정으로 시작하며, 준비 마커 경로를 실제 생성 위치인 `/var/run/knulli.share.mounted`로 바로잡았습니다. 자동 시작 과정은 이미 사용 중인 Wi-Fi와 기존 ConnMan을 강제로 끄거나 재시작하지 않습니다.
+- **에뮬레이터 화면 방향·크기 수정:** 스탠드얼론 RetroArch, N64/Mupen64Plus, Saturn/YabaSanshiro, OpenBOR까지 보정 범위를 확장했습니다. 에뮬레이터 화면 방향은 제작자가 실기로 모두 확인했습니다. N64·Saturn의 하드웨어 RetroArch 코어 실행도 강제 SDL2 대신 실제 GLES 백엔드와 맞추도록 보완했습니다.
+- **도구·포트 게임 화면 보정:** SDLPoP와 OD-Commander 방향을 수정하고, 지원되는 SDL/GLES 경로의 PortMaster 게임에도 회전 보정을 연결했습니다. 모든 개별 포트 게임의 호환을 보장한다는 뜻은 아닙니다.
+- **PortMaster 메뉴 종료 오류 수정:** 런타임 정보가 문자열 대신 목록으로 들어올 때 발생하던 오류를 수정했습니다. 런타임 매니저 표시, 포트 정보·요구 조건, 다운로드 용량 계산 경로를 보완하고, 압축된 `pylibs.zip`과 이미 풀린 설치 소스를 모두 처리합니다. Install PortMaster로 설치한 뒤 실행할 때 보완이 적용됩니다.
+- 기존 Mali 메뉴·PPSSPP Vulkan·설정 저장·조작·밝기·절전 복귀 수정은 유지했습니다.
+
+2026년 10월 25일 test8 펌웨어에서 **재부팅 후에도 Wi-Fi가 정상 연결됨을 실기 후기와 사진으로 확인**했습니다. 공개판은 test8 일반판의 **IMG 내용을 바꾸지 않고** 정식 버전으로 승격했습니다. 에뮬레이터 방향은 제작자가 실기로 모두 확인했고, PortMaster 런타임 매니저와 포트 관리 화면도 실기로 확인했습니다. 모든 게임, 전체·강제 업데이트, 런타임 다운로드 및 향후 모든 PortMaster 버전을 전부 재시험한 것은 아닙니다. [검증 범위](../docs/TESTING.ko.md)
 
 ### 주요 기능
 
@@ -122,11 +145,11 @@ PPSSPP를 전환하는 관리 프로그램을 연결했습니다. 각 실행 경
 다만 원본 제조사 커널의 정확한 소스와 일부 기존 바이너리의 출처는 아직 확인되지 않아,
 이 저장소만으로 펌웨어 전체를
 처음부터 빌드할 수 있는 상태는 아닙니다. 기본 기능, PortMaster 보정과 PPSSPP
-단독 실행 연결은 실기에서 확인했습니다. 최종 배포판 이미지의 오프라인 검증에 더해,
-2026년 10월 24일 사용자가 공개된 v1.0.0 이미지를 직접 내려받아 SD 카드에 기록하고
-실기에 설치한 뒤 정상 작동을 확인했습니다. [검증 범위](../docs/TESTING.ko.md)
+단독 실행 연결은 실기에서 확인했습니다. v1.0.1에서는 에뮬레이터 방향을 제작자가 실기로 모두 확인했고,
+2026년 10월 25일 test8 재부팅 후 Wi-Fi 정상 연결도 확인했습니다. 공개 일반판 IMG는
+test8 원본과 동일하며, 게시 후 다운로드·재설치를 별도로 반복했다는 뜻은 아닙니다. [검증 범위](../docs/TESTING.ko.md)
 
 압축 해제한 IMG 크기: 6,069,178,368바이트. IMG SHA256:
-`322efb6a52025372ef3c063fc840e6e296b4ff2a93860132a18ac578a4783842`.
+`b5d2193e0b88808c7457d8d714d422f8b927630e06bac432bf8067ea31377c42`.
 압축 파일은 압축 해제·기록 전에 `SHA256SUMS`로 확인해 주세요.
 [자세한 설치 안내](../docs/RELEASE.ko.md)

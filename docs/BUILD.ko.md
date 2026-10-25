@@ -82,3 +82,11 @@ PortMaster 훅을 포함하며, 기본 루트 파일시스템을 유지합니다
 `release/BOOT_COMPONENTS.json`에는 배포한 바이너리 보정 파일과 Mali 모듈의 정확한
 해시가 연결되어 있습니다. 이러한 검증 범위는 소스에서 펌웨어 전체를 완전히 재현할 수
 있다는 주장보다 제한적입니다.
+
+## 공개 v1.0.1 패키징
+
+공개 IMG는 내부 test8 일반판을 내용 변경 없이 승격한 파일이며 SHA256은 `b5d2193e0b88808c7457d8d714d422f8b927630e06bac432bf8067ea31377c42`입니다. 승격 과정에서 커널·GPU 모듈·BIOS 묶음·개인 CRC 코어를 추가하지 않았습니다. 영어·초기 Wi-Fi 꺼짐, 설정/복구 사본의 저장 네트워크 없음, 개인 코어·게임 ROM 제외와 기존 BIOS 정책을 다시 확인했습니다.
+
+내부 test8에서는 test7 BOOT의 본문과 S06/S08을 유지하고 Mali 가드가 없는 일반 기준 사본을 만든 뒤 실제 manager.modified()로 활성 Mali 번들을 생성했습니다. 복구 매니페스트·BOOT_SHA·BASE_SHA를 함께 맞추고 시작 helper의 SHARE 마커 경로만 수정했습니다. 실제 restore/arm 함수를 임시 파일에서 세 차례 실행했으며 트랜잭션 복원과 /run·/var/run이 분리된 경우를 확인했습니다. 이 검사는 실제 블록 장치나 GPU에 적용한 시험이 아닙니다.
+
+추가된 보정 소스는 src/app_sdl_rotation.c, src/app_gl_rotation.c, src/od_commander_rotation.c이며 실행 스크립트와 유효 S06/S08은 overlay/에 공개했습니다. 두 BOOT와 내장 8723ds 모듈을 포함한 해시는 release/BOOT_COMPONENTS.json에 있습니다. 업로드 전에 XZ 무결성과 압축 전후 체크섬을 확인하며, 펌웨어 전체를 새로 소스 빌드했다는 뜻은 아닙니다.

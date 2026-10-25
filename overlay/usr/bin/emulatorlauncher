@@ -1,0 +1,76 @@
+#!/usr/bin/python3
+import os
+import subprocess
+import sys
+import traceback
+
+LOG = "/boot/boot/a84-retroarch-run.log"
+
+def write_log(text):
+    try:
+        with open(LOG, "a") as fp:
+            fp.write(text)
+            fp.write("\n")
+    except Exception:
+        pass
+
+def clean_preload():
+    before = os.environ.get("LD_PRELOAD", "")
+    vals = [x for x in before.split(":") if x and x != "/usr/lib/libSDL2-actionpi.so"]
+    if vals:
+        os.environ["LD_PRELOAD"] = ":".join(vals)
+    else:
+        os.environ.pop("LD_PRELOAD", None)
+    write_log("ACTIONPI-V84-FLYCAST-SDL-GL")
+    write_log("ARGS=" + repr(sys.argv[1:]))
+    write_log("LD_PRELOAD_BEFORE=" + before)
+    write_log("LD_PRELOAD_AFTER=" + os.environ.get("LD_PRELOAD", ""))
+
+def run_command(command):
+    # Match KNULLI's stock runCommand, with output persisted before ES resumes.
+    command.array.insert(0, "nice")
+    command.array.insert(1, "-n")
+    command.array.insert(2, "-4")
+    envvars = dict(os.environ)
+    envvars.update(command.env)
+    command.env = envvars
+    write_log("COMMAND=" + repr([str(x) for x in command.array]))
+    envkeys = ("HOME", "XDG_RUNTIME_DIR", "XDG_CONFIG_HOME", "LD_PRELOAD",
+               "SDL_AUDIODRIVER", "PIPEWIRE_RUNTIME_DIR", "PULSE_SERVER",
+               "MESA_LOADER_DRIVER_OVERRIDE", "SDL_VIDEODRIVER", "WAYLAND_DISPLAY", "PATH")
+    write_log("ENV=" + repr({k: str(envvars.get(k, "")) for k in envkeys}))
+    if len(command.array) > 3 and str(command.array[3]) == "/usr/bin/retroarch":
+        try:
+            with open("/tmp/actionpi-retroarch-sdl2-audio.cfg", "w") as fp:
+                system_name = sys.argv[sys.argv.index("-system") + 1] if "-system" in sys.argv else ""
+                is_hardware = system_name in ("dreamcast", "naomi", "naomi2", "atomiswave", "n64", "saturn")
+                if is_hardware:
+                    cfg = "video_driver = \"gl\"\nvideo_context_driver = \"gl_sdl\"\n"
+                    write_log("HARDWARE_SYSTEM={} VIDEO_DRIVER=gl CONTEXT=gl_sdl".format(system_name))
+                else:
+                    cfg = "video_driver = \"sdl2\"\n"
+                cfg += "audio_volume = \"4.0\"\n"
+                fp.write(cfg)
+            idx = command.array.index("--verbose")
+        except (OSError, ValueError):
+            idx = len(command.array)
+        command.array[idx:idx] = ["--appendconfig", "/tmp/actionpi-retroarch-sdl2-audio.cfg"]
+        write_log("VIDEO_DRIVER_CONFIG=per-core AUDIO_GAIN_DB=4.0")
+    if not command.array:
+        return -1
+    proc = subprocess.Popen(command.array, env=command.env,
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = proc.communicate()
+    write_log("RETURNCODE=" + repr(proc.returncode))
+    write_log("STDOUT=" + repr(out.decode("utf-8", "replace")))
+    write_log("STDERR=" + repr(err.decode("utf-8", "replace")))
+    return proc.returncode
+
+try:
+    clean_preload()
+    import configgen.emulatorlauncher as launcher
+    launcher.runCommand = run_command
+    launcher.launch()
+except BaseException:
+    write_log("WRAPPER_EXCEPTION=" + traceback.format_exc())
+    raise

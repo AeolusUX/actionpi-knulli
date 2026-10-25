@@ -4,6 +4,10 @@
 
 | Check | Evidence |
 | --- | --- |
+| v1.0.1 source firmware | On 2026-10-25, user feedback confirmed test8 Wi-Fi still works after reboot; public IMG bytes match normal test8 |
+| Emulator directions | Maintainer confirmed all emulator screen directions on hardware |
+| PortMaster menus | Runtime manager and port-management display confirmed; full update/download/install matrix not exhaustively retested |
+| Boot persistence | Actual Mali restore/arm functions preserved updated S06/S08 for three cycles in temporary files; transaction recovery and separate /var/run marker checked offline |
 | Core functions | Owner confirmed normal operation after installation |
 | Brightness | Owner confirmed complete shutdown/start and suspend/wake; runtime DT/PWM readback agreed |
 | ES↔PPSSPP | Automatic and manual launch/exit/menu return confirmed on the same boot |

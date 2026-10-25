@@ -1,0 +1,45 @@
+#!/bin/sh
+# TEST: preserve the working AIC path, and register stock RTL8723DS as well.
+# Each SDIO driver binds only its supported device IDs; no forced binding/loading.
+[ "$1" = start ] || exit 0
+(
+    sleep 20
+    [ -f /run/actionpi-wifi-power-unsafe ] && exit 0
+    LOG=/tmp/actionpi-dual-wifi.log
+    {
+        echo ACTIONPI-DUAL-WIFI-TEST-1
+        cat /proc/uptime
+        # Keep the tested stock AIC files, indexes and modprobe path unchanged.
+        modprobe aic8800_fdrv
+        echo AIC_MODPROBE_RC=$?
+        # Stock 8723ds has an empty module-dependency list. Its direct load avoids
+        # rebuilding the working AIC/other module indexes or altering udev policy.
+        if [ -f /boot/DISABLE_RTL8723DS.txt ]; then
+            echo RTL8723DS_DISABLED_BY_USER
+        elif grep -q '^8723ds ' /proc/modules; then
+            echo RTL8723DS_ALREADY_LOADED
+        else
+            insmod /lib/modules/5.15.147/8723ds.ko
+            echo RTL8723DS_INSMOD_RC=$?
+        fi
+        sleep 3
+        echo SDIO_DEVICE_IDS_AND_BOUND_DRIVERS
+        for dev in /sys/bus/sdio/devices/*; do
+            [ -d "$dev" ] || continue
+            for field in vendor device; do
+                [ -f "$dev/$field" ] && cat "$dev/$field"
+            done
+            readlink -f "$dev/driver" 2>/dev/null || true
+        done
+        echo WIRELESS_INTERFACE_NAMES
+        for iface in /sys/class/net/*; do
+            [ -d "$iface/wireless" ] && basename "$iface"
+        done
+        echo WIFI_MODULES
+        grep -E '^(aic8800_|8723ds )' /proc/modules || true
+        echo DUAL_WIFI_WORKER_COMPLETE
+    } >"$LOG" 2>&1
+    # No SSIDs, passwords, MAC/IP addresses or full kernel/network dumps collected.
+    cp "$LOG" /boot/boot/dual-wifi.log 2>/dev/null || true
+) </dev/null >/tmp/actionpi-dual-wifi-launch.log 2>&1 &
+exit 0

@@ -1,0 +1,157 @@
+#!/bin/sh
+
+### choose configuration file
+KNULLICONF="/userdata/system/knulli.conf"
+DEFAULTCONF="/usr/share/knulli/datainit/system/knulli.conf"
+BOOTCONF="/boot/knulli-boot.conf"
+
+# This is needed in case an overlay is saved which results in udev rule accumulating wlan entries
+
+# Latest settings are read only by actionpi-ready-config after SHARE is ready.
+
+# Set initial hostname, to be sent in connman DHCP Request
+#
+# Note that if the DHCP server sends back a hostname, connman will set
+# that as the system hostname.
+#
+# Later in the boot process, /etc/init.d/S26system will then reset the
+# hostname to the value specified in the system.hostname setting
+# ("KNULLI" by default), but will do so *only* if the
+# system.hostname setting is absent or blank.
+#
+# This leaves the user in control of the hostname to be set, and also
+# lets the user allow for dynamic hostname configuration from DHCP, by
+# setting the system.hostname setting to a blank empty string.
+knulli_hostname() {
+    echo "$(date -u): starting initial hostname configuration" > /tmp/hostname.log
+    settings_hostname="$(/usr/bin/knulli-settings-get -f "$KNULLICONF" system.hostname)"
+
+    if [ -n "$settings_hostname" ]; then
+        echo "Setting initial hostname from system.hostname: ${settings_hostname}" >> /tmp/hostname.log
+        hostname="$settings_hostname"
+    else
+        echo "Setting default initial hostname KNULLI" >> /tmp/hostname.log
+        hostname="KNULLI"
+    fi
+
+    hostname "${hostname}"
+}
+
+# configure wifi files, always
+knulli_wifi_configure() {
+    X=$1
+
+    settings_hide=false; settings_name="${X}"; settings_priority=
+    [ "$X" = "1" ] && { X=; settings_name=default; }
+    [ "$X" = ".hidden" ] && { settings_name=hidden_AP; settings_hide=true; }
+    [ "$X" = ".adhoc" ] && { settings_name=adhoc_AP; settings_priority=0; }
+
+    settings_ssid="$(/usr/bin/knulli-settings-get -f "$KNULLICONF" wifi${X}.ssid)"
+    settings_key="$(/usr/bin/knulli-settings-get -f "$KNULLICONF" wifi${X}.key)"
+    settings_file="/var/lib/connman/knulli_wifi${X}.config"
+
+    # Add default adhoc values if missing
+    if [ "$X" = ".adhoc" ]; then
+        if [ -z "$settings_ssid" ]; then
+            default_ssid="$(/usr/bin/knulli-settings-get -f "$DEFAULTCONF" wifi${X}.ssid)"
+            if [ -n "$default_ssid" ]; then
+                /usr/bin/knulli-settings-set -f "$KNULLICONF" wifi${X}.ssid "$default_ssid"
+                settings_ssid=$default_ssid
+            fi
+        fi
+
+        if [ -z "$settings_key" ]; then
+            default_key="$(/usr/bin/knulli-settings-get -f "$DEFAULTCONF" wifi${X}.key)"
+            if [ -n "$default_key" ]; then
+                /usr/bin/knulli-settings-set -f "$KNULLICONF" wifi${X}.key "$default_key"
+                settings_key=$default_key
+            fi
+        fi
+    fi
+
+    if [ -n "${settings_key}" ]; then
+        optionalPassphrase="Passphrase=${settings_key}"
+    else
+        optionalPassphrase=
+    fi
+
+    if [ -n "${settings_priority}" ]; then
+        optionalPriority="Priority=${settings_priority}"
+    else
+        optionalPriority=
+    fi
+
+    if [ -n "$settings_ssid" ] && [ "$settingsWlan" = "1" ]; then
+        mkdir -p "/var/lib/connman"
+        cat > "${settings_file}" <<-_EOF_
+		[global]
+		Name=knulli
+		[service_knulli_${settings_name}]
+		Type=wifi
+		Name=${settings_ssid}
+		Hidden=${settings_hide}
+		${optionalPassphrase}
+		${optionalPriority}
+		Autoconnect=true
+		IPv6=off
+	_EOF_
+    else
+        rm -f "${settings_file}" 2>/dev/null
+    fi
+}
+
+wifi_configure_all() {
+    for i in 1 2 3 .hidden .adhoc; do
+        knulli_wifi_configure "$i"
+    done
+}
+
+wifi_disable() {
+    connmanctl disable wifi 2>/dev/null
+}
+
+do_start() {
+    # ACTIONPI_DEFER_WIFI_UNTIL_SHARE: no BOOT setting is used by this worker.
+    python3 /boot/ACTIONPI_FIXES/actionpi_wifi_start_ready.py request || return 1
+    printf "ConnMan startup queued after storage/radio readiness.\n"
+}
+
+do_stop() {
+    # Quiesce only our pending worker before the explicit user/shutdown stop.
+    python3 /boot/ACTIONPI_FIXES/actionpi_wifi_start_ready.py cancel || return 1
+    printf "Stopping connman: "
+    wifi_disable
+
+    start-stop-daemon -K -q -p /var/run/connmand.pid  2>/dev/null
+    printf "done."
+}
+
+case "$1" in
+    actionpi-ready-config)
+        # Called only by the serialized worker, after passive active-use checks.
+        # Profiles retain original KNULLI formatting and ad-hoc defaults.
+        [ -f /userdata/system/knulli.conf ] || exit 1
+        KNULLICONF=/userdata/system/knulli.conf
+        settingsWlan="$(/usr/bin/knulli-settings-get -f "$KNULLICONF" wifi.enabled)"
+        case "$settingsWlan" in 0|1) ;; *) exit 1 ;; esac
+        rm -f /etc/udev/rules.d/70-persistent-net.rules 2>/dev/null
+        knulli_hostname || exit 1
+        wifi_configure_all || exit 1
+        ;;
+    start)
+        do_start || exit 1
+        ;;
+    stop)
+        do_stop || exit 1
+        ;;
+    restart | reload)
+        do_stop || exit 1
+        sleep 0.5
+        do_start || exit 1
+        ;;
+    *)
+        echo "usage: $0 {start|stop|restart|reload|status}"
+        ;;
+esac
+
+exit 0

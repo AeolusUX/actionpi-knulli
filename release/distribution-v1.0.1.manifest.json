@@ -1,0 +1,70 @@
+{
+  "version": "v1.0.1",
+  "edition": "public",
+  "image": "action-pi-knulli-v1.0.1.img",
+  "bytes": 6069178368,
+  "sha256": "b5d2193e0b88808c7457d8d714d422f8b927630e06bac432bf8067ea31377c42",
+  "source_image": "action-pi-knulli-v1.0.1-test7.img",
+  "source_sha256": "c3f597f6a3a85c19a5b777b425e516d61ff9bdaeafe68835ffa599676a7e0c63",
+  "status": "test8 Wi-Fi after reboot confirmed by user on 2026-10-25; public promotion uses unchanged normal-edition bytes",
+  "changed_files": {
+    "PPSSPP_VULKAN/manager-before-session.py": "2e3b3705d6d2ebc2aff70f032320146a7732865230a126b9f5c687517bd8d0f2",
+    "PPSSPP_VULKAN/mali_autostart.py": "e7fa15e1801ac7a1c86d139818b8c5759c195d4278bc5e8840d2b15e21b2c44b",
+    "ACTIONPI_FIXES/actionpi_wifi_start_ready.py": "37e280ba68d0c073df07b7f784cdda98efce7032636f933dc10001ec3aa867c8",
+    "partitions/BOOT.IMG": "1aebb55cf734476fef4fd537b439a40b61dae5587b8ddf71c1f00c91c53dd0b3",
+    "PPSSPP_VULKAN/autostart-backup/BOOT.IMG": "fca98e6206df6d3f9b4b6a7fae05c2bfc75043d933ef4213ad960d4d430fbe63",
+    "PPSSPP_VULKAN/autostart-backup/manifest.json": "9e9de8267c5ac149c992ba4d57fdec8cec16dee3095919f7577ac1f43bcceeff",
+    "ACTIONPI_FIXES/manifest.json": "efb93487da711706e23c0dd2186fb43eb9a8382dacf7745127d2770c46ca6fde"
+  },
+  "changes": [
+    "Synchronize normal Mali recovery BOOT with dual-driver/startup and existing app patches",
+    "Regenerate active Mali BOOT using the unchanged modified() function",
+    "Update recovery BOOT hash, manager BOOT_SHA and autostart BASE_SHA together",
+    "Read actual /var/run/knulli.share.mounted marker"
+  ],
+  "preserved": [
+    "Mali boot arguments, kernel, GPU module, Vulkan and display setup",
+    "test7 rotation, PortMaster, SDLPoP and OD-Commander files",
+    "Wi-Fi driver binaries, load order and power preparation",
+    "first-install/resize flow, settings/BIOS archives and defaults",
+    "CRC cores and late automatic loader in CRC edition",
+    "public/personal stable images and stable marker"
+  ],
+  "checks": {
+    "normal_and_armed_wifi_payloads_equal_test7": true,
+    "mali_boot_arguments_unchanged": true,
+    "only_share_marker_changed_in_helper": true,
+    "old_boot_body_preserved": true,
+    "three_real_restore_arm_cycles_preserve_wifi_and_mali_guard": true,
+    "real_transaction_restore_preserves_wifi": true,
+    "var_run_separate_from_run_and_real_storage_guard": true,
+    "both_boot_header_syntax": true,
+    "staged_readback": true,
+    "preserved_file_mappings": 40,
+    "outside_allowed_bytes_equal": 5957050368
+  },
+  "limitations": [
+    "Hardware report confirms Wi-Fi after reboot; not every game, port or board variant was tested",
+    "New public download has not been independently re-flashed after publication"
+  ],
+  "promoted_from": "action-pi-knulli-v1.0.1-test8.img",
+  "image_bytes_changed_for_promotion": false,
+  "public_defaults": {
+    "language": "en_US",
+    "wifi_enabled": false,
+    "saved_wifi_credentials": false,
+    "personal_crc_cores": false,
+    "additional_bios_archive": false,
+    "inherited_system_bios": "retained with unchanged rootfs",
+    "recovery_configs_checked": [
+      "PPSSPP_VULKAN/autostart-backup/knulli.conf",
+      "PPSSPP_VULKAN/settings-persistence-backup-20261023/knulli.conf",
+      "PPSSPP_VULKAN/settings-persistence-backup-20261023/transaction-knulli.conf"
+    ]
+  },
+  "hardware_report": {
+    "date": "2026-10-25",
+    "wifi_after_reboot": "user confirmed working",
+    "independent_redownload_test_of_v1_0_1": "not repeated"
+  }
+}

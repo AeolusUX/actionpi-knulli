@@ -11,7 +11,7 @@ TrimUI Smart Pro S firmware.
 
 ## Download and install
 
-Download **Action Pi KNULLI v1.0.0** from
+Download **Action Pi KNULLI v1.0.1** from
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases).
 Use the `.img.xz` asset and matching SHA256 file. Extract the image if your flashing
 application does not accept XZ, then write the image to the **whole SD card**.
@@ -98,3 +98,7 @@ license is applied to the firmware. Credits: KNULLI/Batocera, Linux/Allwinner/
 Orange Pi/Radxa, Arm, SDL, PPSSPP, Libretro/Flycast, PortMaster and the
 [Ultramarine handheld work](https://github.com/Ultramarine-Linux/ultramarine-handheld)
 that helped establish the vendor-stack direction.
+
+## v1.0.1 update
+
+Wi-Fi reboot persistence, AIC/RTL8723DS support, emulator/tool/game rotation and PortMaster runtime-menu fixes are included. Emulator directions were all confirmed on hardware by the maintainer; test8 Wi-Fi after reboot was confirmed in device feedback. The public IMG is unchanged from normal test8. [Full changes](release/NOTES.md#what-changed-in-v101).

@@ -24,7 +24,27 @@
     "sha256": "bf4abc09a7f794a697a6d51c47940d1332b60e4a5f6619654d35d48fc642b163"
   },
   "ACTIONPI_FIXES/portmaster-sdl/libSDL2.so": {
-    "bytes": 71824,
-    "sha256": "9e269786cfe202ec68c007a0afa4857e7d557b37d845151eac2f4d17044bb2bd"
+    "bytes": 74904,
+    "sha256": "4d1dc900896b1212b5b51608af6c3e10104848a1c9f4abb50a12b806818589ba"
+  },
+  "ACTIONPI_FIXES/app_output_rotation.so": {
+    "bytes": 74904,
+    "sha256": "291289ed3cebc1ab9616fc19b3436e07e194ae30fae2f1bad3f9599791424bf0"
+  },
+  "ACTIONPI_FIXES/od_commander_rotation.so": {
+    "bytes": 71680,
+    "sha256": "c360b5990d3189269d0b6c2b556564105343abcaa49170be4cdf2be597f6bb0d"
+  },
+  "lib/modules/5.15.147/8723ds.ko": {
+    "bytes": 3837600,
+    "sha256": "b96a1a4adb614173bd0a5e28a486fee0abf069d7ff78ad8b28c3d0b457ebdd0a"
+  },
+  "partitions/BOOT.IMG": {
+    "bytes": 26349568,
+    "sha256": "1aebb55cf734476fef4fd537b439a40b61dae5587b8ddf71c1f00c91c53dd0b3"
+  },
+  "PPSSPP_VULKAN/autostart-backup/BOOT.IMG": {
+    "bytes": 26349568,
+    "sha256": "fca98e6206df6d3f9b4b6a7fae05c2bfc75043d933ef4213ad960d4d430fbe63"
   }
 }

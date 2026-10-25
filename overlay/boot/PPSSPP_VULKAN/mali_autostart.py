@@ -5,7 +5,7 @@ from pathlib import Path
 B=Path('/boot/PPSSPP_VULKAN');F=B/'autostart-backup'
 FLAG=B/'autostart-enabled.json';ATTEMPT=B/'autostart-attempt.json'
 BASE_SOURCE=B/'manager-before-session.py'
-BASE_SHA='3a5c6b95337a1f214c6d99050792724f0e3d692ee7d189e4845c5b246d925ecb'
+BASE_SHA='2e3b3705d6d2ebc2aff70f032320146a7732865230a126b9f5c687517bd8d0f2'
 RECOVERY=(Path('/boot/DISABLE_MALI'),Path('/boot/DISABLE_MALI.txt'))
 _base=None
 

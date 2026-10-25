@@ -1,0 +1,10 @@
+{
+  "version": "v1.0.1",
+  "date": "2026-10-25",
+  "wifi_after_reboot": "user reported working and provided a connected network-settings photo",
+  "emulator_orientation": "maintainer explicitly confirmed all emulator directions on hardware",
+  "portmaster": "runtime manager and port-management UI confirmed in earlier device feedback",
+  "image_promotion": "normal test8 IMG bytes unchanged",
+  "scope": "does not establish every game, PortMaster port/download/update or board variant",
+  "private_network_values_and_photo": "not included in public repository"
+}

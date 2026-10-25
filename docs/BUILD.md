@@ -83,3 +83,11 @@ The public IMG is the reproducible starting artifact for investigating the final
 installed overlay. `release/BOOT_COMPONENTS.json` ties shipped binary adapters
 and the Mali module to their exact hashes. All these checks are narrower than a
 complete from-source firmware reproducibility claim.
+
+## Public v1.0.1 packaging
+
+The public raw IMG is a byte-for-byte promotion of the normal internal test8 image, SHA256 `b5d2193e0b88808c7457d8d714d422f8b927630e06bac432bf8067ea31377c42`. No new kernel, GPU module, BIOS collection or personal CRC cores were introduced by promotion. The public-default audit rechecked English, Wi-Fi off, no saved credentials in settings/recovery configs, no personal cores or game ROMs, and the existing BIOS policy.
+
+Test8 kept the BOOT payload body and S06/S08 code from test7, built a normal baseline without the generated Mali guard, and used the actual manager modified() function to generate the active Mali bundle. It updated the recovery manifest, manager BOOT_SHA and autostart BASE_SHA, plus only the SHARE marker in the startup helper. The actual restore/arm functions were exercised for three cycles against temporary files, and transaction recovery and separate /run versus /var/run were checked. No block device or live GPU was used in those checks.
+
+The new adapter sources are src/app_sdl_rotation.c, src/app_gl_rotation.c and src/od_commander_rotation.c. Runtime sources and effective S06/S08 are exported under overlay/. Binary hashes, including both BOOT copies and the embedded 8723ds module, are in release/BOOT_COMPONENTS.json. XZ integrity and both raw/compressed hashes are checked before upload; this is not a new full from-source firmware build.

@@ -68,3 +68,11 @@ not provide the normal PPSSPP Vulkan path. Keep the card's own recovery snapshot
 they are checksum guarded and are not interchangeable with a different image's
 backups. Do not restore just the old PWM DT flag while retaining the new strict
 normalizer. Whole-image recovery is preferable to mixing historical experiments.
+
+## v1.0.1 Wi-Fi and boot-copy integration
+
+`/boot/partitions/BOOT.IMG` is the active bundle. Mali `restore_boot()` and `arm_boot()` regenerate it from `/boot/PPSSPP_VULKAN/autostart-backup/BOOT.IMG`; transaction recovery also uses that baseline. Wi-Fi changes therefore belong in both copies. The recovery manifest BOOT hash, manager `BOOT_SHA`, and autostart `BASE_SHA` form a linked integrity chain. The active Mali boot arguments remain unchanged.
+
+S06 preserves the AIC path and registers stock 8723ds. S08 queues the deferred startup helper. It waits for persistent SHARE, the `/var/run/knulli.share.mounted` marker, installation completion and a bound interface as applicable, reads current userdata settings, and preserves existing radio/service use. The earlier power helper remains separate. Status files report requested operations rather than proving network access.
+
+App wrappers distinguish SDL renderers, GLES-backed cores and OD-Commander software window surfaces. PortMaster gets its own SDL adapter and scoped game preload; installed Python sources are patched only at known runtime-list patterns.
