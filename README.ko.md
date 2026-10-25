@@ -77,3 +77,11 @@ AIC·RTL8723DS Wi-Fi 지원과 재부팅 후 연결, 에뮬레이터·도구·�
 - 재부팅 후 Wi-Fi·시작 순서, 에뮬레이터·SDLPoP·OD-Commander 방향, PortMaster 런타임 목록 처리, Mali 메뉴·PPSSPP Vulkan 등 누적 수정도 유지했습니다.
 
 집 실기에 SSH로 최종 수정을 적용한 뒤 Mali 메뉴의 정상 시작과 재부팅 후 Wi-Fi 재연결을 확인했습니다. 일반 코어·단독 RetroArch 실행 검사 후, 2026년 10월 25일 사용자가 최종 수정 전체의 정상 작동을 확인했습니다. 새로 패키징한 공개 IMG를 게시 후 다시 내려받아 굽는 시험은 별도로 반복하지 않았으며, 모든 코어·게임·포트·보드 변형을 전부 재시험한 것은 아닙니다. [전체 수정 내역](release/NOTES.md).
+
+## Downloads / 다운로드
+
+### [일반판 v1.0.2 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2)
+
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2-crc-ko)
+
+CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).

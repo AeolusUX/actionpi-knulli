@@ -11,8 +11,13 @@ TrimUI Smart Pro S firmware.
 
 ## Download and install
 
-Download **Action Pi KNULLI v1.0.2** from
-[Releases](https://github.com/pikachu220v/actionpi-knulli/releases).
+Choose your edition:
+
+| Edition | Release download |
+| --- | --- |
+| Standard / 일반판 | [Action Pi KNULLI v1.0.2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2) |
+| 한국 사용자용 CRC 무시 코어 적용판 | [CRC 적용판 v1.0.2 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2-crc-ko) |
+
 Use the `.img.xz` asset and matching SHA256 file. Extract the image if your flashing
 application does not accept XZ, then write the image to the **whole SD card**.
 Writing an image replaces the selected card's contents.
@@ -112,4 +117,10 @@ Wi-Fi reboot persistence, AIC/RTL8723DS support, emulator/tool/game rotation and
 
 The final runtime changes reached a healthy Mali menu after the home-device SSH update. Wi-Fi reconnected, and ordinary-core/standalone RetroArch checks completed. The owner then confirmed all final changes working on 2026-10-25. This newly packaged public IMG was not independently downloaded and reflashed; not every core, game, port or board variant was retested. [Release notes](release/NOTES.md).
 
-A separate [Korean arcade CRC-core edition](docs/CRC_KOREAN.ko.md) is available for users who need those modified cores. Normal v1.0.2 remains the default/latest release.
+## Downloads / 다운로드
+
+### [일반판 v1.0.2 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2)
+
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2-crc-ko)
+
+CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).

@@ -1,5 +1,7 @@
 # Action Pi KNULLI v1.0.2
 
+> **[한국 사용자용 CRC 무시 코어 적용판 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2-crc-ko)** · [일반판 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2)
+
 ## English
 
 Unofficial KNULLI adaptation for the Helegaly Action Pi. Mali runs the menu and PPSSPP Vulkan in the same boot.
