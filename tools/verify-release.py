@@ -18,8 +18,8 @@ def main():
  report={'asset':a.asset.name,'bytes':a.asset.stat().st_size,'sha256':packed.hexdigest(),
          'image_bytes':size,'image_sha256':unpacked.hexdigest(),'xz_integrity':'passed'}
  a.output_dir.mkdir(parents=True,exist_ok=True)
- (a.output_dir/'ASSETS.json').write_text(json.dumps(report,indent=2)+'\n')
- (a.output_dir/'SHA256SUMS').write_text(packed.hexdigest()+'  '+a.asset.name+'\n')
+ (a.output_dir/'ASSETS.json').write_bytes((json.dumps(report,indent=2)+'\n').encode('utf-8'))
+ (a.output_dir/'SHA256SUMS').write_bytes((packed.hexdigest()+'  '+a.asset.name+'\n').encode('utf-8'))
  print(json.dumps(report),flush=True)
 
 if __name__=='__main__':main()

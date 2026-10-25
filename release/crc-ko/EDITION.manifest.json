@@ -1,0 +1,39 @@
+{
+  "version": "v1.0.2",
+  "edition": "crc-ko",
+  "release_tag": "v1.0.2-crc-ko",
+  "image": "action-pi-knulli-v1.0.2-crc무시코어적용.img",
+  "bytes": 6069178368,
+  "sha256": "f67382eec2ac39ac4f5a2d59fcb93d008535d8e1f77e88a20cf87abedc186c7f",
+  "base_image": "action-pi-knulli-v1.0.2.img",
+  "base_sha256": "18cfbf89a81dd4245caee0d557e8b12bf00c8627e01d81b7b2ac28b210143cc9",
+  "cores": {
+    "fbneo_libretro.so": {
+      "bytes": 83514112,
+      "sha256": "57890fff1a9e2828fd0f622e2b14c57db26c5559f1c2c48031f5183f9665bbce"
+    },
+    "mame2003_plus_libretro.so": {
+      "bytes": 41614672,
+      "sha256": "6ecb941bc2b523d532e9ff45db019dc92f7853d91f5d5380969b65d30cd061de"
+    }
+  },
+  "startup": "S99userservices -> /userdata/system/custom.sh -> custom-cores/load.py; bind mounts; no save-overlay",
+  "mame2003_plus_alias": "mame078plus_libretro.so when present",
+  "default_settings": "Same clean public defaults as normal v1.0.2; no saved personal network",
+  "games_included": false,
+  "additional_personal_bios_included": false,
+  "save_overlay_required": false,
+  "image_bytes_changed_for_publication": false,
+  "validation": {
+    "source_hash_during_copy": true,
+    "core_identity_matches_user_provided_files": true,
+    "all_existing_settings_entries_preserved": 86,
+    "payload_readback": true,
+    "unchanged_bytes_compared": 5985316864,
+    "core_execution_tests_repeated": false,
+    "new_img_reflash_repeated": false
+  },
+  "source_provenance": "User-supplied modified core binaries; exact corresponding source/CRC patches not supplied. Upstream links are references, not proof of exact matching source.",
+  "loader_source_sha256": "ca8f581717eba6d8f26c2291e336f31ff43af17ff483ccc3f89aa408296608e3",
+  "custom_hook_sha256": "d155439a552ab52b6412925f25af3bfec631f551ff233940b7e277349372032a"
+}

@@ -4,6 +4,12 @@ These are curated milestones, not a fabricated historical Git commit log.
 Development checkpoint numbers are internal, not upstream KNULLI versions.
 Public release numbering starts at **v1.0.0**.
 
+## Optional Korean CRC edition: v1.0.2-crc-ko — 2026-10-25
+
+Separate download for the user-supplied FBNeo/MAME2003 Plus CRC-override cores and the reboot-persistent late loader. The clean base and all v1.0.2 fixes are unchanged. Normal v1.0.2 remains the default/latest release. [Korean guide](docs/CRC_KOREAN.ko.md).
+
+한글 패치 아케이드용 CRC 무시 코어와 재부팅 자동 적용을 넣은 별도 다운로드입니다. 클린 기본 설정과 v1.0.2 수정은 같으며, 기본 최신 릴리스는 일반판 v1.0.2로 유지합니다. [한국어 안내](docs/CRC_KOREAN.ko.md).
+
 | Checkpoint | Outcome |
 | --- | --- |
 | v87 baseline | Known bootable starting point; preserve it while testing Wi-Fi |

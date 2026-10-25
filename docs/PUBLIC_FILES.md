@@ -47,11 +47,15 @@ The source tree is small enough to inspect and clone without downloading firmwar
 - tools/ActionPi-WiFi-Diagnostic.sh and wifi-diagnostic.py: passive report collector, compatible with this release.
 - release/distribution-v1.0.1.manifest.json and current component/source inventories and asset hashes.
 
-Personal CRC-core images, game ROMs, screenshots containing network details and personal stable images are not release assets.
+At the v1.0.1 release, personal CRC-core images were excluded. Game ROMs, screenshots containing network details and prior personal stable images remain excluded. The separate clean CRC edition is described below.
 
 ## Added or refreshed for v1.0.2
 
 - src/retroarch_gles3_context.c and its ARM64 command in tools/build-runtime.sh.
 - overlay/boot/ACTIONPI_FIXES/actionpi_app_launcher.py and MALI_MENU_TRIAL/mali_menu_trial.py.
 - release/distribution-v1.0.2.manifest.json, FIELD_VALIDATION-v1.0.2.json and current image/asset/source hashes.
-- User CRC cores and prior personal BIOS/settings are not public assets.
+- Normal v1.0.2 excludes user CRC cores; prior personal BIOS/settings remain unpublished.
+
+## Separate Korean CRC edition
+
+The CRC-core IMG is offered in a separate release. config/crc-ko/ contains the actual startup sources; release/crc-ko/ contains dedicated manifests/checksums. See the [Korean guide](CRC_KOREAN.ko.md).

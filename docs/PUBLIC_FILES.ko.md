@@ -48,11 +48,15 @@ FAT 여유 공간 3,289,493,504바이트를 0으로 채우고, 파일 끝 여유
 - tools/ActionPi-WiFi-Diagnostic.sh·wifi-diagnostic.py: 이번 공개판에서도 쓸 수 있는 읽기 전용 진단.
 - release/distribution-v1.0.1.manifest.json과 현재 구성/소스 목록·자산 체크섬.
 
-개인 CRC 코어판·게임 ROM·네트워크 정보가 보이는 사진·개인용 안정판은 공개 자산에 넣지 않습니다.
+v1.0.1 공개 당시 CRC 코어판은 제외했습니다. 게임 ROM·네트워크 정보가 보이는 사진·이전 개인용 안정판은 공개하지 않습니다.
 
 ## v1.0.2 추가·갱신
 
 - src/retroarch_gles3_context.c 및 tools/build-runtime.sh의 ARM64 빌드 명령.
 - overlay/boot/ACTIONPI_FIXES/actionpi_app_launcher.py와 MALI_MENU_TRIAL/mali_menu_trial.py.
 - release/distribution-v1.0.2.manifest.json, FIELD_VALIDATION-v1.0.2.json 및 최신 이미지/자산/소스 해시.
-- 개인 CRC 코어와 이전 개인 BIOS·설정은 공개하지 않습니다.
+- 일반판에는 CRC 코어를 넣지 않습니다. 이전 개인 BIOS·설정은 공개하지 않습니다.
+
+## 한국 사용자용 CRC 별도판
+
+일반판과 분리된 릴리스에 CRC 적용 IMG를 제공합니다. config/crc-ko/는 실제 자동 적용 소스, release/crc-ko/는 전용 구성/체크섬입니다. [상세 안내](CRC_KOREAN.ko.md).

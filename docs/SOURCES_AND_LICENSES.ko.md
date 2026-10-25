@@ -55,3 +55,7 @@ AIC 바이너리는 기존에 기록한 순정펌 이식본을 유지했습니�
 ## v1.0.2 보조 파일
 
 retroarch_gles3_context.c는 이번 적용을 위해 작성한 MIT 보조 소스입니다. SDL의 컨텍스트 주 버전 요청만 해당 프로세스에서 조정하며 SDL/RetroArch 자체를 교체하지 않습니다. 기존 소스·라이선스 미확정 사항은 동일합니다.
+
+## 한국 사용자용 CRC 별도판
+
+FBNeo·MAME2003 Plus는 사용자가 제공한 수정 바이너리이며 IMG를 별도 릴리스로 제공합니다. 정확히 대응하는 소스 버전·CRC 수정 패치는 제공받지 못했습니다. 상위 [FBNeo](https://github.com/finalburnneo/FBNeo)·[MAME2003 Plus](https://github.com/libretro/mame2003-plus-libretro) 링크는 참고 자료입니다. 자동 적용 소스와 해시는 config/crc-ko/ 및 release/crc-ko/에 공개합니다. [한국어 안내](CRC_KOREAN.ko.md). 각 코어의 조건은 일반 MIT 적용 범위와 별개입니다.

@@ -111,3 +111,5 @@ Wi-Fi reboot persistence, AIC/RTL8723DS support, emulator/tool/game rotation and
 - Retain the cumulative Wi-Fi reboot/startup fixes, emulator/SDLPoP/OD-Commander orientation, PortMaster runtime-list fixes, Mali menu and PPSSPP Vulkan.
 
 The final runtime changes reached a healthy Mali menu after the home-device SSH update. Wi-Fi reconnected, and ordinary-core/standalone RetroArch checks completed. The owner then confirmed all final changes working on 2026-10-25. This newly packaged public IMG was not independently downloaded and reflashed; not every core, game, port or board variant was retested. [Release notes](release/NOTES.md).
+
+A separate [Korean arcade CRC-core edition](docs/CRC_KOREAN.ko.md) is available for users who need those modified cores. Normal v1.0.2 remains the default/latest release.
