@@ -17,7 +17,7 @@
 | 기본 배포판 | [일반판 v1.0.2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2) |
 | CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
 
-CRC 적용판은 FBNeo·MAME2003 Plus와 재부팅 자동 적용을 추가한 변형입니다. 두 판의 체크섬이 다릅니다.
+CRC 적용판은 FBNeo·MAME2003 Plus와 재부팅 자동 적용을 추가한 변형입니다. 두 판의 체크섬이 다릅니다. CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다.
 
 **첫 설치 시 부팅 이미지 이후 검정화면만 보여도 정상적인 설치 과정이니 걱정하지
 않으셔도 됩니다. 약 5분 기다리면 SHARE 자동 확장과 설정 설치 중 한두 차례 자동으로

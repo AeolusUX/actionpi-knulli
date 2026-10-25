@@ -58,3 +58,5 @@ retroarch_gles3_context.c is an MIT-licensed adaptation helper written for this 
 ## Separate Korean CRC edition
 
 The FBNeo/MAME2003 Plus binaries were supplied by the user and are packaged in a separate IMG release. Exact corresponding source versions and CRC modification patches were not supplied. Upstream [FBNeo](https://github.com/finalburnneo/FBNeo) and [MAME2003 Plus](https://github.com/libretro/mame2003-plus-libretro) links are references, not proof of a matching binary source. Actual startup sources and binary hashes are in config/crc-ko/ and release/crc-ko/. Component terms are separate from this repository's scoped MIT adaptation license.
+
+CRC-override core materials: **[dsno](https://dsno.tistory.com/m/)**, as identified by the user.

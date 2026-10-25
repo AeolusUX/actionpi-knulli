@@ -2,7 +2,7 @@
   "version": "v1.0.2",
   "edition": "crc-ko",
   "release_tag": "v1.0.2-crc-ko",
-  "image": "action-pi-knulli-v1.0.2-crc무시코어적용.img",
+  "image": "action-pi-knulli-v1.0.2-crc-ko.img",
   "bytes": 6069178368,
   "sha256": "f67382eec2ac39ac4f5a2d59fcb93d008535d8e1f77e88a20cf87abedc186c7f",
   "base_image": "action-pi-knulli-v1.0.2.img",
@@ -33,7 +33,12 @@
     "core_execution_tests_repeated": false,
     "new_img_reflash_repeated": false
   },
-  "source_provenance": "User-supplied modified core binaries; exact corresponding source/CRC patches not supplied. Upstream links are references, not proof of exact matching source.",
+  "source_provenance": "CRC-override core materials from dsno, supplied by the user; exact corresponding source/patch versions were not supplied. Upstream source links remain references.",
   "loader_source_sha256": "ca8f581717eba6d8f26c2291e336f31ff43af17ff483ccc3f89aa408296608e3",
-  "custom_hook_sha256": "d155439a552ab52b6412925f25af3bfec631f551ff233940b7e277349372032a"
+  "custom_hook_sha256": "d155439a552ab52b6412925f25af3bfec631f551ff233940b7e277349372032a",
+  "core_material_credit": {
+    "name": "dsno",
+    "url": "https://dsno.tistory.com/m/",
+    "identified_by": "user"
+  }
 }
