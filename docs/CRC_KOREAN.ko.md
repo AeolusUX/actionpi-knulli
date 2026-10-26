@@ -1,4 +1,4 @@
-# 한국 사용자용 CRC 무시 코어 적용판 — v1.0.3
+# 한국 사용자용 CRC 무시 코어 적용판 — v1.0.4
 
 CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다.
 
@@ -7,8 +7,8 @@ CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용
 
 | 용도 | 다운로드 |
 | --- | --- |
-| 기본 배포판 | [일반판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3) |
-| 한글 패치 아케이드용 CRC 무시 코어 필요 | [CRC 적용판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3-crc-ko) |
+| 기본 배포판 | [일반판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.4) |
+| 한글 패치 아케이드용 CRC 무시 코어 필요 | [CRC 적용판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.4-crc-ko) |
 
 ## 적용 내용
 
@@ -30,7 +30,7 @@ CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용
 4. 첫 부팅은 부팅 이미지 뒤 검정화면이 보여도 약 5분 기다려 주세요. 자동 확장·설정 설치로 한두 번 재부팅한 뒤 메뉴가 표시됩니다.
 
 압축 해제 IMG: 6,069,178,368바이트.
-SHA256: `9b02a097dce0ee517112138bcae169bf44bbd50d84cba39fb10520f0f8b16a2f`.
+SHA256: `2d9733617773319a85a3492ee0db2b6832802fea03c0ba21ee37a1c69f0da605`.
 일반판의 체크섬과 다르므로 이 릴리스의 체크섬을 사용해 주세요.
 
 ## 코어와 자동 적용 소스

@@ -63,3 +63,7 @@ The CRC-core IMG is offered in a separate release. config/crc-ko/ contains the a
 ## v1.0.3 additions
 
 Publish config/userdata/system/rumble-fix, background-quiet and brightness-osd, shared multimedia_keys.conf, edition-specific custom.sh, tools/package-v1.0.3.py and its FAT helper. Inventories record their hashes. No live private configuration, logs or network credentials are copied.
+
+## v1.0.4
+
+Publish build/ppsspp-1.20.4, LICENSES/ppsspp-1.20.4, tools/package-v1.0.4.py, updated runners/Vulkan forwarding source and release manifests. Private device settings, screenshots and diagnostic logs are excluded.

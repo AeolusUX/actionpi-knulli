@@ -1,5 +1,6 @@
 import hashlib,json,os,re,shutil,signal,struct,subprocess,sys,time
 from pathlib import Path
+APP=Path('/userdata/system/ppsspp-1.20.4') # ACTIONPI_PPSSPP_1204_DEFAULT
 B=Path('/boot/PPSSPP_VULKAN');T=Path(sys.argv[2]);CONFIG=Path('/userdata/system/configs/ppsspp')
 KERNEL_SHA='52eb2334f61bad08c82cd0d5a27f11f93596b686b06019bc6948c7ef6a03847d'
 sha=lambda b:hashlib.sha256(b).hexdigest()
@@ -38,11 +39,12 @@ def run_game(game,seconds):
   env=os.environ.copy()
   for k in ['LD_PRELOAD','LD_LIBRARY_PATH','MESA_LOADER_DRIVER_OVERRIDE','WAYLAND_DISPLAY','DISPLAY']:env.pop(k,None)
   env.update(SDL_VIDEODRIVER='KMSDRM',SDL_KMSDRM_DEVICE_INDEX='0',SDL_KMSDRM_REQUIRE_DRM_MASTER='1',VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/mali_icd.json',XDG_RUNTIME_DIR='/var/run',DBUS_SESSION_BUS_ADDRESS='unix:path=/run/dbus/system_bus_socket',PULSE_SERVER='unix:/var/run/pulse/native')
+  env['XDG_CONFIG_HOME']='/userdata/system/configs'
   # Preserve the prior working SDL fallback bindings; correct only the D-pad.
   env['SDL_GAMECONTROLLERCONFIG']='19000000330100008811000000000000,adc_gamepad,x:b3,a:b0,b:b1,y:b2,back:b8,guide:b10,start:b9,dpleft:h0.8,dpdown:h0.4,dpright:h0.2,dpup:h0.1,leftshoulder:b4,lefttrigger:a2,rightshoulder:b6,rightshoulder:b5,righttrigger:a5,leftstick:b7,leftstick:b11,rightstick:b12,leftx:a0,lefty:a1,rightx:a3,righty:a4,platform:Linux,'
   if settings.get('full_output_rotation'):
-   env['LD_LIBRARY_PATH']=str(B/'rotation');env['LD_PRELOAD']=str(B/'rotation'/'sdl_output_rotation.so');result['full_output_rotation']=True
-  cmd=['/usr/bin/PPSSPP']+([manifest['game']] if manifest['game'] else [])+['--fullscreen','--appendconfig='+str(T/'vulkan.ini'),'--log='+str(T/'ppsspp.log'),'--loglevel=3']
+   env['LD_LIBRARY_PATH']=str(APP/'rotation');env['LD_PRELOAD']=str(APP/'rotation'/'sdl_output_rotation.so');result['full_output_rotation']=True
+  cmd=[str(APP/'PPSSPP-1.20.4')]+([manifest['game']] if manifest['game'] else [])+['--fullscreen','--appendconfig='+str(T/'vulkan.ini'),'--log='+str(T/'ppsspp.log'),'--loglevel=3']
   try:pad=InputDevice('/dev/input/by-path/platform-rgp_joypad-event-joystick')
   except OSError as e:log('Exit combo reader unavailable',e)
   with (T/'console.log').open('wb') as out:

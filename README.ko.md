@@ -6,7 +6,7 @@
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
-**Action Pi KNULLI v1.0.3**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
+**Action Pi KNULLI v1.0.4**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
 압축 이미지를 지원하지 않는 프로그램에서는 먼저 압축을 풀고 SD 전체에 굽습니다.
 선택한 SD의 내용은 지워집니다.
 
@@ -14,8 +14,8 @@
 
 | 종류 | 선택 |
 | --- | --- |
-| 기본 배포판 | [일반판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3) |
-| CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
+| 기본 배포판 | [일반판 v1.0.4](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.4) |
+| CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.4-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
 
 CRC 적용판은 FBNeo·MAME2003 Plus와 재부팅 자동 적용을 추가한 변형입니다. 두 판의 체크섬이 다릅니다. CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다.
 
@@ -78,6 +78,15 @@ AIC·RTL8723DS Wi-Fi 지원과 재부팅 후 연결, 에뮬레이터·도구·�
 
 집 실기에 SSH로 최종 수정을 적용한 뒤 Mali 메뉴의 정상 시작과 재부팅 후 Wi-Fi 재연결을 확인했습니다. 일반 코어·단독 RetroArch 실행 검사 후, 2026년 10월 25일 사용자가 최종 수정 전체의 정상 작동을 확인했습니다. 새로 패키징한 공개 IMG를 게시 후 다시 내려받아 굽는 시험은 별도로 반복하지 않았으며, 모든 코어·게임·포트·보드 변형을 전부 재시험한 것은 아닙니다. [전체 수정 내역](release/NOTES.md).
 
+## v1.0.4 변경 사항
+
+- **PPSSPP 1.20.4 업데이트:** 공식 소스로 ARM64 빌드해 1.19.3에서 올렸습니다. PSP 게임과 Emulators → PPSSPP 단독 실행 모두 새 Vulkan 버전으로 연결됩니다.
+- **Vulkan·화면 호환 보완:** 기존 Mali 드라이버·회전·출력 투명도 보정·메뉴 복귀는 유지하고, 새 버전의 초기 검사에 필요한 Vulkan 함수 전달 3개를 추가했습니다. 부팅용 런처 두 사본도 동기화했습니다.
+- **한영 혼합 글꼴 수정:** 설치된 Noto·나눔 글꼴을 올바르게 선택하도록 보완해 혼합 문장의 네모 글자를 해결했습니다.
+- 기존 Wi-Fi·에뮬레이터 회전·Ozone·PortMaster·진동·밝기 단축키와 게이지 보정은 유지합니다. 임시 시험 제어 프로그램·캡처·개인 설정은 포함하지 않습니다.
+
+사용자가 재부팅 후에도 PPSSPP 1.20.4가 정상 실행되는 것을 확인했습니다. 실기 캡처에서 메뉴 방향·한영 혼합 글꼴을 확인했고, 정상 종료와 재부팅 없는 ES 복귀를 확인했습니다. 앞선 시험에서 게임 타이틀 출력도 원격으로 확인했습니다. 모든 게임의 성능·동작과 모든 생산분을 다시 시험한 것은 아닙니다. 새로 패키징한 v1.0.4 설치 IMG를 별도 SD에 다시 굽는 시험은 반복하지 않았습니다.
+
 ## v1.0.3 변경 사항
 
 - **진동 보정:** 모터 PWM을 25kHz로 바꾸고 작은 진동 신호의 세기를 보정했습니다. 시험 기기의 Flycast VL·Xtreme 크레이지택시 1·2에서 작은 진동이 느껴지고 거슬리던 고주파음이 줄어드는 것을 확인했습니다.
@@ -90,8 +99,8 @@ AIC·RTL8723DS Wi-Fi 지원과 재부팅 후 연결, 에뮬레이터·도구·�
 
 ## Downloads / 다운로드
 
-### [일반판 v1.0.3 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3)
+### [일반판 v1.0.4 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.4)
 
-### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3-crc-ko)
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.4](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.4-crc-ko)
 
 CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).

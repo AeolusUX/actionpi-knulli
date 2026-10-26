@@ -64,3 +64,7 @@ v1.0.1 공개 당시 CRC 코어판은 제외했습니다. 게임 ROM·네트워�
 ## v1.0.3 추가 파일
 
 config/userdata/system/rumble-fix, background-quiet, brightness-osd와 config/defaults/multimedia_keys.conf, 일반·CRC custom.sh, tools/package-v1.0.3.py 및 FAT 도구를 공개합니다. source inventory와 release manifest에 해시를 기록합니다. 라이브 기기의 개인 설정·로그·SSID·비밀번호는 복사하지 않았습니다.
+
+## v1.0.4
+
+build/ppsspp-1.20.4、LICENSES/ppsspp-1.20.4、tools/package-v1.0.4.py、갱신된 런처·Vulkan 전달 소스 및 release manifest를 공개합니다. 원격 실기의 개인 설정·스크린샷·진단 로그는 포함하지 않습니다.

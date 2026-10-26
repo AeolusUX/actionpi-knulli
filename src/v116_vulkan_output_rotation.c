@@ -84,3 +84,15 @@ R vkCreateInstance(const void *a,const void *b,H *c){init();return((R(*)(const v
 R vkEnumerateInstanceExtensionProperties(const char *a,uint32_t *b,void *c){init();return((R(*)(const char*,uint32_t*,void*))dlsym(real_lib,"vkEnumerateInstanceExtensionProperties"))(a,b,c);}
 R vkEnumerateInstanceLayerProperties(uint32_t *a,void *b){init();return((R(*)(uint32_t*,void*))dlsym(real_lib,"vkEnumerateInstanceLayerProperties"))(a,b);}
 R vkEnumerateInstanceVersion(uint32_t *v){init();F f=dlsym(real_lib,"vkEnumerateInstanceVersion");if(!f){*v=1U<<22;return 0;}return((R(*)(uint32_t*))f)(v);}
+
+/* 1.20.4 probes these through dlsym before creating its real Vulkan instance.
+ * Forward unchanged; never bypass the availability check. */
+R vkEnumeratePhysicalDevices(H instance,uint32_t *count,H *devices){
+ init();return((R(*)(H,uint32_t*,H*))dlsym(real_lib,"vkEnumeratePhysicalDevices"))(instance,count,devices);
+}
+void vkDestroyInstance(H instance,const void *allocator){
+ init();((void(*)(H,const void*))dlsym(real_lib,"vkDestroyInstance"))(instance,allocator);
+}
+void vkGetPhysicalDeviceProperties(H device,void *properties){
+ init();((void(*)(H,void*))dlsym(real_lib,"vkGetPhysicalDeviceProperties"))(device,properties);
+}

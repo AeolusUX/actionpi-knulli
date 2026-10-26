@@ -84,3 +84,7 @@ Ordinary-core/standalone RetroArch receives final gl/gl_sdl/ozone overrides. Onl
 ## v1.0.3 userdata and brightness OSD
 
 custom.sh runs one-shot background cleanup and rumble calibration, then exits; the latter recreates its suspend/resume hook each boot. Native S50triggerhappy prefers the userdata multimedia_keys.conf. Its brightness wrapper preserves original calculations, hold and release behavior while requesting the OSD. The OSD owns a dumb framebuffer through its own non-master DRM client and uses an unused plane. It borrows the active application master fd only for configuration calls and immediately closes it, never keeping it across a wait. On completion it removes its own framebuffer and restores unused plane properties. system.telemetry=0 disables default statistics.
+
+## PPSSPP 1.20.4
+
+Install the application, assets and forwarding libraries in /userdata/system/ppsspp-1.20.4. Both /boot session-runner copies reference the same app and retain existing Mali ownership, user configuration and exit handling. The old 1.19.3 executable remains in the read-only system for recovery but is not used by normal launches.

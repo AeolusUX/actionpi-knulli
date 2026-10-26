@@ -100,3 +100,11 @@ v1.0.1에 Ozone 런처·GLES3 보조 라이브러리·ACTIONPI_FIXES manifest를
 config/userdata/system/에 진동·일회성 정리·밝기 OSD 소스를 공개했습니다. config/defaults/multimedia_keys.conf와 양 판의 custom.sh를 초기 설정 압축파일에 병합하고 telemetry=0을 SHARE·부팅 설정에 함께 넣습니다. STABLE_V119는 내부 설치 경로로 유지하고 payload의 설정 압축파일 해시를 갱신합니다. 기존 Wi-Fi·Mali·부팅 사본·회전 코드는 바꾸지 않습니다.
 
 Python 3와 mtools(mcopy), Linux 또는 mtools가 설치된 Ubuntu WSL이 필요합니다. 공개 v1.0.2 일반·CRC 이미지를 압축 해제해 이름을 유지한 뒤 ACTIONPI_IMAGE_DIR 환경 변수에 그 폴더를 지정하고 python3 tools/package-v1.0.3.py를 실행합니다. 두 입력 이미지의 고정 SHA256을 검사하고 새 파일만 생성합니다. 원본 tar 구성·코어 해시와 변경 영역 밖의 전체 바이트를 검사합니다. gzip 메타데이터 시각 때문에 재패키징 결과의 최종 SHA가 항상 동일하다고 주장하지 않습니다. XZ 제작 후 tools/verify-release.py로 압축 무결성과 해제 IMG 해시를 한 번의 스트리밍 읽기로 확인합니다.
+
+## v1.0.4
+
+CRC판은 설정 압축파일 교체 후 FAT에서 비었다고 표시된 옛 파일 클러스터만 0으로 정리합니다. 사용 중인 파일을 변경하지 않고 미할당 영역의 잔여 데이터를 제거해 XZ를 릴리스 용량 제한 안으로 줄입니다. 패키징 도구는 이 정리 뒤 최종 IMG 체크섬을 계산합니다.
+
+build/ppsspp-1.20.4에 실제 빌드 절차·도구 체인·FFmpeg 빌드 스크립트·글꼴 패치를 공개했습니다. 같은 릴리스의 ppsspp-1.20.4.tar.xz는 빌드에 사용한 공식 전체 소스입니다. ARM GNU 13.3.1, CMake 3.31 및 기존 이미지에서 추출한 target-sdk 런타임과 대응 개발 헤더를 사용합니다. ACTIONPI_WORKDIR·ACTIONPI_BUILD_DIR·CMAKE_BIN으로 경로를 지정하고 build.sh, font-fix.sh 순서로 실행합니다. 전달 라이브러리는 src/v116_vulkan_output_rotation.c를 aarch64-none-linux-gnu-gcc -shared -fPIC -O2 -Wall -Wextra -Werror -ldl로 빌드해 rotation/libvulkan.so와 libvulkan.so.1에 같은 파일로 둡니다. 기존 SDL 회전 보조 라이브러리도 함께 둡니다. 자세한 파일 배치는 build/ppsspp-1.20.4/README.md를 참고하세요.
+
+ACTIONPI_IMAGE_DIR에 두 v1.0.3 IMG를, ACTIONPI_PPSSPP_BUNDLE에 빌드한 앱 묶음을 지정한 뒤 tools/package-v1.0.4.py를 실행합니다. 앱·assets·라이선스를 초기 설정 압축파일에 추가하고 /boot 런처 두 사본과 payload 해시를 갱신합니다. 기존 tar 항목·CRC 코어·그 밖의 이미지 영역 바이트가 보존되는지 검사합니다. XZ는 tools/verify-release.py로 한 번 해제하면서 무결성과 IMG 해시를 확인합니다.

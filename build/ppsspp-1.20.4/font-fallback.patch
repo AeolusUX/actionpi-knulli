@@ -1,0 +1,35 @@
+--- a/Common/Render/Text/draw_text_sdl.cpp
++++ b/Common/Render/Text/draw_text_sdl.cpp
+@@ -65,6 +65,9 @@
+ 	// To install the recommended Droid Sans fallback font in Ubuntu:
+ 	// sudo apt install fonts-droid-fallback
+ 	const char *hardcodedNames[] = {
++		// Action Pi: modern Noto family names cover mixed Hangul/Latin.
++		"Noto Sans KR",
++		"NanumGothic",
+ 		"Droid Sans",
+ 		"Droid Sans Fallback",
+ 		"Source Han Sans",
+@@ -88,16 +91,22 @@
+ 	std::vector<const char *> names;
+ 	if (locale == "zh_CN") {
+ 		names.push_back("Noto Sans CJK SC");
++		names.push_back("Noto Sans SC");
+ 	} else if (locale == "zh_TW") {
+ 		names.push_back("Noto Sans CJK TC");
++		names.push_back("Noto Sans TC");
+ 		names.push_back("Noto Sans CJK HK");
++		names.push_back("Noto Sans HK");
+ 	} else if (locale == "ja_JP") {
+ 		names.push_back("Noto Sans CJK JP");
++		names.push_back("Noto Sans JP");
+ 	} else if (locale == "ko_KR") {
+ 		names.push_back("Noto Sans CJK KR");
++		names.push_back("Noto Sans KR");
+ 	} else {
+ 		// Let's just pick one.
+ 		names.push_back("Noto Sans CJK JP");
++		names.push_back("Noto Sans JP");
+ 	}
+ 
+ 	// Then push all the hardcoded ones.

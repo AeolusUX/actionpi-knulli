@@ -1,4 +1,4 @@
-# Action Pi KNULLI v1.0.3
+# Action Pi KNULLI v1.0.4
 
 ## English
 
@@ -6,11 +6,10 @@ Unofficial KNULLI adaptation for the Helegaly Action Pi. Mali runs the menu and 
 
 ### What changed
 
-- **Rumble:** use a 25 kHz motor PWM carrier and compensate low-strength effects. Crazy Taxi 1/2 with Flycast VL/Xtreme now provides noticeable small rumble with reduced high-pitched motor-related noise on the tested device.
-- **Brightness shortcut:** hold SELECT, then use Volume +/−. Normal volume and HOME behavior are retained; held adjustment works.
-- **Brightness overlay:** show a sun icon, percentage and bar above the menu or game, then hide it about 2.2 seconds after adjustment. It uses an unused display plane and runs only while visible; no idle overlay service is added.
-- **Background cleanup:** disable KNULLI usage-statistics reporting by default and stop the obsolete repeating boot-log copy on devices carrying it. Omit old diagnostic maps from the image.
-- Existing Mali menu/PPSSPP Vulkan, Wi-Fi, screen rotation, Ozone and PortMaster functionality is retained.
+- **PPSSPP 1.20.4:** update from 1.19.3 using the official source release and an ARM64 build. PSP games and Emulators → PPSSPP both open the updated Vulkan application.
+- **Vulkan/display compatibility:** preserve the existing Mali driver, rotation, output opacity correction and menu return. Add three real Vulkan forwarding exports required by the newer availability check; synchronize both persistent launcher copies.
+- **Mixed Korean/English text:** improve fallback font selection for the installed Noto and Nanum families, resolving missing square glyphs in mixed strings.
+- Previous Wi-Fi, emulator rotation, Ozone, PortMaster, rumble and brightness shortcut/overlay improvements are retained. No temporary test controllers, captures or personal settings are included.
 
 ### Installation
 
@@ -22,19 +21,19 @@ Brightness: **hold SELECT + Volume +/−**. Exit PPSSPP: **hold SELECT+START for
 
 ### Verification and technical documentation
 
-On-device tests confirmed rumble strength/noise and persistence after reboot, disabled statistics/repeating logging after reboot, and the brightness shortcut's direction, hold and normal-volume behavior. The owner confirmed the brightness overlay in ES and PPSSPP, automatic hiding, and game exit/menu return; remote inspection confirmed the overlay worker exits. The overlay uses a shared display path, but every emulator and hardware batch was not individually retested. The owner subsequently rebooted the device and confirmed all applied changes still work, including the brightness shortcut and overlay. These newly packaged installation images have not been independently reflashed.
+The owner confirmed PPSSPP 1.20.4 still launches correctly after reboot. On-device captures confirmed correct menu orientation and mixed Korean/English text; normal exit and return to ES without reboot were verified. Earlier title-screen rendering was checked remotely. Every game, performance characteristic and hardware batch was not retested. The newly packaged v1.0.4 SD installation images have not been independently reflashed.
 
-- [History](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/HISTORY.md)
-- [Architecture](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/ARCHITECTURE.md)
-- [Build and packaging](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/BUILD.md)
-- [Published files](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/PUBLIC_FILES.md)
-- [Sources and licenses](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/SOURCES_AND_LICENSES.md)
-- [Installation](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/RELEASE.md)
-- [Verification scope](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/TESTING.md)
+- [History](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/HISTORY.md)
+- [Architecture](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/ARCHITECTURE.md)
+- [Build and packaging](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/BUILD.md)
+- [Published files](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/PUBLIC_FILES.md)
+- [Sources and licenses](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/SOURCES_AND_LICENSES.md)
+- [Installation](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/RELEASE.md)
+- [Verification scope](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/TESTING.md)
 
 Board integration is based on [upstream KNULLI's Action Pi board configuration](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi). This is an adaptation of an inherited image, not a complete from-source firmware build.
 
-Raw IMG: 6,069,178,368 bytes. SHA256: 17b65929b241ce27dbcd147a406f2d7dfa14f017c863219e1ede090656b27df4.
+Raw IMG: 6,069,178,368 bytes. SHA256: 3b7595a3d131cee45473e8c448279cc530acfe2412ab148a13653d50d256c916.
 
 ---
 
@@ -44,11 +43,10 @@ Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. 같은 부팅�
 
 ### 수정 내역
 
-- **진동 보정:** 모터 PWM을 25kHz로 바꾸고 작은 진동 신호의 세기를 보정했습니다. 시험 기기의 Flycast VL·Xtreme 크레이지택시 1·2에서 작은 진동이 느껴지고 거슬리던 고주파음이 줄어드는 것을 확인했습니다.
-- **밝기 단축키:** SELECT를 먼저 누른 채 볼륨 +/−로 조절합니다. 길게 누름을 지원하며 일반 볼륨과 HOME 동작은 유지합니다.
-- **밝기 게이지:** 메뉴와 게임 위에 해 아이콘·밝기 %·막대를 표시하고 조작 후 약 2.2초 뒤 숨깁니다. 비어 있는 출력 레이어를 사용하며 표시할 때만 실행하므로 대기 중 상주 서비스가 추가되지 않습니다.
-- **백그라운드 정리:** 기본 통계 전송을 끄고, 예전 부팅 로그 반복 복사 작업이 남은 기기에서는 이를 중지합니다. 옛 진단 maps 파일은 이미지에서 제외했습니다.
-- 기존 Mali 메뉴·PPSSPP Vulkan·Wi-Fi·화면 회전·Ozone·PortMaster 기능은 유지했습니다.
+- **PPSSPP 1.20.4 업데이트:** 공식 소스로 ARM64 빌드해 1.19.3에서 올렸습니다. PSP 게임과 Emulators → PPSSPP 단독 실행 모두 새 Vulkan 버전으로 연결됩니다.
+- **Vulkan·화면 호환 보완:** 기존 Mali 드라이버·회전·출력 투명도 보정·메뉴 복귀는 유지하고, 새 버전의 초기 검사에 필요한 Vulkan 함수 전달 3개를 추가했습니다. 부팅용 런처 두 사본도 동기화했습니다.
+- **한영 혼합 글꼴 수정:** 설치된 Noto·나눔 글꼴을 올바르게 선택하도록 보완해 혼합 문장의 네모 글자를 해결했습니다.
+- 기존 Wi-Fi·에뮬레이터 회전·Ozone·PortMaster·진동·밝기 단축키와 게이지 보정은 유지합니다. 임시 시험 제어 프로그램·캡처·개인 설정은 포함하지 않습니다.
 
 ### 설치
 
@@ -60,16 +58,16 @@ Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. 같은 부팅�
 
 ### 검증 범위와 기술 문서
 
-실기에서 진동 세기·소음과 재부팅 후 유지, 재부팅 후 통계 전송·반복 로그 중지, 밝기 단축키의 방향·길게 누름·일반 볼륨 유지를 확인했습니다. 사용자가 ES와 PPSSPP의 밝기 게이지 표시·자동 숨김·게임 종료·메뉴 복귀를 확인했고, 표시 뒤 작업도 종료되는 것을 원격으로 확인했습니다. 공통 화면 경로를 사용하지만 모든 에뮬레이터·생산분을 각각 재시험한 것은 아닙니다. 이후 사용자가 기기를 재부팅하고 밝기 단축키·게이지를 포함한 수정 사항 전체가 정상 작동한다고 확인했습니다. 새로 패키징한 설치 IMG를 별도 SD에 다시 굽는 시험도 반복하지 않았습니다.
+사용자가 재부팅 후에도 PPSSPP 1.20.4가 정상 실행되는 것을 확인했습니다. 실기 캡처에서 메뉴 방향·한영 혼합 글꼴을 확인했고, 정상 종료와 재부팅 없는 ES 복귀를 확인했습니다. 앞선 시험에서 게임 타이틀 출력도 원격으로 확인했습니다. 모든 게임의 성능·동작과 모든 생산분을 다시 시험한 것은 아닙니다. 새로 패키징한 v1.0.4 설치 IMG를 별도 SD에 다시 굽는 시험은 반복하지 않았습니다.
 
-- [작업 이력](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/HISTORY.ko.md)
-- [작동 구조](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/ARCHITECTURE.ko.md)
-- [빌드·이미지 제작](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/BUILD.ko.md)
-- [공개 파일](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/PUBLIC_FILES.ko.md)
-- [출처·라이선스](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/SOURCES_AND_LICENSES.ko.md)
-- [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/RELEASE.ko.md)
-- [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3/docs/TESTING.ko.md)
+- [작업 이력](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/HISTORY.ko.md)
+- [작동 구조](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/ARCHITECTURE.ko.md)
+- [빌드·이미지 제작](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/BUILD.ko.md)
+- [공개 파일](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/PUBLIC_FILES.ko.md)
+- [출처·라이선스](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/SOURCES_AND_LICENSES.ko.md)
+- [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/RELEASE.ko.md)
+- [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/TESTING.ko.md)
 
 보드 구성은 상위 KNULLI의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)을 기반으로 했습니다. 기존 이미지를 수정한 배포판이며 모든 구성요소를 소스에서 완전히 재빌드한 펌웨어는 아닙니다.
 
-압축 해제 IMG: 6,069,178,368바이트. SHA256: 17b65929b241ce27dbcd147a406f2d7dfa14f017c863219e1ede090656b27df4.
+압축 해제 IMG: 6,069,178,368바이트. SHA256: 3b7595a3d131cee45473e8c448279cc530acfe2412ab148a13653d50d256c916.

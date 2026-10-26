@@ -1,0 +1,20 @@
+# Candidate application toolchain only. No installation or firmware mutation.
+set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_PROCESSOR aarch64)
+set(_tc /opt/actionpi-toolchain/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-linux-gnu)
+set(CMAKE_C_COMPILER ${_tc}/bin/aarch64-none-linux-gnu-gcc)
+set(CMAKE_CXX_COMPILER ${_tc}/bin/aarch64-none-linux-gnu-g++)
+set(CMAKE_ASM_COMPILER ${_tc}/bin/aarch64-none-linux-gnu-gcc)
+set(CMAKE_AR ${_tc}/bin/aarch64-none-linux-gnu-ar)
+set(CMAKE_RANLIB ${_tc}/bin/aarch64-none-linux-gnu-ranlib)
+set(CMAKE_STRIP ${_tc}/bin/aarch64-none-linux-gnu-strip)
+# SDK is a separate staging directory, not the host or a mounted device.
+# Do not set CMAKE_SYSROOT to an incomplete runtime-only rootfs extraction.
+set(ACTIONPI_TARGET_SDK ${CMAKE_CURRENT_LIST_DIR}/target-sdk CACHE PATH "Matching ARM64 development dependencies")
+set(CMAKE_FIND_ROOT_PATH ${ACTIONPI_TARGET_SDK} ${_tc}/aarch64-none-linux-gnu/libc)
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+set(CMAKE_C_FLAGS_INIT "-march=armv8-a -mtune=cortex-a55")
+set(CMAKE_CXX_FLAGS_INIT "-march=armv8-a -mtune=cortex-a55")

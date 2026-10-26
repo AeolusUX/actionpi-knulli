@@ -64,3 +64,7 @@ CRC-override core materials: **[dsno](https://dsno.tistory.com/m/)**, as identif
 ## v1.0.3 original helpers
 
 The new userdata rumble, cleanup and brightness OSD helpers and packaging logic are original project Python/shell glue under the existing scoped MIT terms. Inherited firmware/kernel/CRC-core licenses and corresponding-source limitations remain unchanged.
+
+## PPSSPP 1.20.4
+
+PPSSPP is GPL-2.0-or-later. The release includes the exact official v1.20.4 full source archive, including bundled FFmpeg. build/ppsspp-1.20.4/SOURCE.json records its checksum; font patches, build scripts and forwarding-library source are published. See LICENSES/ppsspp-1.20.4. Previously documented corresponding-source limitations for inherited vendor kernel/binaries and modified CRC cores remain unchanged.

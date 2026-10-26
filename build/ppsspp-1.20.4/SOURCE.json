@@ -1,0 +1,8 @@
+{
+  "upstream": "https://github.com/hrydgard/ppsspp/releases/tag/v1.20.4",
+  "asset": "ppsspp-1.20.4.tar.xz",
+  "sha256": "4de21db3105d9d81a465a8a7e78c68ee3c0e0bf6597d1c1d530f7555f3ad8b31",
+  "bytes": 60860348,
+  "includes": "Official full source archive, including bundled FFmpeg and dependencies",
+  "executable_sha256": "364031f68f2f7e1dc03d4ed151fa2c13cb322fe68a6c1aa40e552af2def32b57"
+}

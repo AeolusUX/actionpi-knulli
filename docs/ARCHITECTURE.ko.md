@@ -87,3 +87,7 @@ SDL Renderer·GLES 코어·OD-Commander 소프트웨어 Surface 경로를 구분
 ## v1.0.3 사용자 설정과 OSD
 
 custom.sh는 일회성 로그 정리와 진동 보정을 실행하고 끝납니다. 진동 보정은 절전 후크를 부팅마다 다시 설치합니다. S50triggerhappy가 userdata의 multimedia_keys.conf를 우선 읽어 밝기 wrapper를 실행합니다. wrapper는 원래 밝기 계산·길게 누름·release를 유지하고 OSD만 요청합니다. OSD는 자체 non-master DRM 클라이언트의 dumb framebuffer와 비어 있는 plane을 사용합니다. 앱 master fd는 설정 호출 때만 복제하고 즉시 닫으며 대기 중 유지하지 않습니다. 표시 종료 때 자체 framebuffer와 비어 있는 plane 속성을 정리합니다. 통계는 system.telemetry=0으로 비활성화합니다.
+
+## PPSSPP 1.20.4
+
+앱·assets·전달 라이브러리는 /userdata/system/ppsspp-1.20.4에 설치됩니다. 두 /boot 런처 사본은 같은 앱을 실행하며 기존 Mali 세션·사용자 설정·종료 처리를 유지합니다. 원래 1.19.3 바이너리는 읽기 전용 시스템에 복구용으로 남지만 일반 실행에는 사용하지 않습니다.

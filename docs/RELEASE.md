@@ -20,7 +20,7 @@ the cleared free space efficiently.
    details when downloads are needed.
 
 Raw image SHA256:
-`17b65929b241ce27dbcd147a406f2d7dfa14f017c863219e1ede090656b27df4`.
+`3b7595a3d131cee45473e8c448279cc530acfe2412ab148a13653d50d256c916`.
 The public manifest and binary component hashes are in `release/`.
 
 The source tree is stored in Git; the large firmware belongs in Releases.
@@ -37,3 +37,7 @@ matching a version number does not establish that the recorded guards still appl
 ## v1.0.3 brightness shortcut
 
 Hold SELECT, then Volume +/− to adjust brightness. A sun icon, percentage and bar hide about 2.2 seconds after adjustment. Use Volume without SELECT for normal audio volume.
+
+## v1.0.4
+
+PPSSPP is now 1.20.4. First-installation waiting time, brightness shortcuts and SELECT+START exit behavior remain unchanged.

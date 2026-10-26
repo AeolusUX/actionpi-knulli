@@ -1,16 +1,15 @@
-# 한국 사용자용 · CRC 무시 코어 적용판 v1.0.3
+# 한국 사용자용 · CRC 무시 코어 적용판 v1.0.4
 
 한글 패치 아케이드 게임용 FBNeo·MAME2003 Plus CRC 무시 코어가 필요한 분을 위한 별도 배포판입니다. 기본 배포판과 이미지·체크섬을 분리했습니다.
 
 CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다. 이번 버전에서 두 코어 바이너리는 변경하지 않았습니다.
 
-## v1.0.3 수정 내역
+## v1.0.4 수정 내역
 
-- **진동 보정:** 모터 PWM을 25kHz로 바꾸고 작은 진동 신호의 세기를 보정했습니다. 시험 기기의 Flycast VL·Xtreme 크레이지택시 1·2에서 작은 진동이 느껴지고 거슬리던 고주파음이 줄어드는 것을 확인했습니다.
-- **밝기 단축키:** SELECT를 먼저 누른 채 볼륨 +/−로 조절합니다. 길게 누름을 지원하며 일반 볼륨과 HOME 동작은 유지합니다.
-- **밝기 게이지:** 메뉴와 게임 위에 해 아이콘·밝기 %·막대를 표시하고 조작 후 약 2.2초 뒤 숨깁니다. 비어 있는 출력 레이어를 사용하며 표시할 때만 실행하므로 대기 중 상주 서비스가 추가되지 않습니다.
-- **백그라운드 정리:** 기본 통계 전송을 끄고, 예전 부팅 로그 반복 복사 작업이 남은 기기에서는 이를 중지합니다. 옛 진단 maps 파일은 이미지에서 제외했습니다.
-- Mali 메뉴·PPSSPP Vulkan·Wi-Fi·회전·Ozone·PortMaster와 CRC판 코어 자동 적용을 유지했습니다. CPU 배치는 바꾸지 않았습니다.
+- **PPSSPP 1.20.4 업데이트:** 공식 소스로 ARM64 빌드해 1.19.3에서 올렸습니다. PSP 게임과 Emulators → PPSSPP 단독 실행 모두 새 Vulkan 버전으로 연결됩니다.
+- **Vulkan·화면 호환 보완:** 기존 Mali 드라이버·회전·출력 투명도 보정·메뉴 복귀는 유지하고, 새 버전의 초기 검사에 필요한 Vulkan 함수 전달 3개를 추가했습니다. 부팅용 런처 두 사본도 동기화했습니다.
+- **한영 혼합 글꼴 수정:** 설치된 Noto·나눔 글꼴을 올바르게 선택하도록 보완해 혼합 문장의 네모 글자를 해결했습니다.
+- 기존 Wi-Fi·에뮬레이터 회전·Ozone·PortMaster·진동·밝기 단축키와 게이지 보정은 유지합니다. 임시 시험 제어 프로그램·캡처·개인 설정은 포함하지 않습니다.
 
 코어는 재부팅할 때마다 자동 연결되며 save-overlay는 필요 없습니다. MAME2003 Plus의 mame078plus 이름도 처리합니다.
 
@@ -24,17 +23,17 @@ CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용
 
 ## 확인 범위와 출처
 
-실기에서 진동 세기·소음과 재부팅 후 유지, 재부팅 후 통계 전송·반복 로그 중지, 밝기 단축키의 방향·길게 누름·일반 볼륨 유지를 확인했습니다. 사용자가 ES와 PPSSPP의 밝기 게이지 표시·자동 숨김·게임 종료·메뉴 복귀를 확인했고, 표시 뒤 작업도 종료되는 것을 원격으로 확인했습니다. 공통 화면 경로를 사용하지만 모든 에뮬레이터·생산분을 각각 재시험한 것은 아닙니다. 이후 사용자가 기기를 재부팅하고 밝기 단축키·게이지를 포함한 수정 사항 전체가 정상 작동한다고 확인했습니다. 새로 패키징한 설치 IMG를 별도 SD에 다시 굽는 시험도 반복하지 않았습니다.
+사용자가 재부팅 후에도 PPSSPP 1.20.4가 정상 실행되는 것을 확인했습니다. 실기 캡처에서 메뉴 방향·한영 혼합 글꼴을 확인했고, 정상 종료와 재부팅 없는 ES 복귀를 확인했습니다. 앞선 시험에서 게임 타이틀 출력도 원격으로 확인했습니다. 모든 게임의 성능·동작과 모든 생산분을 다시 시험한 것은 아닙니다. 새로 패키징한 v1.0.4 설치 IMG를 별도 SD에 다시 굽는 시험은 반복하지 않았습니다.
 
 제공된 두 코어와 자동 연결은 기존 확인 결과를 유지하며 새 이미지에서 코어 해시 동일성을 확인했습니다. 정확히 일치하는 수정 코어 소스와 CRC 패치는 제공받지 못했으며 상위 소스 링크를 정확한 대응 소스로 주장하지 않습니다.
 
-- [CRC판 상세 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3-crc-ko/docs/CRC_KOREAN.ko.md)
-- [작업 이력](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3-crc-ko/docs/HISTORY.ko.md)
-- [작동 구조](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3-crc-ko/docs/ARCHITECTURE.ko.md)
-- [빌드·이미지 제작](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3-crc-ko/docs/BUILD.ko.md)
-- [공개 파일](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3-crc-ko/docs/PUBLIC_FILES.ko.md)
-- [출처·라이선스](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3-crc-ko/docs/SOURCES_AND_LICENSES.ko.md)
-- [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3-crc-ko/docs/RELEASE.ko.md)
-- [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.3-crc-ko/docs/TESTING.ko.md)
+- [CRC판 상세 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4-crc-ko/docs/CRC_KOREAN.ko.md)
+- [작업 이력](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4-crc-ko/docs/HISTORY.ko.md)
+- [작동 구조](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4-crc-ko/docs/ARCHITECTURE.ko.md)
+- [빌드·이미지 제작](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4-crc-ko/docs/BUILD.ko.md)
+- [공개 파일](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4-crc-ko/docs/PUBLIC_FILES.ko.md)
+- [출처·라이선스](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4-crc-ko/docs/SOURCES_AND_LICENSES.ko.md)
+- [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4-crc-ko/docs/RELEASE.ko.md)
+- [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4-crc-ko/docs/TESTING.ko.md)
 
-압축 해제 IMG: 6,069,178,368바이트. SHA256: 9b02a097dce0ee517112138bcae169bf44bbd50d84cba39fb10520f0f8b16a2f. CRC판 전용 체크섬을 사용하세요.
+압축 해제 IMG: 6,069,178,368바이트. SHA256: 2d9733617773319a85a3492ee0db2b6832802fea03c0ba21ee37a1c69f0da605. CRC판 전용 체크섬을 사용하세요.

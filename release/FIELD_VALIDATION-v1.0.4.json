@@ -1,0 +1,20 @@
+{
+  "version": "v1.0.4",
+  "date": "2026-10-27",
+  "owner_confirmed": [
+    "PPSSPP 1.20.4 normal launch after reboot"
+  ],
+  "remote_confirmed": [
+    "Vulkan menu, rotation and mixed Korean/English font capture",
+    "normal exit and same-boot ES return",
+    "persistent runner copies synchronized"
+  ],
+  "not_repeated": [
+    "fresh SD flash of newly packaged v1.0.4 images",
+    "every game and hardware batch",
+    "gameplay performance comparison"
+  ],
+  "diagnostic_controllers_in_image": false,
+  "private_configuration_copied": false,
+  "crc_cores_unchanged": true
+}

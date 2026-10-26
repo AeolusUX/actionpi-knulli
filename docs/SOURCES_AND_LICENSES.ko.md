@@ -65,3 +65,7 @@ CRC 무시 코어 자료 출처: **[dsno님 블로그](https://dsno.tistory.com/
 ## v1.0.3 자체 보조 코드
 
 config/userdata의 진동·로그 정리·밝기 OSD와 tools/package-v1.0.3.py는 이 프로젝트의 자체 Python·shell 보조 코드이며 기존 원본 glue의 MIT 범위에 포함합니다. 상속한 펌웨어·커널·CRC 코어의 라이선스나 불완전한 대응 소스 상태는 바뀌지 않습니다.
+
+## PPSSPP 1.20.4
+
+PPSSPP는 GPL-2.0-or-later이며 공식 v1.20.4 전체 소스와 그 안의 FFmpeg 소스를 릴리스에 동봉합니다. build/ppsspp-1.20.4/SOURCE.json에 원본 체크섬을 기록하고 글꼴 패치·빌드 스크립트·전달 라이브러리 소스를 공개합니다. LICENSES/ppsspp-1.20.4의 라이선스도 참고하세요. 기존 제조사 커널·바이너리 및 CRC 코어의 대응 소스 제한은 앞서 명시한 상태에서 바뀌지 않습니다.
