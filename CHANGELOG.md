@@ -10,13 +10,13 @@ Public release numbering starts at **v1.0.0**.
 - **Brightness shortcut:** hold SELECT, then use Volume +/−. Normal volume and HOME behavior are retained; held adjustment works.
 - **Brightness overlay:** show a sun icon, percentage and bar above the menu or game, then hide it about 2.2 seconds after adjustment. It uses an unused display plane and runs only while visible; no idle overlay service is added.
 - **Background cleanup:** disable KNULLI usage-statistics reporting by default and stop the obsolete repeating boot-log copy on devices carrying it. Omit old diagnostic maps from the image.
-- Retain Mali menu/PPSSPP Vulkan, Wi-Fi, rotations, Ozone, PortMaster and CRC-edition core loading. CPU affinity is unchanged.
+- Existing Mali menu/PPSSPP Vulkan, Wi-Fi, screen rotation, Ozone and PortMaster functionality is retained.
 
 - **진동 보정:** 모터 PWM을 25kHz로 바꾸고 작은 진동 신호의 세기를 보정했습니다. 시험 기기의 Flycast VL·Xtreme 크레이지택시 1·2에서 작은 진동이 느껴지고 거슬리던 고주파음이 줄어드는 것을 확인했습니다.
 - **밝기 단축키:** SELECT를 먼저 누른 채 볼륨 +/−로 조절합니다. 길게 누름을 지원하며 일반 볼륨과 HOME 동작은 유지합니다.
 - **밝기 게이지:** 메뉴와 게임 위에 해 아이콘·밝기 %·막대를 표시하고 조작 후 약 2.2초 뒤 숨깁니다. 비어 있는 출력 레이어를 사용하며 표시할 때만 실행하므로 대기 중 상주 서비스가 추가되지 않습니다.
 - **백그라운드 정리:** 기본 통계 전송을 끄고, 예전 부팅 로그 반복 복사 작업이 남은 기기에서는 이를 중지합니다. 옛 진단 maps 파일은 이미지에서 제외했습니다.
-- Mali 메뉴·PPSSPP Vulkan·Wi-Fi·회전·Ozone·PortMaster와 CRC판 코어 자동 적용을 유지했습니다. CPU 배치는 바꾸지 않았습니다.
+- 기존 Mali 메뉴·PPSSPP Vulkan·Wi-Fi·화면 회전·Ozone·PortMaster 기능은 유지했습니다.
 
 On-device tests confirmed rumble strength/noise and persistence after reboot, disabled statistics/repeating logging after reboot, and the brightness shortcut's direction, hold and normal-volume behavior. The owner confirmed the brightness overlay in ES and PPSSPP, automatic hiding, and game exit/menu return; remote inspection confirmed the overlay worker exits. The overlay uses a shared display path, but every emulator and hardware batch was not individually retested. The owner subsequently rebooted the device and confirmed all applied changes still work, including the brightness shortcut and overlay. These newly packaged installation images have not been independently reflashed.
 

@@ -10,7 +10,7 @@ Unofficial KNULLI adaptation for the Helegaly Action Pi. Mali runs the menu and 
 - **Brightness shortcut:** hold SELECT, then use Volume +/−. Normal volume and HOME behavior are retained; held adjustment works.
 - **Brightness overlay:** show a sun icon, percentage and bar above the menu or game, then hide it about 2.2 seconds after adjustment. It uses an unused display plane and runs only while visible; no idle overlay service is added.
 - **Background cleanup:** disable KNULLI usage-statistics reporting by default and stop the obsolete repeating boot-log copy on devices carrying it. Omit old diagnostic maps from the image.
-- Retain Mali menu/PPSSPP Vulkan, Wi-Fi, rotations, Ozone, PortMaster and CRC-edition core loading. CPU affinity is unchanged.
+- Existing Mali menu/PPSSPP Vulkan, Wi-Fi, screen rotation, Ozone and PortMaster functionality is retained.
 
 ### Installation
 
@@ -48,7 +48,7 @@ Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. 같은 부팅�
 - **밝기 단축키:** SELECT를 먼저 누른 채 볼륨 +/−로 조절합니다. 길게 누름을 지원하며 일반 볼륨과 HOME 동작은 유지합니다.
 - **밝기 게이지:** 메뉴와 게임 위에 해 아이콘·밝기 %·막대를 표시하고 조작 후 약 2.2초 뒤 숨깁니다. 비어 있는 출력 레이어를 사용하며 표시할 때만 실행하므로 대기 중 상주 서비스가 추가되지 않습니다.
 - **백그라운드 정리:** 기본 통계 전송을 끄고, 예전 부팅 로그 반복 복사 작업이 남은 기기에서는 이를 중지합니다. 옛 진단 maps 파일은 이미지에서 제외했습니다.
-- Mali 메뉴·PPSSPP Vulkan·Wi-Fi·회전·Ozone·PortMaster와 CRC판 코어 자동 적용을 유지했습니다. CPU 배치는 바꾸지 않았습니다.
+- 기존 Mali 메뉴·PPSSPP Vulkan·Wi-Fi·화면 회전·Ozone·PortMaster 기능은 유지했습니다.
 
 ### 설치
 
