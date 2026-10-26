@@ -59,3 +59,7 @@ At the v1.0.1 release, personal CRC-core images were excluded. Game ROMs, screen
 ## Separate Korean CRC edition
 
 The CRC-core IMG is offered in a separate release. config/crc-ko/ contains the actual startup sources; release/crc-ko/ contains dedicated manifests/checksums. See the [Korean guide](CRC_KOREAN.ko.md).
+
+## v1.0.3 additions
+
+Publish config/userdata/system/rumble-fix, background-quiet and brightness-osd, shared multimedia_keys.conf, edition-specific custom.sh, tools/package-v1.0.3.py and its FAT helper. Inventories record their hashes. No live private configuration, logs or network credentials are copied.

@@ -1,0 +1,6 @@
+#!/bin/sh
+# Preserve KNULLI's original hold/release logic; scope the notifier to brightness.
+case "$1" in briup|bridown) ;; *) exit 1 ;; esac
+PATH=/userdata/system/brightness-osd/bin:$PATH
+export PATH
+exec /usr/bin/volume-button "$1"

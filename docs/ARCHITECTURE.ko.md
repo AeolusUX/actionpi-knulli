@@ -83,3 +83,7 @@ SDL Renderer·GLES 코어·OD-Commander 소프트웨어 Surface 경로를 구분
 ## v1.0.2 Ozone과 전체 BOOT 검증 연결
 
 일반 코어/단독 RetroArch는 gl/gl_sdl/ozone을 마지막 추가 설정으로 받습니다. 해당 프로세스에만 retroarch_gles3_context.so → app_output_rotation.so 순으로 연결해 SDL 주 버전 요청을 최소 3으로 맞춥니다. 기존 하드웨어 코어의 영상 설정은 유지합니다. 메뉴 guard의 BOOT 상수는 normal 복원 BOOT의 SHA256과 같아야 하며, 활성 armed BOOT를 요구하는 검사가 아닙니다. manager BOOT_SHA·autostart BASE_SHA·복원 manifest·메뉴 guard/manifest를 함께 갱신해야 합니다.
+
+## v1.0.3 사용자 설정과 OSD
+
+custom.sh는 일회성 로그 정리와 진동 보정을 실행하고 끝납니다. 진동 보정은 절전 후크를 부팅마다 다시 설치합니다. S50triggerhappy가 userdata의 multimedia_keys.conf를 우선 읽어 밝기 wrapper를 실행합니다. wrapper는 원래 밝기 계산·길게 누름·release를 유지하고 OSD만 요청합니다. OSD는 자체 non-master DRM 클라이언트의 dumb framebuffer와 비어 있는 plane을 사용합니다. 앱 master fd는 설정 호출 때만 복제하고 즉시 닫으며 대기 중 유지하지 않습니다. 표시 종료 때 자체 framebuffer와 비어 있는 plane 속성을 정리합니다. 통계는 system.telemetry=0으로 비활성화합니다.

@@ -4,6 +4,24 @@ These are curated milestones, not a fabricated historical Git commit log.
 Development checkpoint numbers are internal, not upstream KNULLI versions.
 Public release numbering starts at **v1.0.0**.
 
+## v1.0.3 — 2026-10-26
+
+- **Rumble:** use a 25 kHz motor PWM carrier and compensate low-strength effects. Crazy Taxi 1/2 with Flycast VL/Xtreme now provides noticeable small rumble with reduced high-pitched motor-related noise on the tested device.
+- **Brightness shortcut:** hold SELECT, then use Volume +/−. Normal volume and HOME behavior are retained; held adjustment works.
+- **Brightness overlay:** show a sun icon, percentage and bar above the menu or game, then hide it about 2.2 seconds after adjustment. It uses an unused display plane and runs only while visible; no idle overlay service is added.
+- **Background cleanup:** disable KNULLI usage-statistics reporting by default and stop the obsolete repeating boot-log copy on devices carrying it. Omit old diagnostic maps from the image.
+- Retain Mali menu/PPSSPP Vulkan, Wi-Fi, rotations, Ozone, PortMaster and CRC-edition core loading. CPU affinity is unchanged.
+
+- **진동 보정:** 모터 PWM을 25kHz로 바꾸고 작은 진동 신호의 세기를 보정했습니다. 시험 기기의 Flycast VL·Xtreme 크레이지택시 1·2에서 작은 진동이 느껴지고 거슬리던 고주파음이 줄어드는 것을 확인했습니다.
+- **밝기 단축키:** SELECT를 먼저 누른 채 볼륨 +/−로 조절합니다. 길게 누름을 지원하며 일반 볼륨과 HOME 동작은 유지합니다.
+- **밝기 게이지:** 메뉴와 게임 위에 해 아이콘·밝기 %·막대를 표시하고 조작 후 약 2.2초 뒤 숨깁니다. 비어 있는 출력 레이어를 사용하며 표시할 때만 실행하므로 대기 중 상주 서비스가 추가되지 않습니다.
+- **백그라운드 정리:** 기본 통계 전송을 끄고, 예전 부팅 로그 반복 복사 작업이 남은 기기에서는 이를 중지합니다. 옛 진단 maps 파일은 이미지에서 제외했습니다.
+- Mali 메뉴·PPSSPP Vulkan·Wi-Fi·회전·Ozone·PortMaster와 CRC판 코어 자동 적용을 유지했습니다. CPU 배치는 바꾸지 않았습니다.
+
+On-device tests confirmed rumble strength/noise and persistence after reboot, disabled statistics/repeating logging after reboot, and the brightness shortcut's direction, hold and normal-volume behavior. The owner confirmed the brightness overlay in ES and PPSSPP, automatic hiding, and game exit/menu return; remote inspection confirmed the overlay worker exits. The overlay uses a shared display path, but every emulator and hardware batch was not individually retested. The owner subsequently rebooted the device and confirmed all applied changes still work, including the brightness shortcut and overlay. These newly packaged installation images have not been independently reflashed.
+
+실기에서 진동 세기·소음과 재부팅 후 유지, 재부팅 후 통계 전송·반복 로그 중지, 밝기 단축키의 방향·길게 누름·일반 볼륨 유지를 확인했습니다. 사용자가 ES와 PPSSPP의 밝기 게이지 표시·자동 숨김·게임 종료·메뉴 복귀를 확인했고, 표시 뒤 작업도 종료되는 것을 원격으로 확인했습니다. 공통 화면 경로를 사용하지만 모든 에뮬레이터·생산분을 각각 재시험한 것은 아닙니다. 이후 사용자가 기기를 재부팅하고 밝기 단축키·게이지를 포함한 수정 사항 전체가 정상 작동한다고 확인했습니다. 새로 패키징한 설치 IMG를 별도 SD에 다시 굽는 시험도 반복하지 않았습니다.
+
 ## Optional Korean CRC edition: v1.0.2-crc-ko — 2026-10-25
 
 Separate download for the user-supplied FBNeo/MAME2003 Plus CRC-override cores and the reboot-persistent late loader. The clean base and all v1.0.2 fixes are unchanged. Normal v1.0.2 remains the default/latest release. [Korean guide](docs/CRC_KOREAN.ko.md).

@@ -60,3 +60,7 @@ v1.0.1 공개 당시 CRC 코어판은 제외했습니다. 게임 ROM·네트워�
 ## 한국 사용자용 CRC 별도판
 
 일반판과 분리된 릴리스에 CRC 적용 IMG를 제공합니다. config/crc-ko/는 실제 자동 적용 소스, release/crc-ko/는 전용 구성/체크섬입니다. [상세 안내](CRC_KOREAN.ko.md).
+
+## v1.0.3 추가 파일
+
+config/userdata/system/rumble-fix, background-quiet, brightness-osd와 config/defaults/multimedia_keys.conf, 일반·CRC custom.sh, tools/package-v1.0.3.py 및 FAT 도구를 공개합니다. source inventory와 release manifest에 해시를 기록합니다. 라이브 기기의 개인 설정·로그·SSID·비밀번호는 복사하지 않았습니다.

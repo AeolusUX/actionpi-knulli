@@ -95,3 +95,9 @@ The new adapter sources are src/app_sdl_rotation.c, src/app_gl_rotation.c and sr
 ## v1.0.2 packaging
 
 Starting from v1.0.1, add the Ozone launcher, GLES3 helper and ACTIONPI_FIXES manifest entries, then synchronize the menu guard BOOT constant and MALI_MENU_TRIAL manifest with normal BOOT. Work on a separate IMG copy. Execute the actual guard with redirected file I/O: accept normal BOOT, reject armed BOOT and reproduce the old mismatch. Read back inserted files and compare all bytes outside the allowed FAT/file regions while calculating SHA256. Existing clean-default data is unchanged. tools/build-runtime.sh includes the new helper. Verify XZ integrity and compressed/unpacked hashes in one streaming pass.
+
+## v1.0.3 packaging
+
+Runtime sources live under config/userdata/system/. Merge the shared multimedia_keys.conf and edition-specific custom.sh into the initial settings archive; set telemetry=0 in both SHARE defaults and boot configuration. Keep STABLE_V119 as the internal installer path and refresh the settings-archive payload hash. Retain the existing Wi-Fi/Mali/BOOT/rotation files.
+
+Requires Python 3, mtools (mcopy), and Linux or Ubuntu WSL with mtools. Extract both public v1.0.2 IMG editions, retaining their public filenames, set ACTIONPI_IMAGE_DIR to that directory, then run python3 tools/package-v1.0.3.py. The tool checks fixed input SHA256 values, creates new files only, preserves original tar members/core identities and compares every byte outside allowed FAT/file ranges. Gzip timestamp metadata means bit-for-bit reproducible output hashes are not claimed. After XZ compression use tools/verify-release.py to check integrity and unpacked IMG identity in one streaming read.

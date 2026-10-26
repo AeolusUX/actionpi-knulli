@@ -80,3 +80,7 @@ App wrappers distinguish SDL renderers, GLES-backed cores and OD-Commander softw
 ## v1.0.2 Ozone and the complete BOOT reference chain
 
 Ordinary-core/standalone RetroArch receives final gl/gl_sdl/ozone overrides. Only these processes preload retroarch_gles3_context.so before app_output_rotation.so, requesting at least GLES3 while preserving other SDL attributes. Existing hardware-core output settings remain. The menu guard expects the normal recovery BOOT hash, not the armed active BOOT. Keep manager BOOT_SHA, autostart BASE_SHA, recovery manifests and the menu guard/manifest synchronized.
+
+## v1.0.3 userdata and brightness OSD
+
+custom.sh runs one-shot background cleanup and rumble calibration, then exits; the latter recreates its suspend/resume hook each boot. Native S50triggerhappy prefers the userdata multimedia_keys.conf. Its brightness wrapper preserves original calculations, hold and release behavior while requesting the OSD. The OSD owns a dumb framebuffer through its own non-master DRM client and uses an unused plane. It borrows the active application master fd only for configuration calls and immediately closes it, never keeping it across a wait. On completion it removes its own framebuffer and restores unused plane properties. system.telemetry=0 disables default statistics.

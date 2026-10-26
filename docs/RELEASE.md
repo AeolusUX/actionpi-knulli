@@ -20,7 +20,7 @@ the cleared free space efficiently.
    details when downloads are needed.
 
 Raw image SHA256:
-`18cfbf89a81dd4245caee0d557e8b12bf00c8627e01d81b7b2ac28b210143cc9`.
+`17b65929b241ce27dbcd147a406f2d7dfa14f017c863219e1ede090656b27df4`.
 The public manifest and binary component hashes are in `release/`.
 
 The source tree is stored in Git; the large firmware belongs in Releases.
@@ -34,3 +34,6 @@ The normal updater path for arbitrary upstream firmware is not validated by this
 adaptation. Keep a backup before experimenting with a different kernel/rootfs;
 matching a version number does not establish that the recorded guards still apply.
 
+## v1.0.3 brightness shortcut
+
+Hold SELECT, then Volume +/− to adjust brightness. A sun icon, percentage and bar hide about 2.2 seconds after adjustment. Use Volume without SELECT for normal audio volume.

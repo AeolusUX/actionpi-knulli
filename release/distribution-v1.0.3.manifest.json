@@ -1,0 +1,45 @@
+{
+  "version": "v1.0.3",
+  "edition": "standard",
+  "image": "action-pi-knulli-v1.0.3.img",
+  "bytes": 6069178368,
+  "sha256": "17b65929b241ce27dbcd147a406f2d7dfa14f017c863219e1ede090656b27df4",
+  "source_image": "action-pi-knulli-v1.0.2.img",
+  "source_sha256": "18cfbf89a81dd4245caee0d557e8b12bf00c8627e01d81b7b2ac28b210143cc9",
+  "changed_files": {
+    "STABLE_V119/settings.tar.gz": "348ee26a1cb06dc1000d74343bb391520f90968ec306fb620301bb20ff1edada",
+    "STABLE_V119/payload.json": "0c086111505376aa4db953a6bb3d8615e93070c8cf5511705c4230937c2bbc30",
+    "knulli-boot.conf": "88de0ff4c89523c350a94d390262ae0640bcf43c4d1dc38297757d32250c2b26"
+  },
+  "added_or_updated_userdata": {
+    "system/rumble-fix/apply.py": "6b51a1fdfa77901223c796ca152c806f45b2c8b4a14105f953440a57b122dc0c",
+    "system/background-quiet/quiet_start.py": "1a8c80edf71d4a42ee664f89d08ab125466c8b97b012350b7a834ebdad8e9f9e",
+    "system/brightness-osd/overlay.py": "1ca43da98e32b6bf3f8cb29d923f277bb58d526274d41db1acb408137b8c4774",
+    "system/brightness-osd/notify.sh": "f449279affd667544ce50e59123881b50a91654afff2df000e878fc42c7ba699",
+    "system/brightness-osd/brightness-button": "6e7258f032d033176f5a239861d3f8e6411a1795a2e2c5dcfbdd38f9160a7d52",
+    "system/brightness-osd/bin/knulli-brightness": "2920e0eb0699837ed11638a59cf042eecfb28294a843e4ade49fa7fed205add3",
+    "system/configs/multimedia_keys.conf": "f444645b126e13087aa2e528f112975778bd485c5c08791334b7908267ee4793",
+    "system/knulli.conf": "f830a2a8d760027fc9bead6e23a862761a2efeb95e72a18474d043d846496819",
+    "system/custom.sh": "da42ab3f74c1fa8c6ef9b97fa113d53d65ad730cae946fc016734dca60740f10"
+  },
+  "removed_old_diagnostics": [
+    "ACTIONPI_FIXES/flycastvl-maps.txt",
+    "ACTIONPI_FIXES/flycast-xtreme-maps.txt"
+  ],
+  "checks": {
+    "unmodified_tar_members_preserved": true,
+    "crc_cores_unchanged": false,
+    "runtime_files_readback": true,
+    "boot_mali_wifi_rotation_chain_unchanged": true,
+    "unchanged_bytes_compared": 6017990656,
+    "original_images_unchanged": true
+  },
+  "defaults": {
+    "language": "en_US",
+    "wifi_enabled": false,
+    "saved_wifi_credentials": false,
+    "telemetry_enabled": false
+  },
+  "hardware_validation": "Live runtime fixes tested; this newly packaged installation image has not been freshly flashed.",
+  "cpu_affinity_changed": false
+}

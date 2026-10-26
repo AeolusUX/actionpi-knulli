@@ -1,12 +1,12 @@
 {
-  "version": "v1.0.2",
+  "version": "v1.0.3",
   "edition": "crc-ko",
-  "release_tag": "v1.0.2-crc-ko",
-  "image": "action-pi-knulli-v1.0.2-crc-ko.img",
+  "release_tag": "v1.0.3-crc-ko",
+  "image": "action-pi-knulli-v1.0.3-crc-ko.img",
   "bytes": 6069178368,
-  "sha256": "f67382eec2ac39ac4f5a2d59fcb93d008535d8e1f77e88a20cf87abedc186c7f",
-  "base_image": "action-pi-knulli-v1.0.2.img",
-  "base_sha256": "18cfbf89a81dd4245caee0d557e8b12bf00c8627e01d81b7b2ac28b210143cc9",
+  "sha256": "9b02a097dce0ee517112138bcae169bf44bbd50d84cba39fb10520f0f8b16a2f",
+  "base_image": "action-pi-knulli-v1.0.3.img",
+  "base_sha256": "17b65929b241ce27dbcd147a406f2d7dfa14f017c863219e1ede090656b27df4",
   "cores": {
     "fbneo_libretro.so": {
       "bytes": 83514112,
@@ -19,26 +19,26 @@
   },
   "startup": "S99userservices -> /userdata/system/custom.sh -> custom-cores/load.py; bind mounts; no save-overlay",
   "mame2003_plus_alias": "mame078plus_libretro.so when present",
-  "default_settings": "Same clean public defaults as normal v1.0.2; no saved personal network",
+  "default_settings": "Same clean public defaults as standard v1.0.3; telemetry disabled; no saved personal network",
   "games_included": false,
   "additional_personal_bios_included": false,
   "save_overlay_required": false,
   "image_bytes_changed_for_publication": false,
   "validation": {
-    "source_hash_during_copy": true,
-    "core_identity_matches_user_provided_files": true,
-    "all_existing_settings_entries_preserved": 86,
-    "payload_readback": true,
-    "unchanged_bytes_compared": 5985316864,
-    "core_execution_tests_repeated": false,
-    "new_img_reflash_repeated": false
+    "unmodified_tar_members_preserved": true,
+    "crc_cores_unchanged": true,
+    "runtime_files_readback": true,
+    "boot_mali_wifi_rotation_chain_unchanged": true,
+    "unchanged_bytes_compared": 5952360448,
+    "original_images_unchanged": true
   },
   "source_provenance": "CRC-override core materials from dsno, supplied by the user; exact corresponding source/patch versions were not supplied. Upstream source links remain references.",
   "loader_source_sha256": "ca8f581717eba6d8f26c2291e336f31ff43af17ff483ccc3f89aa408296608e3",
-  "custom_hook_sha256": "d155439a552ab52b6412925f25af3bfec631f551ff233940b7e277349372032a",
+  "custom_hook_sha256": "9197a967b9a4d8d1df1c57667c96934b6bca008460108c69026618d9e664ec90",
   "core_material_credit": {
     "name": "dsno",
     "url": "https://dsno.tistory.com/m/",
     "identified_by": "user"
-  }
+  },
+  "packaging_source_image": "action-pi-knulli-v1.0.2-crc무시코어적용.img"
 }

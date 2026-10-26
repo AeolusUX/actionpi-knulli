@@ -1,0 +1,6 @@
+#!/bin/sh
+/usr/bin/knulli-brightness "$@" || exit $?
+case "$1" in
+    +|-) /userdata/system/brightness-osd/notify.sh ;;
+esac
+exit 0

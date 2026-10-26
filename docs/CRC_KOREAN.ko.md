@@ -1,21 +1,21 @@
-# 한국 사용자용 CRC 무시 코어 적용판 — v1.0.2
+# 한국 사용자용 CRC 무시 코어 적용판 — v1.0.3
 
 CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다.
 
 일부 한글 패치 아케이드 게임에 필요한 코어를 사용하는 분을 위한 별도 이미지입니다.
-일반 배포판과 같은 클린 v1.0.2에 제공된 FBNeo·MAME2003 Plus 코어와 재부팅 자동 적용만 추가했습니다.
+일반 배포판과 같은 클린 v1.0.3에 제공된 FBNeo·MAME2003 Plus 코어와 재부팅 자동 적용만 추가했습니다.
 
 | 용도 | 다운로드 |
 | --- | --- |
-| 기본 배포판 | [일반판 v1.0.2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2) |
-| 한글 패치 아케이드용 CRC 무시 코어 필요 | [CRC 적용판 v1.0.2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2-crc-ko) |
+| 기본 배포판 | [일반판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3) |
+| 한글 패치 아케이드용 CRC 무시 코어 필요 | [CRC 적용판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3-crc-ko) |
 
 ## 적용 내용
 
 - FBNeo와 MAME2003 Plus를 제공받은 CRC 무시 코어로 교체합니다. 게임 실행 시 해당 코어를 선택해 주세요.
 - SHARE 준비 후 S99 사용자 시작 훅이 코어를 매번 자동 연결합니다. 재부팅 후에도 적용되며 save-overlay는 필요하지 않습니다.
 - KNULLI에서 쓰는 MAME2003 Plus 이름인 mame078plus에도 연결합니다.
-- Wi-Fi·Mali·PPSSPP Vulkan·Ozone·화면 방향·PortMaster와 메뉴 시작 guard 수정은 일반판 v1.0.2와 같습니다.
+- Wi-Fi·Mali·PPSSPP Vulkan·Ozone·화면 방향·PortMaster와 메뉴 시작 guard 수정은 일반판 v1.0.3와 같습니다.
 - 시스템 기본 언어 등 초기 설정은 일반판과 같습니다. 게임 ROM은 포함하지 않습니다.
 
 사용자가 사용해 온 코어와 실기 재부팅 후 확인한 자동 연결 방식을 그대로 사용합니다.
@@ -30,7 +30,7 @@ CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용
 4. 첫 부팅은 부팅 이미지 뒤 검정화면이 보여도 약 5분 기다려 주세요. 자동 확장·설정 설치로 한두 번 재부팅한 뒤 메뉴가 표시됩니다.
 
 압축 해제 IMG: 6,069,178,368바이트.
-SHA256: `f67382eec2ac39ac4f5a2d59fcb93d008535d8e1f77e88a20cf87abedc186c7f`.
+SHA256: `9b02a097dce0ee517112138bcae169bf44bbd50d84cba39fb10520f0f8b16a2f`.
 일반판의 체크섬과 다르므로 이 릴리스의 체크섬을 사용해 주세요.
 
 ## 코어와 자동 적용 소스
@@ -46,3 +46,11 @@ SHA256: `f67382eec2ac39ac4f5a2d59fcb93d008535d8e1f77e88a20cf87abedc186c7f`.
 [FBNeo 상위 프로젝트](https://github.com/finalburnneo/FBNeo)와 [MAME2003 Plus 상위 프로젝트](https://github.com/libretro/mame2003-plus-libretro)는 출처 참고 링크이며 이 바이너리의 정확한 소스 버전을 보증하는 링크는 아닙니다.
 코어에는 각 구성요소의 조건이 적용되며 저장소의 일반 MIT 라이선스를 펌웨어 전체에 적용하지 않습니다.
 [전체 소스·라이선스 기록](SOURCES_AND_LICENSES.ko.md).
+
+## v1.0.3 공통 개선
+
+- **진동 보정:** 모터 PWM을 25kHz로 바꾸고 작은 진동 신호의 세기를 보정했습니다. 시험 기기의 Flycast VL·Xtreme 크레이지택시 1·2에서 작은 진동이 느껴지고 거슬리던 고주파음이 줄어드는 것을 확인했습니다.
+- **밝기 단축키:** SELECT를 먼저 누른 채 볼륨 +/−로 조절합니다. 길게 누름을 지원하며 일반 볼륨과 HOME 동작은 유지합니다.
+- **밝기 게이지:** 메뉴와 게임 위에 해 아이콘·밝기 %·막대를 표시하고 조작 후 약 2.2초 뒤 숨깁니다. 비어 있는 출력 레이어를 사용하며 표시할 때만 실행하므로 대기 중 상주 서비스가 추가되지 않습니다.
+- **백그라운드 정리:** 기본 통계 전송을 끄고, 예전 부팅 로그 반복 복사 작업이 남은 기기에서는 이를 중지합니다. 옛 진단 maps 파일은 이미지에서 제외했습니다.
+- Mali 메뉴·PPSSPP Vulkan·Wi-Fi·회전·Ozone·PortMaster와 CRC판 코어 자동 적용을 유지했습니다. CPU 배치는 바꾸지 않았습니다.

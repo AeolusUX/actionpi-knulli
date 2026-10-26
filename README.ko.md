@@ -6,7 +6,7 @@
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
-**Action Pi KNULLI v1.0.2**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
+**Action Pi KNULLI v1.0.3**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
 압축 이미지를 지원하지 않는 프로그램에서는 먼저 압축을 풀고 SD 전체에 굽습니다.
 선택한 SD의 내용은 지워집니다.
 
@@ -14,8 +14,8 @@
 
 | 종류 | 선택 |
 | --- | --- |
-| 기본 배포판 | [일반판 v1.0.2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2) |
-| CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
+| 기본 배포판 | [일반판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3) |
+| CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
 
 CRC 적용판은 FBNeo·MAME2003 Plus와 재부팅 자동 적용을 추가한 변형입니다. 두 판의 체크섬이 다릅니다. CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다.
 
@@ -78,10 +78,20 @@ AIC·RTL8723DS Wi-Fi 지원과 재부팅 후 연결, 에뮬레이터·도구·�
 
 집 실기에 SSH로 최종 수정을 적용한 뒤 Mali 메뉴의 정상 시작과 재부팅 후 Wi-Fi 재연결을 확인했습니다. 일반 코어·단독 RetroArch 실행 검사 후, 2026년 10월 25일 사용자가 최종 수정 전체의 정상 작동을 확인했습니다. 새로 패키징한 공개 IMG를 게시 후 다시 내려받아 굽는 시험은 별도로 반복하지 않았으며, 모든 코어·게임·포트·보드 변형을 전부 재시험한 것은 아닙니다. [전체 수정 내역](release/NOTES.md).
 
+## v1.0.3 변경 사항
+
+- **진동 보정:** 모터 PWM을 25kHz로 바꾸고 작은 진동 신호의 세기를 보정했습니다. 시험 기기의 Flycast VL·Xtreme 크레이지택시 1·2에서 작은 진동이 느껴지고 거슬리던 고주파음이 줄어드는 것을 확인했습니다.
+- **밝기 단축키:** SELECT를 먼저 누른 채 볼륨 +/−로 조절합니다. 길게 누름을 지원하며 일반 볼륨과 HOME 동작은 유지합니다.
+- **밝기 게이지:** 메뉴와 게임 위에 해 아이콘·밝기 %·막대를 표시하고 조작 후 약 2.2초 뒤 숨깁니다. 비어 있는 출력 레이어를 사용하며 표시할 때만 실행하므로 대기 중 상주 서비스가 추가되지 않습니다.
+- **백그라운드 정리:** 기본 통계 전송을 끄고, 예전 부팅 로그 반복 복사 작업이 남은 기기에서는 이를 중지합니다. 옛 진단 maps 파일은 이미지에서 제외했습니다.
+- Mali 메뉴·PPSSPP Vulkan·Wi-Fi·회전·Ozone·PortMaster와 CRC판 코어 자동 적용을 유지했습니다. CPU 배치는 바꾸지 않았습니다.
+
+실기에서 진동 세기·소음과 재부팅 후 유지, 재부팅 후 통계 전송·반복 로그 중지, 밝기 단축키의 방향·길게 누름·일반 볼륨 유지를 확인했습니다. 사용자가 ES와 PPSSPP의 밝기 게이지 표시·자동 숨김·게임 종료·메뉴 복귀를 확인했고, 표시 뒤 작업도 종료되는 것을 원격으로 확인했습니다. 공통 화면 경로를 사용하지만 모든 에뮬레이터·생산분을 각각 재시험한 것은 아닙니다. 이후 사용자가 기기를 재부팅하고 밝기 단축키·게이지를 포함한 수정 사항 전체가 정상 작동한다고 확인했습니다. 새로 패키징한 설치 IMG를 별도 SD에 다시 굽는 시험도 반복하지 않았습니다.
+
 ## Downloads / 다운로드
 
-### [일반판 v1.0.2 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2)
+### [일반판 v1.0.3 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3)
 
-### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2-crc-ko)
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3-crc-ko)
 
 CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).

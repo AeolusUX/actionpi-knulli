@@ -61,3 +61,7 @@ retroarch_gles3_context.c는 이번 적용을 위해 작성한 MIT 보조 소스
 FBNeo·MAME2003 Plus는 사용자가 제공한 수정 바이너리이며 IMG를 별도 릴리스로 제공합니다. 정확히 대응하는 소스 버전·CRC 수정 패치는 제공받지 못했습니다. 상위 [FBNeo](https://github.com/finalburnneo/FBNeo)·[MAME2003 Plus](https://github.com/libretro/mame2003-plus-libretro) 링크는 참고 자료입니다. 자동 적용 소스와 해시는 config/crc-ko/ 및 release/crc-ko/에 공개합니다. [한국어 안내](CRC_KOREAN.ko.md). 각 코어의 조건은 일반 MIT 적용 범위와 별개입니다.
 
 CRC 무시 코어 자료 출처: **[dsno님 블로그](https://dsno.tistory.com/m/)**. 사용자가 이 자료를 사용했다고 확인했습니다.
+
+## v1.0.3 자체 보조 코드
+
+config/userdata의 진동·로그 정리·밝기 OSD와 tools/package-v1.0.3.py는 이 프로젝트의 자체 Python·shell 보조 코드이며 기존 원본 glue의 MIT 범위에 포함합니다. 상속한 펌웨어·커널·CRC 코어의 라이선스나 불완전한 대응 소스 상태는 바뀌지 않습니다.

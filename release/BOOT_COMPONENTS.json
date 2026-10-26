@@ -74,5 +74,29 @@
   "PPSSPP_VULKAN/mali_autostart.py": {
     "bytes": 8938,
     "sha256": "e7fa15e1801ac7a1c86d139818b8c5759c195d4278bc5e8840d2b15e21b2c44b"
+  },
+  "userdata/system/rumble-fix/apply.py": {
+    "bytes": 2659,
+    "sha256": "6b51a1fdfa77901223c796ca152c806f45b2c8b4a14105f953440a57b122dc0c"
+  },
+  "userdata/system/background-quiet/quiet_start.py": {
+    "bytes": 2739,
+    "sha256": "1a8c80edf71d4a42ee664f89d08ab125466c8b97b012350b7a834ebdad8e9f9e"
+  },
+  "userdata/system/brightness-osd/overlay.py": {
+    "bytes": 9264,
+    "sha256": "1ca43da98e32b6bf3f8cb29d923f277bb58d526274d41db1acb408137b8c4774"
+  },
+  "userdata/system/brightness-osd/notify.sh": {
+    "bytes": 332,
+    "sha256": "f449279affd667544ce50e59123881b50a91654afff2df000e878fc42c7ba699"
+  },
+  "userdata/system/brightness-osd/brightness-button": {
+    "bytes": 234,
+    "sha256": "6e7258f032d033176f5a239861d3f8e6411a1795a2e2c5dcfbdd38f9160a7d52"
+  },
+  "userdata/system/brightness-osd/bin/knulli-brightness": {
+    "bytes": 132,
+    "sha256": "2920e0eb0699837ed11638a59cf042eecfb28294a843e4ade49fa7fed205add3"
   }
 }

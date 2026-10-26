@@ -15,8 +15,8 @@ Choose your edition:
 
 | Edition | Release download |
 | --- | --- |
-| Standard / 일반판 | [Action Pi KNULLI v1.0.2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2) |
-| 한국 사용자용 CRC 무시 코어 적용판 | [CRC 적용판 v1.0.2 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2-crc-ko) |
+| Standard / 일반판 | [Action Pi KNULLI v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3) |
+| 한국 사용자용 CRC 무시 코어 적용판 | [CRC 적용판 v1.0.3 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3-crc-ko) |
 
 Use the `.img.xz` asset and matching SHA256 file. Extract the image if your flashing
 application does not accept XZ, then write the image to the **whole SD card**.
@@ -117,10 +117,20 @@ Wi-Fi reboot persistence, AIC/RTL8723DS support, emulator/tool/game rotation and
 
 The final runtime changes reached a healthy Mali menu after the home-device SSH update. Wi-Fi reconnected, and ordinary-core/standalone RetroArch checks completed. The owner then confirmed all final changes working on 2026-10-25. This newly packaged public IMG was not independently downloaded and reflashed; not every core, game, port or board variant was retested. [Release notes](release/NOTES.md).
 
+## v1.0.3 changes
+
+- **Rumble:** use a 25 kHz motor PWM carrier and compensate low-strength effects. Crazy Taxi 1/2 with Flycast VL/Xtreme now provides noticeable small rumble with reduced high-pitched motor-related noise on the tested device.
+- **Brightness shortcut:** hold SELECT, then use Volume +/−. Normal volume and HOME behavior are retained; held adjustment works.
+- **Brightness overlay:** show a sun icon, percentage and bar above the menu or game, then hide it about 2.2 seconds after adjustment. It uses an unused display plane and runs only while visible; no idle overlay service is added.
+- **Background cleanup:** disable KNULLI usage-statistics reporting by default and stop the obsolete repeating boot-log copy on devices carrying it. Omit old diagnostic maps from the image.
+- Retain Mali menu/PPSSPP Vulkan, Wi-Fi, rotations, Ozone, PortMaster and CRC-edition core loading. CPU affinity is unchanged.
+
+On-device tests confirmed rumble strength/noise and persistence after reboot, disabled statistics/repeating logging after reboot, and the brightness shortcut's direction, hold and normal-volume behavior. The owner confirmed the brightness overlay in ES and PPSSPP, automatic hiding, and game exit/menu return; remote inspection confirmed the overlay worker exits. The overlay uses a shared display path, but every emulator and hardware batch was not individually retested. The owner subsequently rebooted the device and confirmed all applied changes still work, including the brightness shortcut and overlay. These newly packaged installation images have not been independently reflashed.
+
 ## Downloads / 다운로드
 
-### [일반판 v1.0.2 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2)
+### [일반판 v1.0.3 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3)
 
-### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.2-crc-ko)
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.3](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.3-crc-ko)
 
 CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).

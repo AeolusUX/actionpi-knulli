@@ -94,3 +94,9 @@ PortMaster 훅을 포함하며, 기본 루트 파일시스템을 유지합니다
 ## v1.0.2 제작
 
 v1.0.1에 Ozone 런처·GLES3 보조 라이브러리·ACTIONPI_FIXES manifest를 반영하고, 메뉴 guard의 BOOT 상수와 MALI_MENU_TRIAL manifest를 normal BOOT에 맞췄습니다. 기존 IMG와 개인 데이터를 바꾸지 않는 사본에서 작업했습니다. 올바른 normal BOOT의 검사 통과, armed BOOT의 거부와 옛 검사값 불일치 재현을 실제 guard 함수에 파일 입출력 대역을 연결해 확인했습니다. 최종 파일 재읽기 및 변경 영역 외 바이트 비교·SHA256을 수행했습니다. 기존 클린 기본값 자료는 변경하지 않았습니다. 새 보조 파일은 tools/build-runtime.sh에 포함됩니다. XZ 무결성·압축/해제 해시는 한 번의 스트리밍 검사로 기록합니다.
+
+## v1.0.3 패키징
+
+config/userdata/system/에 진동·일회성 정리·밝기 OSD 소스를 공개했습니다. config/defaults/multimedia_keys.conf와 양 판의 custom.sh를 초기 설정 압축파일에 병합하고 telemetry=0을 SHARE·부팅 설정에 함께 넣습니다. STABLE_V119는 내부 설치 경로로 유지하고 payload의 설정 압축파일 해시를 갱신합니다. 기존 Wi-Fi·Mali·부팅 사본·회전 코드는 바꾸지 않습니다.
+
+Python 3와 mtools(mcopy), Linux 또는 mtools가 설치된 Ubuntu WSL이 필요합니다. 공개 v1.0.2 일반·CRC 이미지를 압축 해제해 이름을 유지한 뒤 ACTIONPI_IMAGE_DIR 환경 변수에 그 폴더를 지정하고 python3 tools/package-v1.0.3.py를 실행합니다. 두 입력 이미지의 고정 SHA256을 검사하고 새 파일만 생성합니다. 원본 tar 구성·코어 해시와 변경 영역 밖의 전체 바이트를 검사합니다. gzip 메타데이터 시각 때문에 재패키징 결과의 최종 SHA가 항상 동일하다고 주장하지 않습니다. XZ 제작 후 tools/verify-release.py로 압축 무결성과 해제 IMG 해시를 한 번의 스트리밍 읽기로 확인합니다.

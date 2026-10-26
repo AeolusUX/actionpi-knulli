@@ -1,0 +1,18 @@
+{
+  "version": "v1.0.3",
+  "date": "2026-10-26",
+  "confirmed_runtime": [
+    "rumble strength/noise and reboot",
+    "statistics/log loop disabled after reboot",
+    "brightness shortcut direction/hold/normal volume",
+    "ES and PPSSPP brightness OSD and game return",
+    "OSD worker exits when idle",
+    "owner confirmed all runtime changes after reboot, including brightness shortcut and OSD"
+  ],
+  "not_individually_retested": [
+    "every emulator and board variant",
+    "freshly flashed v1.0.3 installation images"
+  ],
+  "cpu_affinity_changed": false,
+  "no_private_network_data_copied": true
+}
