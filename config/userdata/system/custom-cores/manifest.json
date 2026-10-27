@@ -1,0 +1,10 @@
+{
+  "bennugd_libretro.so": {
+    "bytes": 3103560,
+    "sha256": "152aeaade426a9c8ccf11d0b34ee3a64278768f1f1fa91a635d7c20efa5cc34b"
+  },
+  "load.py": {
+    "bytes": 1245,
+    "sha256": "d52e6e1f2fe69bc3248bb9f04d58914ef2adafdca8532825e9b6978cb787adc9"
+  }
+}

@@ -1,4 +1,4 @@
-# Action Pi KNULLI v1.0.4
+# Action Pi KNULLI v1.0.5
 
 ## English
 
@@ -6,10 +6,9 @@ Unofficial KNULLI adaptation for the Helegaly Action Pi. Mali runs the menu and 
 
 ### What changed
 
-- **PPSSPP 1.20.4:** update from 1.19.3 using the official source release and an ARM64 build. PSP games and Emulators → PPSSPP both open the updated Vulkan application.
-- **Vulkan/display compatibility:** preserve the existing Mali driver, rotation, output opacity correction and menu return. Add three real Vulkan forwarding exports required by the newer availability check; synchronize both persistent launcher copies.
-- **Mixed Korean/English text:** improve fallback font selection for the installed Noto and Nanum families, resolving missing square glyphs in mixed strings.
-- Previous Wi-Fi, emulator rotation, Ozone, PortMaster, rumble and brightness shortcut/overlay improvements are retained. No temporary test controllers, captures or personal settings are included.
+- **ZRAM service repaired:** the Services menu now starts/stops runtime-tested modules for this kernel, with the setting retained after reboot. ZRAM is **off by default**. It starts after the menu settles, uses lzo-rle, exposes logical swap of half the detected RAM and caps compressed RAM usage at a quarter of RAM (up to 512 MiB). RAM is allocated on demand. This helps memory-pressure situations; it does not guarantee higher FPS.
+- **BennuGD core:** install the supplied ARM64 BennuGD libretro core and reconnect it automatically on each boot without save-overlay. The standard edition keeps its existing FBNeo/MAME cores.
+- Existing PPSSPP 1.20.4/Vulkan, Mali menu, Wi-Fi, rotation, Ozone, PortMaster, rumble and brightness improvements are retained.
 
 ### Installation
 
@@ -17,23 +16,23 @@ Download this release's .img.xz and SHA256SUMS, verify the checksum and flash th
 
 **On first installation, a black screen after the boot image is normal. Allow about 5 minutes: SHARE expansion and settings installation may restart the device once or twice before the menu appears. Keep power on until setup finishes.**
 
-Brightness: **hold SELECT + Volume +/−**. Exit PPSSPP: **hold SELECT+START for about one second**. Emulator exit with the top HOME key works in RetroArch and remains disabled in PPSSPP. No game ROMs are included.
+Brightness: **hold SELECT + Volume +/−**. Exit PPSSPP: **hold SELECT+START for about one second**. Emulator exit with the top HOME key works in RetroArch and remains disabled in PPSSPP. No game ROMs are included. ZRAM recovery: create an empty `ACTIONPI_ZRAM/DISABLED` file on BOOT to skip its startup. ZRAM recovery: create an empty `ACTIONPI_ZRAM/DISABLED` file on BOOT to skip its startup.
 
 ### Verification and technical documentation
 
-The owner confirmed PPSSPP 1.20.4 still launches correctly after reboot. On-device captures confirmed correct menu orientation and mixed Korean/English text; normal exit and return to ES without reboot were verified. Earlier title-screen rendering was checked remotely. Every game, performance characteristic and hardware batch was not retested. The newly packaged v1.0.4 SD installation images have not been independently reflashed.
+ZRAM block compression/readback, actual 32 MiB swap-out/in, service start/stop and reboot startup were verified on the maintainer device. BennuGD file identity and active core mapping were verified; gameplay and reboot testing of that supplied core were not repeated. Long memory-pressure stress, suspend/resume, all hardware batches and a fresh SD flash of these newly packaged v1.0.5 images have not been tested.
 
-- [History](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/HISTORY.md)
-- [Architecture](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/ARCHITECTURE.md)
-- [Build and packaging](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/BUILD.md)
-- [Published files](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/PUBLIC_FILES.md)
-- [Sources and licenses](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/SOURCES_AND_LICENSES.md)
-- [Installation](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/RELEASE.md)
-- [Verification scope](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/TESTING.md)
+- [History](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/HISTORY.md)
+- [Architecture](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/ARCHITECTURE.md)
+- [Build and packaging](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/BUILD.md)
+- [Published files](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/PUBLIC_FILES.md)
+- [Sources and licenses](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/SOURCES_AND_LICENSES.md)
+- [Installation](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/RELEASE.md)
+- [Verification scope](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/TESTING.md)
 
 Board integration is based on [upstream KNULLI's Action Pi board configuration](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi). This is an adaptation of an inherited image, not a complete from-source firmware build.
 
-Raw IMG: 6,069,178,368 bytes. SHA256: 3b7595a3d131cee45473e8c448279cc530acfe2412ab148a13653d50d256c916.
+Raw IMG: 6,069,178,368 bytes. SHA256: 2b0120fe41d11e78ecca1b3c2e0fbb02b86f55e14240ec5ac15e109947751bfe.
 
 ---
 
@@ -43,10 +42,9 @@ Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. 같은 부팅�
 
 ### 수정 내역
 
-- **PPSSPP 1.20.4 업데이트:** 공식 소스로 ARM64 빌드해 1.19.3에서 올렸습니다. PSP 게임과 Emulators → PPSSPP 단독 실행 모두 새 Vulkan 버전으로 연결됩니다.
-- **Vulkan·화면 호환 보완:** 기존 Mali 드라이버·회전·출력 투명도 보정·메뉴 복귀는 유지하고, 새 버전의 초기 검사에 필요한 Vulkan 함수 전달 3개를 추가했습니다. 부팅용 런처 두 사본도 동기화했습니다.
-- **한영 혼합 글꼴 수정:** 설치된 Noto·나눔 글꼴을 올바르게 선택하도록 보완해 혼합 문장의 네모 글자를 해결했습니다.
-- 기존 Wi-Fi·에뮬레이터 회전·Ozone·PortMaster·진동·밝기 단축키와 게이지 보정은 유지합니다. 임시 시험 제어 프로그램·캡처·개인 설정은 포함하지 않습니다.
+- **ZRAM 서비스 수정:** 서비스 메뉴에서 현재 커널에 맞춘 모듈을 켜고 끌 수 있으며 재부팅 후에도 선택이 유지됩니다. **기본값은 꺼짐**입니다. 메뉴 준비 후 lzo-rle로 시작하며 논리 스왑은 감지한 RAM의 절반, 실제 압축 RAM 사용 한도는 RAM의 1/4(최대 512MiB)입니다. 필요한 만큼만 RAM을 사용합니다. 메모리 부족 상황을 완화하는 기능이며 FPS 향상을 보장하지는 않습니다.
+- **BennuGD 코어 적용:** 제공받은 ARM64 BennuGD libretro 코어를 넣고 재부팅 때 자동 연결되도록 했습니다. save-overlay는 필요 없습니다. 일반판의 FBNeo·MAME 코어는 기존 상태를 유지합니다.
+- 기존 PPSSPP 1.20.4·Vulkan, Mali 메뉴, Wi-Fi, 회전, Ozone, PortMaster, 진동·밝기 보완은 유지합니다.
 
 ### 설치
 
@@ -54,20 +52,20 @@ Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. 같은 부팅�
 
 **첫 설치는 부팅 이미지 뒤 검정화면이 보여도 정상입니다. 약 5분 기다리면 SHARE 자동 확장·설정 설치 중 한두 번 재부팅한 뒤 메뉴가 표시됩니다. 전원을 유지한 채 완료될 때까지 기다려 주세요.**
 
-밝기는 **SELECT를 누른 채 볼륨 +/−**, PPSSPP 종료는 **SELECT+START 약 1초**입니다. 상단의 HOME키를 이용한 에뮬레이터 종료는 RetroArch에서 작동하며 PPSSPP에서는 비활성화되어 있습니다. 게임 ROM은 포함하지 않습니다.
+밝기는 **SELECT를 누른 채 볼륨 +/−**, PPSSPP 종료는 **SELECT+START 약 1초**입니다. 상단의 HOME키를 이용한 에뮬레이터 종료는 RetroArch에서 작동하며 PPSSPP에서는 비활성화되어 있습니다. 게임 ROM은 포함하지 않습니다. ZRAM 복구는 BOOT의 `ACTIONPI_ZRAM` 안에 이름이 `DISABLED`인 빈 파일을 만들면 됩니다. ZRAM 복구는 BOOT의 `ACTIONPI_ZRAM` 안에 이름이 `DISABLED`인 빈 파일을 만들면 됩니다.
 
 ### 검증 범위와 기술 문서
 
-사용자가 재부팅 후에도 PPSSPP 1.20.4가 정상 실행되는 것을 확인했습니다. 실기 캡처에서 메뉴 방향·한영 혼합 글꼴을 확인했고, 정상 종료와 재부팅 없는 ES 복귀를 확인했습니다. 앞선 시험에서 게임 타이틀 출력도 원격으로 확인했습니다. 모든 게임의 성능·동작과 모든 생산분을 다시 시험한 것은 아닙니다. 새로 패키징한 v1.0.4 설치 IMG를 별도 SD에 다시 굽는 시험은 반복하지 않았습니다.
+관리자 실기에서 ZRAM 블록 압축·되읽기, 실제 32MiB 스왑 저장·복원, 서비스 켜기·끄기와 재부팅 자동 시작을 확인했습니다. BennuGD는 파일 해시·실제 코어 연결을 확인했으며 해당 제공 코어의 게임 실행·재부팅 시험은 반복하지 않았습니다. 장시간 메모리 압박·절전 복귀·모든 생산분 및 새 v1.0.5 IMG를 SD에 다시 굽는 시험은 하지 않았습니다.
 
-- [작업 이력](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/HISTORY.ko.md)
-- [작동 구조](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/ARCHITECTURE.ko.md)
-- [빌드·이미지 제작](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/BUILD.ko.md)
-- [공개 파일](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/PUBLIC_FILES.ko.md)
-- [출처·라이선스](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/SOURCES_AND_LICENSES.ko.md)
-- [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/RELEASE.ko.md)
-- [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.4/docs/TESTING.ko.md)
+- [작업 이력](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/HISTORY.ko.md)
+- [작동 구조](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/ARCHITECTURE.ko.md)
+- [빌드·이미지 제작](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/BUILD.ko.md)
+- [공개 파일](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/PUBLIC_FILES.ko.md)
+- [출처·라이선스](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/SOURCES_AND_LICENSES.ko.md)
+- [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/RELEASE.ko.md)
+- [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.5/docs/TESTING.ko.md)
 
 보드 구성은 상위 KNULLI의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)을 기반으로 했습니다. 기존 이미지를 수정한 배포판이며 모든 구성요소를 소스에서 완전히 재빌드한 펌웨어는 아닙니다.
 
-압축 해제 IMG: 6,069,178,368바이트. SHA256: 3b7595a3d131cee45473e8c448279cc530acfe2412ab148a13653d50d256c916.
+압축 해제 IMG: 6,069,178,368바이트. SHA256: 2b0120fe41d11e78ecca1b3c2e0fbb02b86f55e14240ec5ac15e109947751bfe.

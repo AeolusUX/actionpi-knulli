@@ -91,3 +91,7 @@ custom.sh는 일회성 로그 정리와 진동 보정을 실행하고 끝납니�
 ## PPSSPP 1.20.4
 
 앱·assets·전달 라이브러리는 /userdata/system/ppsspp-1.20.4에 설치됩니다. 두 /boot 런처 사본은 같은 앱을 실행하며 기존 Mali 세션·사용자 설정·종료 처리를 유지합니다. 원래 1.19.3 바이너리는 읽기 전용 시스템에 복구용으로 남지만 일반 실행에는 사용하지 않습니다.
+
+## v1.0.5
+
+S00bootcustom에서 BOOT의 zramswap wrapper 한 파일만 기존 서비스에 bind mount합니다. /var/run은 S04populate에서 나중에 생성되므로 이른 연결 로그는 BOOT에 둡니다. 기존 S99 사용자 서비스는 같은 설정값을 따르며 메뉴가 안정된 뒤 검증 모듈 5개를 올립니다. 시작 도중 중단된 기록이 있으면 다음 부팅에서 재시도를 차단하고 ACTIONPI_ZRAM/DISABLED로 복구할 수 있습니다. 기존 모듈과 modprobe 인덱스는 덮어쓰지 않습니다. BennuGD는 SHARE의 custom.sh/S99에서 연결하며 일반판은 BennuGD만, CRC판은 기존 아케이드 두 코어·MAME 별칭도 유지합니다.

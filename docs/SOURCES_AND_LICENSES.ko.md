@@ -69,3 +69,9 @@ config/userdata의 진동·로그 정리·밝기 OSD와 tools/package-v1.0.3.py�
 ## PPSSPP 1.20.4
 
 PPSSPP는 GPL-2.0-or-later이며 공식 v1.20.4 전체 소스와 그 안의 FFmpeg 소스를 릴리스에 동봉합니다. build/ppsspp-1.20.4/SOURCE.json에 원본 체크섬을 기록하고 글꼴 패치·빌드 스크립트·전달 라이브러리 소스를 공개합니다. LICENSES/ppsspp-1.20.4의 라이선스도 참고하세요. 기존 제조사 커널·바이너리 및 CRC 코어의 대응 소스 제한은 앞서 명시한 상태에서 바뀌지 않습니다.
+
+## v1.0.5
+
+재빌드한 ZRAM·zsmalloc·LZO 모듈은 고정 Orange Pi Linux 트리에서 왔습니다. 전체 원본 소스 압축파일과 실제 외부 모듈 소스·설정·패치·빌드 절차·Linux 고유 라이선스를 kernel/zram 및 LICENSES/zram에 공개합니다. 이번 재빌드 모듈의 소스와 아직 확인되지 않은 제조사 원래 커널 소스는 구분합니다. BennuGD는 config/bennugd/SOURCE.json에 해시를 기록한 제공 바이너리이며 정확한 소스 리비전·빌드 절차는 제공받지 못했습니다. 상위 링크를 정확한 대응 소스로 주장하지 않으며 프로젝트 MIT 연결 코드 라이선스로 이 코어를 재허가하지 않습니다. dsno님 출처는 별도 CRC판의 아케이드 코어에만 해당합니다.
+
+BennuGD 참고 프로젝트: [BennuGD_libretro](https://github.com/diekleinekuh/BennuGD_libretro). 이 링크는 제공 바이너리의 정확한 대응 소스를 확인했다는 의미가 아닙니다.

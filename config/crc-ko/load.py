@@ -7,7 +7,7 @@ def same(a,b):
  try:
   x=a.stat();y=b.stat();return (x.st_dev,x.st_ino)==(y.st_dev,y.st_ino)
  except OSError:return False
-pairs=[('fbneo_libretro.so','fbneo_libretro.so'),('mame2003_plus_libretro.so','mame2003_plus_libretro.so')]
+pairs=[('fbneo_libretro.so','fbneo_libretro.so'),('mame2003_plus_libretro.so','mame2003_plus_libretro.so'),('bennugd_libretro.so','bennugd_libretro.so')]
 # KNULLI/Batocera commonly names MAME 2003 Plus mame078plus.
 if (CORE/'mame078plus_libretro.so').is_file():pairs.append(('mame2003_plus_libretro.so','mame078plus_libretro.so'))
 if (ROOT/'DISABLE').exists():

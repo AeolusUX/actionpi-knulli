@@ -88,3 +88,7 @@ custom.sh runs one-shot background cleanup and rumble calibration, then exits; t
 ## PPSSPP 1.20.4
 
 Install the application, assets and forwarding libraries in /userdata/system/ppsspp-1.20.4. Both /boot session-runner copies reference the same app and retain existing Mali ownership, user configuration and exit handling. The old 1.19.3 executable remains in the read-only system for recovery but is not used by normal launches.
+
+## v1.0.5
+
+S00bootcustom bind-mounts only the zramswap service wrapper from BOOT; its log must be on BOOT because /var/run is created later at S04populate. S99user services still obey the existing setting. Early boot startup waits for a stable menu before loading the five checked modules. A durable pending marker blocks a repeated incomplete startup, and ACTIONPI_ZRAM/DISABLED is a recovery switch. No original module or modprobe index is overwritten. The BennuGD override uses SHARE custom.sh at S99; standard loads only BennuGD while CRC retains the two existing arcade overrides and the MAME alias.

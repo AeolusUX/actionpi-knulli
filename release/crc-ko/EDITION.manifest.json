@@ -1,12 +1,12 @@
 {
-  "version": "v1.0.4",
+  "version": "v1.0.5",
   "edition": "crc-ko",
-  "release_tag": "v1.0.4-crc-ko",
-  "image": "action-pi-knulli-v1.0.4-crc-ko.img",
+  "release_tag": "v1.0.5-crc-ko",
+  "image": "action-pi-knulli-v1.0.5-crc-ko.img",
   "bytes": 6069178368,
-  "sha256": "2d9733617773319a85a3492ee0db2b6832802fea03c0ba21ee37a1c69f0da605",
-  "base_image": "action-pi-knulli-v1.0.4.img",
-  "base_sha256": "3b7595a3d131cee45473e8c448279cc530acfe2412ab148a13653d50d256c916",
+  "sha256": "2335743b4178c753bd0998b7de1eb9ad6d3396c244b59a12b5ef6727a115fe4c",
+  "base_image": "action-pi-knulli-v1.0.5.img",
+  "base_sha256": "2b0120fe41d11e78ecca1b3c2e0fbb02b86f55e14240ec5ac15e109947751bfe",
   "cores": {
     "fbneo_libretro.so": {
       "bytes": 83514112,
@@ -19,19 +19,20 @@
   },
   "startup": "S99userservices -> /userdata/system/custom.sh -> custom-cores/load.py; bind mounts; no save-overlay",
   "mame2003_plus_alias": "mame078plus_libretro.so when present",
-  "default_settings": "Same clean public defaults as standard v1.0.4; telemetry disabled; no saved personal network",
+  "default_settings": "Same clean English defaults as standard v1.0.5; Wi-Fi and ZRAM off; no saved personal network",
   "games_included": false,
   "additional_personal_bios_included": false,
   "save_overlay_required": false,
   "image_bytes_changed_for_publication": true,
   "validation": {
-    "unmodified_tar_members_preserved": true,
-    "crc_cores_unchanged": true,
-    "runtime_files_readback": true,
-    "kernel_mali_wifi_and_other_emulator_files_unchanged": true,
-    "ppsspp_persistent_runner_copies_synchronized": true,
-    "unchanged_bytes_compared": 5933383680,
-    "original_images_unchanged": true
+    "unchanged_tar_members_preserved": true,
+    "crc_arcade_cores_preserved": true,
+    "kernel_mali_wifi_ppsspp_unchanged": true,
+    "private_configuration_copied": false,
+    "unchanged_bytes_compared": 5910765568,
+    "old_images_unchanged": true,
+    "zram_default_off": true,
+    "boot_and_userdata_payload_readback": true
   },
   "source_provenance": "CRC-override core materials from dsno, supplied by the user; exact corresponding source/patch versions were not supplied. Upstream source links remain references.",
   "loader_source_sha256": "ca8f581717eba6d8f26c2291e336f31ff43af17ff483ccc3f89aa408296608e3",
@@ -41,6 +42,12 @@
     "url": "https://dsno.tistory.com/m/",
     "identified_by": "user"
   },
-  "packaging_source_image": "action-pi-knulli-v1.0.3-crc-ko.img",
-  "ppsspp_version": "1.20.4"
+  "packaging_source_image": "action-pi-knulli-v1.0.4-crc-ko.img",
+  "ppsspp_version": "1.20.4",
+  "zram_default_enabled": false,
+  "bennugd": {
+    "bytes": 3103560,
+    "sha256": "152aeaade426a9c8ccf11d0b34ee3a64278768f1f1fa91a635d7c20efa5cc34b",
+    "provenance": "User-supplied binary; exact corresponding source/build not supplied"
+  }
 }

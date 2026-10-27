@@ -1,0 +1,25 @@
+{
+  "version": "v1.0.5",
+  "date": "2026-10-27",
+  "zram_verified": [
+    "8MiB block compression/readback",
+    "32MiB actual swap-out/in with byte comparison",
+    "service start/stop",
+    "corrected S00 binding after reboot",
+    "ES process/Wi-Fi SSH return and restored key settings"
+  ],
+  "bennugd_verified": [
+    "supplied ARM64 binary checksum",
+    "runtime bind mapping",
+    "persistent startup loader installed"
+  ],
+  "not_tested": [
+    "BennuGD gameplay and reboot test",
+    "fresh SD flash of final v1.0.5 images",
+    "long memory pressure and suspend/resume",
+    "every hardware batch"
+  ],
+  "zram_default_enabled": false,
+  "private_configuration_copied": false,
+  "crc_arcade_cores_unchanged": true
+}

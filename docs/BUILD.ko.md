@@ -108,3 +108,7 @@ CRC판은 설정 압축파일 교체 후 FAT에서 비었다고 표시된 옛 �
 build/ppsspp-1.20.4에 실제 빌드 절차·도구 체인·FFmpeg 빌드 스크립트·글꼴 패치를 공개했습니다. 같은 릴리스의 ppsspp-1.20.4.tar.xz는 빌드에 사용한 공식 전체 소스입니다. ARM GNU 13.3.1, CMake 3.31 및 기존 이미지에서 추출한 target-sdk 런타임과 대응 개발 헤더를 사용합니다. ACTIONPI_WORKDIR·ACTIONPI_BUILD_DIR·CMAKE_BIN으로 경로를 지정하고 build.sh, font-fix.sh 순서로 실행합니다. 전달 라이브러리는 src/v116_vulkan_output_rotation.c를 aarch64-none-linux-gnu-gcc -shared -fPIC -O2 -Wall -Wextra -Werror -ldl로 빌드해 rotation/libvulkan.so와 libvulkan.so.1에 같은 파일로 둡니다. 기존 SDL 회전 보조 라이브러리도 함께 둡니다. 자세한 파일 배치는 build/ppsspp-1.20.4/README.md를 참고하세요.
 
 ACTIONPI_IMAGE_DIR에 두 v1.0.3 IMG를, ACTIONPI_PPSSPP_BUNDLE에 빌드한 앱 묶음을 지정한 뒤 tools/package-v1.0.4.py를 실행합니다. 앱·assets·라이선스를 초기 설정 압축파일에 추가하고 /boot 런처 두 사본과 payload 해시를 갱신합니다. 기존 tar 항목·CRC 코어·그 밖의 이미지 영역 바이트가 보존되는지 검사합니다. XZ는 tools/verify-release.py로 한 번 해제하면서 무결성과 IMG 해시를 확인합니다.
+
+## v1.0.5
+
+kernel/zram에 실제 외부 모듈 소스·정규화/실기 추출 설정·소스 식별·빌드 스크립트·용량 API 패치를 공개했습니다. 일반판 릴리스에 SOURCE.json이 가리키는 고정 Orange Pi 전체 소스를 첨부하며 CRC판도 같은 소스를 사용합니다. 제조사 원본 커널의 정확한 대응 트리라는 주장은 아닙니다. tools/package-v1.0.5.py는 두 v1.0.4 IMG와 검증한 ZRAM .ko 묶음·제공 BennuGD 바이너리를 입력으로 사용합니다. 허용한 BOOT 파일과 코어/로더 항목만 추가하고 ZRAM 초기 꺼짐, 기존 tar 항목 및 수정 허용 영역 밖의 이미지 바이트 동일성을 확인합니다. 실기 개인 설정·백업·로그·접속 정보는 입력하지 않습니다.

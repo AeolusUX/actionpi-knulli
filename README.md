@@ -15,8 +15,8 @@ Choose your edition:
 
 | Edition | Release download |
 | --- | --- |
-| Standard / 일반판 | [Action Pi KNULLI v1.0.4](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.4) |
-| 한국 사용자용 CRC 무시 코어 적용판 | [CRC 적용판 v1.0.4 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.4-crc-ko) |
+| Standard / 일반판 | [Action Pi KNULLI v1.0.5](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.5) |
+| 한국 사용자용 CRC 무시 코어 적용판 | [CRC 적용판 v1.0.5 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.5-crc-ko) |
 
 Use the `.img.xz` asset and matching SHA256 file. Extract the image if your flashing
 application does not accept XZ, then write the image to the **whole SD card**.
@@ -117,15 +117,13 @@ Wi-Fi reboot persistence, AIC/RTL8723DS support, emulator/tool/game rotation and
 
 The final runtime changes reached a healthy Mali menu after the home-device SSH update. Wi-Fi reconnected, and ordinary-core/standalone RetroArch checks completed. The owner then confirmed all final changes working on 2026-10-25. This newly packaged public IMG was not independently downloaded and reflashed; not every core, game, port or board variant was retested. [Release notes](release/NOTES.md).
 
-## v1.0.4 changes
+## v1.0.5 changes
 
-- **PPSSPP 1.20.4:** update from 1.19.3 using the official source release and an ARM64 build. PSP games and Emulators → PPSSPP both open the updated Vulkan application.
-- **Vulkan/display compatibility:** preserve the existing Mali driver, rotation, output opacity correction and menu return. Add three real Vulkan forwarding exports required by the newer availability check; synchronize both persistent launcher copies.
-- **Mixed Korean/English text:** improve fallback font selection for the installed Noto and Nanum families, resolving missing square glyphs in mixed strings.
-- Previous Wi-Fi, emulator rotation, Ozone, PortMaster, rumble and brightness shortcut/overlay improvements are retained. No temporary test controllers, captures or personal settings are included.
+- **ZRAM service repaired:** the Services menu now starts/stops runtime-tested modules for this kernel, with the setting retained after reboot. ZRAM is **off by default**. It starts after the menu settles, uses lzo-rle, exposes logical swap of half the detected RAM and caps compressed RAM usage at a quarter of RAM (up to 512 MiB). RAM is allocated on demand. This helps memory-pressure situations; it does not guarantee higher FPS.
+- **BennuGD core:** install the supplied ARM64 BennuGD libretro core and reconnect it automatically on each boot without save-overlay. The standard edition keeps its existing FBNeo/MAME cores.
+- Existing PPSSPP 1.20.4/Vulkan, Mali menu, Wi-Fi, rotation, Ozone, PortMaster, rumble and brightness improvements are retained.
 
-The owner confirmed PPSSPP 1.20.4 still launches correctly after reboot. On-device captures confirmed correct menu orientation and mixed Korean/English text; normal exit and return to ES without reboot were verified. Earlier title-screen rendering was checked remotely. Every game, performance characteristic and hardware batch was not retested. The newly packaged v1.0.4 SD installation images have not been independently reflashed.
-
+ZRAM block compression/readback, actual 32 MiB swap-out/in, service start/stop and reboot startup were verified on the maintainer device. BennuGD file identity and active core mapping were verified; gameplay and reboot testing of that supplied core were not repeated. Long memory-pressure stress, suspend/resume, all hardware batches and a fresh SD flash of these newly packaged v1.0.5 images have not been tested.
 ## v1.0.3 changes
 
 - **Rumble:** use a 25 kHz motor PWM carrier and compensate low-strength effects. Crazy Taxi 1/2 with Flycast VL/Xtreme now provides noticeable small rumble with reduced high-pitched motor-related noise on the tested device.
@@ -138,8 +136,8 @@ On-device tests confirmed rumble strength/noise and persistence after reboot, di
 
 ## Downloads / 다운로드
 
-### [일반판 v1.0.4 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.4)
+### [일반판 v1.0.5 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.5)
 
-### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.4](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.4-crc-ko)
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.5](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.5-crc-ko)
 
 CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).

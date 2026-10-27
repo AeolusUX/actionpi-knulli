@@ -1,0 +1,18 @@
+{
+  "fbneo_libretro.so": {
+    "bytes": 83514112,
+    "sha256": "57890fff1a9e2828fd0f622e2b14c57db26c5559f1c2c48031f5183f9665bbce"
+  },
+  "mame2003_plus_libretro.so": {
+    "bytes": 41614672,
+    "sha256": "6ecb941bc2b523d532e9ff45db019dc92f7853d91f5d5380969b65d30cd061de"
+  },
+  "load.py": {
+    "bytes": 1407,
+    "sha256": "38658c5262c6734e01d4d3bbe2626ab1da02c33b5e06cfc82c4a430db1327278"
+  },
+  "bennugd_libretro.so": {
+    "bytes": 3103560,
+    "sha256": "152aeaade426a9c8ccf11d0b34ee3a64278768f1f1fa91a635d7c20efa5cc34b"
+  }
+}

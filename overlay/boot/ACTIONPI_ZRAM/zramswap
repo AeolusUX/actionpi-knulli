@@ -1,0 +1,3 @@
+#!/bin/sh
+# ACTIONPI_ZRAM_COMPAT_SERVICE
+exec /usr/bin/python3 /boot/ACTIONPI_ZRAM/service.py "$@"

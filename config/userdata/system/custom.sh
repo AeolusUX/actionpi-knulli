@@ -9,3 +9,8 @@ fi
 if [ "$1" = start ]; then
     python3 /userdata/system/rumble-fix/apply.py start || true
 fi
+
+# ACTIONPI_BENNUGD_CORE
+if [ "$1" = start ]; then
+    python3 /userdata/system/custom-cores/load.py || true
+fi

@@ -1,0 +1,22 @@
+{
+  "lzo-rle.ko": {
+    "bytes": 268072,
+    "sha256": "68f09a01f975d761c068fb9a234a8e73752c6ea6657f72f261dccf2e0f795b54"
+  },
+  "lzo.ko": {
+    "bytes": 267832,
+    "sha256": "13409c6b52b89626deea1a4f5610b7b27affa1ec8d01f8ba10015c316e1b0124"
+  },
+  "lzo_compress.ko": {
+    "bytes": 155248,
+    "sha256": "a269e17c92629787c4734ba02d93ddb3a9335463cf5aab35f6793f3e33cb4423"
+  },
+  "zram.ko": {
+    "bytes": 730232,
+    "sha256": "ff92779ddd4863b8dc8a148981a7e7ceb2233769573c077d42499fea7809374c"
+  },
+  "zsmalloc.ko": {
+    "bytes": 717056,
+    "sha256": "cad8dec9984ea9b3d1f843873c1dce57cd30bad921ffadc4ee3a98bd80f98b2d"
+  }
+}

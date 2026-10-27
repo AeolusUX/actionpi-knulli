@@ -68,3 +68,7 @@ config/userdata/system/rumble-fix, background-quiet, brightness-osd와 config/de
 ## v1.0.4
 
 build/ppsspp-1.20.4、LICENSES/ppsspp-1.20.4、tools/package-v1.0.4.py、갱신된 런처·Vulkan 전달 소스 및 release manifest를 공개합니다. 원격 실기의 개인 설정·스크린샷·진단 로그는 포함하지 않습니다.
+
+## v1.0.5
+
+kernel/zram·LICENSES/zram·overlay/boot/ACTIONPI_ZRAM·일반/CRC 코어 로더 소스·config/bennugd/SOURCE.json·패키징 스크립트·v1.0.5 명세를 추가했습니다. 바이너리는 IMG에, 전체 소스는 릴리스 자산에 포함하며 개인 백업은 공개하지 않습니다.

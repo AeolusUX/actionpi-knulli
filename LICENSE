@@ -8,6 +8,11 @@ Kernel-derived display cleanup/repair material, including src/display_repair.S,
 kernel/display-cleanup/ and the corresponding derived repair logic, remains
 under the applicable Linux GPL-2.0 terms. Original upstream notices take priority.
 
+kernel/zram/source/ contains Linux-derived ZRAM, zsmalloc and LZO code and retains
+its upstream kernel license notices; it is not relicensed under the MIT glue
+license. Source/build details and retained license texts are in kernel/zram/
+and LICENSES/zram/.
+
 third_party/mali-valhall/ retains its upstream license.txt and per-file notices,
 including GPL-2.0 WITH Linux-syscall-note declarations where present.
 

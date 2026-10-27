@@ -1,0 +1,20 @@
+--- a/drivers/block/zram/zram_drv.c
++++ b/drivers/block/zram/zram_drv.c
+@@ -1705,7 +1705,7 @@
+ 	disksize = zram->disksize;
+ 	zram->disksize = 0;
+ 
+-	set_capacity_and_notify(zram->disk, 0);
++	set_capacity(zram->disk, 0);
+ 	part_stat_set_all(zram->disk->part0, 0);
+ 
+ 	up_write(&zram->init_lock);
+@@ -1751,7 +1751,7 @@
+ 
+ 	zram->comp = comp;
+ 	zram->disksize = disksize;
+-	set_capacity_and_notify(zram->disk, zram->disksize >> SECTOR_SHIFT);
++	set_capacity(zram->disk, zram->disksize >> SECTOR_SHIFT);
+ 	up_write(&zram->init_lock);
+ 
+ 	return len;

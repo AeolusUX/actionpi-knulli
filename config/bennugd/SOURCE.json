@@ -1,0 +1,11 @@
+{
+  "filename": "bennugd_libretro.so",
+  "bytes": 3103560,
+  "sha256": "152aeaade426a9c8ccf11d0b34ee3a64278768f1f1fa91a635d7c20efa5cc34b",
+  "origin": "User-supplied ARM64 binary",
+  "reference_upstream": "https://github.com/diekleinekuh/BennuGD_libretro",
+  "exact_corresponding_source_or_build_recipe_supplied": false,
+  "upstream_link_is_proof_of_matching_source": false,
+  "credit_scope": "BennuGD upstream authors; no claim that dsno supplied this binary",
+  "validation": "Installed hash and bind mapping verified; supplied core gameplay not tested in this release task"
+}

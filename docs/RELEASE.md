@@ -20,7 +20,7 @@ the cleared free space efficiently.
    details when downloads are needed.
 
 Raw image SHA256:
-`3b7595a3d131cee45473e8c448279cc530acfe2412ab148a13653d50d256c916`.
+`2b0120fe41d11e78ecca1b3c2e0fbb02b86f55e14240ec5ac15e109947751bfe`.
 The public manifest and binary component hashes are in `release/`.
 
 The source tree is stored in Git; the large firmware belongs in Releases.
@@ -41,3 +41,7 @@ Hold SELECT, then Volume +/− to adjust brightness. A sun icon, percentage and 
 ## v1.0.4
 
 PPSSPP is now 1.20.4. First-installation waiting time, brightness shortcuts and SELECT+START exit behavior remain unchanged.
+
+## v1.0.5 ZRAM
+
+Toggle zramswap in Services; the default is off. Create an empty BOOT/ACTIONPI_ZRAM/DISABLED file for recovery. BennuGD reconnects at each boot.

@@ -1,0 +1,83 @@
+{
+  "version": "v1.0.5",
+  "edition": "standard",
+  "image": "action-pi-knulli-v1.0.5.img",
+  "bytes": 6069178368,
+  "sha256": "2b0120fe41d11e78ecca1b3c2e0fbb02b86f55e14240ec5ac15e109947751bfe",
+  "source_image": "action-pi-knulli-v1.0.4.img",
+  "source_sha256": "3b7595a3d131cee45473e8c448279cc530acfe2412ab148a13653d50d256c916",
+  "changed_files": {
+    "ACTIONPI_ZRAM/modules/lzo-rle.ko": "68f09a01f975d761c068fb9a234a8e73752c6ea6657f72f261dccf2e0f795b54",
+    "ACTIONPI_ZRAM/modules/lzo.ko": "13409c6b52b89626deea1a4f5610b7b27affa1ec8d01f8ba10015c316e1b0124",
+    "ACTIONPI_ZRAM/modules/lzo_compress.ko": "a269e17c92629787c4734ba02d93ddb3a9335463cf5aab35f6793f3e33cb4423",
+    "ACTIONPI_ZRAM/modules/zram.ko": "ff92779ddd4863b8dc8a148981a7e7ceb2233769573c077d42499fea7809374c",
+    "ACTIONPI_ZRAM/modules/zsmalloc.ko": "cad8dec9984ea9b3d1f843873c1dce57cd30bad921ffadc4ee3a98bd80f98b2d",
+    "ACTIONPI_ZRAM/MODULES.json": "2de9a2cf96a25384cdab0883067c1c68e76cd09e6a1774aaa3dda5d69254d502",
+    "ACTIONPI_ZRAM/service.py": "c41b7140360bd0356f897f1ee7715bd7f1356a76660784b326a90ae0bf54af29",
+    "ACTIONPI_ZRAM/bind.sh": "a7350362c07c1de53840eca392d4e7fc7adbd6b756f06d36c55f16092f92fa33",
+    "ACTIONPI_ZRAM/zramswap": "db49bbca1e7b6489120ac7b48c3d2fb14aec96d32ee4f2164fdf7b1c4d525fb4",
+    "ACTIONPI_ZRAM/RECOVERY.txt": "1d2295ab984b6a1b495b8bb49e395dc3d11a9692147de16d9c10c082464ddb37",
+    "ACTIONPI_ZRAM/licenses/COPYING": "fb5a425bd3b3cd6071a3a9aff9909a859e7c1158d54d32e07658398cd67eb6a0",
+    "ACTIONPI_ZRAM/licenses/GPL-2.0.txt": "f6b78c087c3ebdf0f3c13415070dd480a3f35d8fc76f3d02180a407c1c812f79",
+    "ACTIONPI_ZRAM/licenses/Linux-syscall-note.txt": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f",
+    "STABLE_V119/settings.tar.gz": "c18b049f21ec15d8ed3708b980375293df64874d6317179507215b4c2efb7bf6",
+    "STABLE_V119/payload.json": "22f80fd5f7eec0001d4d0291870ce79d38b9eb67e5f712411c57c72db5e49eb9",
+    "boot-custom.sh": "f303fd479fd7c41aaae2c158727095a44c5f8e7ae4d8ca63ce98f40c140a57f7"
+  },
+  "added_or_updated_userdata": {
+    "system/custom-cores/bennugd_libretro.so": "152aeaade426a9c8ccf11d0b34ee3a64278768f1f1fa91a635d7c20efa5cc34b",
+    "system/custom-cores/load.py": "d52e6e1f2fe69bc3248bb9f04d58914ef2adafdca8532825e9b6978cb787adc9",
+    "system/custom-cores/manifest.json": "81f4f436475bdb6d42fc17aa054f5d8eefc502dea439e78b5f1d3922fb829a65",
+    "system/custom.sh": "c5e29e9ea7023d86aaa8b2ebfe7255a4a448b81d9f61a788a5652c25ee32b598"
+  },
+  "defaults": {
+    "language": "en_US",
+    "wifi_enabled": false,
+    "saved_wifi_credentials": false,
+    "telemetry_enabled": false
+  },
+  "zram": {
+    "default_enabled": false,
+    "algorithm": "lzo-rle",
+    "disksize": "MemTotal/2",
+    "mem_limit": "min(MemTotal/4,512MiB)",
+    "modules": {
+      "lzo-rle.ko": {
+        "bytes": 268072,
+        "sha256": "68f09a01f975d761c068fb9a234a8e73752c6ea6657f72f261dccf2e0f795b54"
+      },
+      "lzo.ko": {
+        "bytes": 267832,
+        "sha256": "13409c6b52b89626deea1a4f5610b7b27affa1ec8d01f8ba10015c316e1b0124"
+      },
+      "lzo_compress.ko": {
+        "bytes": 155248,
+        "sha256": "a269e17c92629787c4734ba02d93ddb3a9335463cf5aab35f6793f3e33cb4423"
+      },
+      "zram.ko": {
+        "bytes": 730232,
+        "sha256": "ff92779ddd4863b8dc8a148981a7e7ceb2233769573c077d42499fea7809374c"
+      },
+      "zsmalloc.ko": {
+        "bytes": 717056,
+        "sha256": "cad8dec9984ea9b3d1f843873c1dce57cd30bad921ffadc4ee3a98bd80f98b2d"
+      }
+    }
+  },
+  "bennugd": {
+    "bytes": 3103560,
+    "sha256": "152aeaade426a9c8ccf11d0b34ee3a64278768f1f1fa91a635d7c20efa5cc34b",
+    "provenance": "User-supplied binary; exact corresponding source/build not supplied"
+  },
+  "checks": {
+    "unchanged_tar_members_preserved": true,
+    "crc_arcade_cores_preserved": false,
+    "kernel_mali_wifi_ppsspp_unchanged": true,
+    "private_configuration_copied": false,
+    "unchanged_bytes_compared": 5971091456,
+    "old_images_unchanged": true,
+    "zram_default_off": true,
+    "boot_and_userdata_payload_readback": true
+  },
+  "hardware_validation": "ZRAM compression/swap, service lifecycle and reboot integration verified on maintainer device. BennuGD mount verified; gameplay and new-image SD installation not retested."
+}

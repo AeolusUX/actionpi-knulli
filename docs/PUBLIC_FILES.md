@@ -67,3 +67,7 @@ Publish config/userdata/system/rumble-fix, background-quiet and brightness-osd, 
 ## v1.0.4
 
 Publish build/ppsspp-1.20.4, LICENSES/ppsspp-1.20.4, tools/package-v1.0.4.py, updated runners/Vulkan forwarding source and release manifests. Private device settings, screenshots and diagnostic logs are excluded.
+
+## v1.0.5
+
+Added kernel/zram, LICENSES/zram, overlay/boot/ACTIONPI_ZRAM, standard/CRC core loader sources, config/bennugd/SOURCE.json, packaging script and v1.0.5 manifests. Binaries are in the IMG and source archives are release assets; private backups are not public.

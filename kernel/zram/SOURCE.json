@@ -1,0 +1,13 @@
+{
+  "upstream": "https://github.com/orangepi-xunlong/linux-orangepi",
+  "commit": "5b956b750422abd5e9e9c5523540d2aaf41a7939",
+  "asset": "orangepi-5b956b750422abd5.tar.gz",
+  "bytes": 266572089,
+  "sha256": "c1dd14b4b23b5c59d1dfff8b9878b1837a309515d79e53a98f9378afba5f66c6",
+  "tree_preparation_patch": "001-fix-build.patch",
+  "configuration": "candidate.config",
+  "modules": "source/",
+  "compiler": "Arm GNU 13.3.Rel1 (GCC 13.3.1)",
+  "original_vendor_kernel_correspondence": "not established",
+  "image_kernel_sha256": "52eb2334f61bad08c82cd0d5a27f11f93596b686b06019bc6948c7ef6a03847d"
+}

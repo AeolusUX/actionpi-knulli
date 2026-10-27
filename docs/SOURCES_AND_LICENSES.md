@@ -68,3 +68,9 @@ The new userdata rumble, cleanup and brightness OSD helpers and packaging logic 
 ## PPSSPP 1.20.4
 
 PPSSPP is GPL-2.0-or-later. The release includes the exact official v1.20.4 full source archive, including bundled FFmpeg. build/ppsspp-1.20.4/SOURCE.json records its checksum; font patches, build scripts and forwarding-library source are published. See LICENSES/ppsspp-1.20.4. Previously documented corresponding-source limitations for inherited vendor kernel/binaries and modified CRC cores remain unchanged.
+
+## v1.0.5
+
+The rebuilt ZRAM/zsmalloc/LZO modules derive from the pinned Orange Pi Linux tree. Full source archive, actual external translation units, configurations, patches, build recipe and retained Linux notices are published in kernel/zram and LICENSES/zram. The source used for these rebuilt modules is documented separately from the still-unresolved original vendor kernel provenance. BennuGD is the user-supplied binary identified in config/bennugd/SOURCE.json. Its exact source revision/build recipe was not supplied; the upstream reference is not proof of corresponding source and the project MIT glue license does not relicense that core. dsno credit applies only to the separately packaged CRC arcade cores.
+
+BennuGD reference project: [BennuGD_libretro](https://github.com/diekleinekuh/BennuGD_libretro). This link is not evidence of the supplied binary’s exact corresponding source.
