@@ -3,6 +3,17 @@
 이 저장소는 Action Pi에서 KNULLI 메뉴와 PPSSPP Vulkan을 함께 사용하기 위해
 진행한 작업의 소스와 기록입니다. KNULLI 공식 배포판은 아닙니다.
 
+
+## v1.0.6 변경 사항
+
+- **Flycast Vulkan 적용:** 일반·VL·Xtreme을 Vulkan으로 실행하며 게임·RetroArch 메뉴 회전 보정, HOME 종료와 재부팅 없는 ES 메뉴 복귀를 연결했습니다.
+- **일반 Flycast 2.7 업데이트:** 일반 코어만 공식 v2.7 소스로 업데이트했습니다. VL·Xtreme의 소스 버전은 유지했습니다.
+- **일반 코어 강력 추천:** 액션파이 실기에서 일반 Flycast 코어를 OpenGL에서 Vulkan으로 전환한 뒤 큰 폭의 성능 향상과 훨씬 부드러운 게임 화면을 직접 확인했습니다. **일반 Flycast 코어를 우선 사용하실 것을 강력히 권장합니다.** 확인된 향상은 Vulkan 전환 결과이며 2.7과 2.5의 정량 비교나 모든 게임의 성능 보장은 아닙니다.
+- **해상도 변경 시 회전 유지:** 내부 해상도를 바꾸며 RetroArch가 Vulkan을 재초기화할 때 회전 보정 로더가 빠지는 문제를 수정했습니다. 세 코어에 공통 적용했습니다. 해당 Vulkan 실행에서는 GL 셰이더를 끄며 다른 에뮬레이터의 설정은 유지합니다.
+- 기존 Wi-Fi·PPSSPP·Mali 메뉴·Ozone·PortMaster·진동·밝기·ZRAM·BennuGD 보완을 유지합니다.
+
+제작자가 일반·VL·Xtreme Vulkan을 직접 플레이해 화질·성능 향상을 확인했으며 특히 일반 코어의 큰 개선을 보고했습니다. 일반 2.7은 원격으로 게임/데모·메뉴 표시, 해상도 증가에 따른 실제 Vulkan 재초기화 후 방향 유지와 같은 부팅의 정상 ES 복귀를 확인했습니다. VL·Xtreme의 개별 해상도 변경, 2.7의 실제 소리·물리 입력·성능 비교, 최종 이미지의 새 SD 플래싱과 모든 생산분은 추가 시험하지 않았습니다.
+
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
@@ -14,8 +25,8 @@
 
 | 종류 | 선택 |
 | --- | --- |
-| 기본 배포판 | [일반판 v1.0.5](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.5) |
-| CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.5-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
+| 기본 배포판 | [일반판 v1.0.6](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6) |
+| CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
 
 CRC 적용판은 FBNeo·MAME2003 Plus와 재부팅 자동 적용을 추가한 변형입니다. 두 판의 체크섬이 다릅니다. CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다.
 
@@ -109,8 +120,8 @@ AIC·RTL8723DS Wi-Fi 지원과 재부팅 후 연결, 에뮬레이터·도구·�
 
 ## Downloads / 다운로드
 
-### [일반판 v1.0.5 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.5)
+### [일반판 v1.0.6 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6)
 
-### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.5](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.5-crc-ko)
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.6](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6-crc-ko)
 
 CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).

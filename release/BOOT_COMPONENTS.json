@@ -48,8 +48,8 @@
     "sha256": "fca98e6206df6d3f9b4b6a7fae05c2bfc75043d933ef4213ad960d4d430fbe63"
   },
   "ACTIONPI_FIXES/actionpi_app_launcher.py": {
-    "bytes": 4283,
-    "sha256": "67402b8c97f66ac47bb16b9a40059316af64f5818d73b1156521cfcb74725a90"
+    "bytes": 4523,
+    "sha256": "df0f0ef90dcf09856b3105312a20272dd4f0e9092285c784f9655cbf55a2eb8d"
   },
   "ACTIONPI_FIXES/retroarch_gles3_context.so": {
     "bytes": 71240,
@@ -100,12 +100,12 @@
     "sha256": "2920e0eb0699837ed11638a59cf042eecfb28294a843e4ade49fa7fed205add3"
   },
   "MALI_MENU_TRIAL/v116_ppsspp_session.py": {
-    "bytes": 5635,
-    "sha256": "bb94582a71b6abc5372dea3ef1d13fd13da14cd2d3cbc2f37f30def595fe46ef"
+    "bytes": 5940,
+    "sha256": "ad8dd3214aa75053e46a663a1eeb76afae252817796f79293533adc869b29f37"
   },
   "ACTIONPI_FIXES/v116_ppsspp_session.py": {
-    "bytes": 5635,
-    "sha256": "bb94582a71b6abc5372dea3ef1d13fd13da14cd2d3cbc2f37f30def595fe46ef"
+    "bytes": 5940,
+    "sha256": "ad8dd3214aa75053e46a663a1eeb76afae252817796f79293533adc869b29f37"
   },
   "userdata/system/ppsspp-1.20.4/assets/adhoc-servers.json": {
     "sha256": "7c12f2ec3c4451693d385453f531fa9986e8689067c81a5530ba08a4c1e81512"
@@ -748,15 +748,23 @@
     "sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f"
   },
   "STABLE_V119/settings.tar.gz": {
-    "bytes": 43371719,
-    "sha256": "c18b049f21ec15d8ed3708b980375293df64874d6317179507215b4c2efb7bf6"
+    "bytes": 55695383,
+    "sha256": "fd2be5ce33e6b7d3334a8e3f4e1b77bac74ece633a4c5e809739679c76c64abf"
   },
   "STABLE_V119/payload.json": {
-    "bytes": 963,
-    "sha256": "22f80fd5f7eec0001d4d0291870ce79d38b9eb67e5f712411c57c72db5e49eb9"
+    "bytes": 1138,
+    "sha256": "b0f1b9c8db64be468282efd5105790bb180a3426cd4c2551c823e1497a5e4f7b"
   },
   "boot-custom.sh": {
     "bytes": 308,
     "sha256": "f303fd479fd7c41aaae2c158727095a44c5f8e7ae4d8ca63ce98f40c140a57f7"
+  },
+  "ACTIONPI_FIXES/actionpi_flycast_vulkan.py": {
+    "bytes": 7174,
+    "sha256": "7987b6c121b7bf0aa8a384853b8625f75cbffecf100d3aa5c3f3b85b9817014a"
+  },
+  "ACTIONPI_FIXES/home_exit.py": {
+    "bytes": 3006,
+    "sha256": "6fa84fe640d790c0983f66be7c209f05dd7b5a32d34155e1b68bd6f12b9ad6ac"
   }
 }

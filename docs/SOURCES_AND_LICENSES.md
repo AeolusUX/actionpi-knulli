@@ -74,3 +74,7 @@ PPSSPP is GPL-2.0-or-later. The release includes the exact official v1.20.4 full
 The rebuilt ZRAM/zsmalloc/LZO modules derive from the pinned Orange Pi Linux tree. Full source archive, actual external translation units, configurations, patches, build recipe and retained Linux notices are published in kernel/zram and LICENSES/zram. The source used for these rebuilt modules is documented separately from the still-unresolved original vendor kernel provenance. BennuGD is the user-supplied binary identified in config/bennugd/SOURCE.json. Its exact source revision/build recipe was not supplied; the upstream reference is not proof of corresponding source and the project MIT glue license does not relicense that core. dsno credit applies only to the separately packaged CRC arcade cores.
 
 BennuGD reference project: [BennuGD_libretro](https://github.com/diekleinekuh/BennuGD_libretro). This link is not evidence of the supplied binary’s exact corresponding source.
+
+## v1.0.6 — 2026-10-27
+
+Pinned sources, patches and build recipes for the three Vulkan cores are in src/flycast-vulkan; the standard release includes flycast-v1.0.6-sources.tar containing the full source archives. config/flycast-vulkan/SOURCES.json records identities and checksums. The scoped loader retains rotation through Vulkan reinitialization using SONAME/NODELETE. tools/package-v1.0.6.py consumes only the clean v1.0.5 images and checked payload; the kernel, existing archive settings and CRC cores are preserved.

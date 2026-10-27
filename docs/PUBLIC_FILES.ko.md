@@ -72,3 +72,7 @@ build/ppsspp-1.20.4、LICENSES/ppsspp-1.20.4、tools/package-v1.0.4.py、갱신�
 ## v1.0.5
 
 kernel/zram·LICENSES/zram·overlay/boot/ACTIONPI_ZRAM·일반/CRC 코어 로더 소스·config/bennugd/SOURCE.json·패키징 스크립트·v1.0.5 명세를 추가했습니다. 바이너리는 IMG에, 전체 소스는 릴리스 자산에 포함하며 개인 백업은 공개하지 않습니다.
+
+## v1.0.6 — 2026-10-27
+
+Vulkan 세 코어의 고정 소스·패치·빌드 방법은 src/flycast-vulkan에 공개하며 전체 소스 압축파일 묶음은 일반판 릴리스의 flycast-v1.0.6-sources.tar에 있습니다. config/flycast-vulkan/SOURCES.json에 출처·체크섬을 기록했습니다. 해상도 변경 보정은 전용 로더의 SONAME/NODELETE로 유지합니다. tools/package-v1.0.6.py는 클린 v1.0.5 이미지와 검증된 payload만 입력으로 사용합니다. 새 이미지의 커널·기존 사용자 설정·CRC 코어는 보존합니다.

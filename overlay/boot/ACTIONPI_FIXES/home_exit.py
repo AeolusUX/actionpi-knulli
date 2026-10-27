@@ -28,6 +28,15 @@ def exit_game():
             if s.get('phase')=='game' and s.get('boot_id')==Path('/proc/sys/kernel/random/boot_id').read_text().strip():
                 folder=Path(s['folder']).resolve()
                 if folder.is_relative_to(SESSION.resolve()):
+                    # ACTIONPI_FLYCAST_VULKAN_HOME: keep the PPSSPP guard below.
+                    marker=folder/'flycast-vulkan-active.json'
+                    try:meta=json.loads(marker.read_text())
+                    except (OSError,ValueError):meta=None
+                    if meta and meta.get('boot_id')==s.get('boot_id') and alive(meta):
+                        import socket
+                        with socket.socket(socket.AF_INET,socket.SOCK_DGRAM) as sock:
+                            sock.sendto(b'QUIT\n',('127.0.0.1',55356))
+                        return
                     # Disabled after a live PPSSPP quit timeout triggered fallback.
                     # Keep SELECT+START as the known working exit until diagnosed.
                     return

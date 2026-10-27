@@ -34,6 +34,10 @@ def ra_args(args):
 def run(name,args):
     real=ORIGINAL/name;env=os.environ.copy();args=list(args)
     if env.get('ACTIONPI_MALI_SESSION')=='1':
+        # ACTIONPI_FLYCAST_VULKAN_DEFAULT
+        if name=='retroarch':
+            from actionpi_flycast_vulkan import request
+            if request(args):return
         preload(env)
         if name=='retroarch':
             args,core,driver=ra_args(args)

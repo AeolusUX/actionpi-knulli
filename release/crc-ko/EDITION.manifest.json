@@ -1,12 +1,12 @@
 {
-  "version": "v1.0.5",
+  "version": "v1.0.6",
   "edition": "crc-ko",
-  "release_tag": "v1.0.5-crc-ko",
-  "image": "action-pi-knulli-v1.0.5-crc-ko.img",
+  "release_tag": "v1.0.6-crc-ko",
+  "image": "action-pi-knulli-v1.0.6-crc-ko.img",
   "bytes": 6069178368,
-  "sha256": "2335743b4178c753bd0998b7de1eb9ad6d3396c244b59a12b5ef6727a115fe4c",
-  "base_image": "action-pi-knulli-v1.0.5.img",
-  "base_sha256": "2b0120fe41d11e78ecca1b3c2e0fbb02b86f55e14240ec5ac15e109947751bfe",
+  "sha256": "a0931b5048fb78fb196ab42f09e17022388eb579cc998a4baedc644d7c519f4d",
+  "base_image": "action-pi-knulli-v1.0.6.img",
+  "base_sha256": "fcc87396aa584440d3c93e50ca3b8bec00e5ec2f29219391c2ceaacacd87fb5f",
   "cores": {
     "fbneo_libretro.so": {
       "bytes": 83514112,
@@ -19,7 +19,7 @@
   },
   "startup": "S99userservices -> /userdata/system/custom.sh -> custom-cores/load.py; bind mounts; no save-overlay",
   "mame2003_plus_alias": "mame078plus_libretro.so when present",
-  "default_settings": "Same clean English defaults as standard v1.0.5; Wi-Fi and ZRAM off; no saved personal network",
+  "default_settings": "Same clean English defaults as standard v1.0.6; Wi-Fi and ZRAM off; no saved personal network",
   "games_included": false,
   "additional_personal_bios_included": false,
   "save_overlay_required": false,
@@ -27,11 +27,10 @@
   "validation": {
     "unchanged_tar_members_preserved": true,
     "crc_arcade_cores_preserved": true,
-    "kernel_mali_wifi_ppsspp_unchanged": true,
+    "kernel_mali_wifi_ppsspp_zram_unchanged": true,
     "private_configuration_copied": false,
-    "unchanged_bytes_compared": 5910765568,
+    "unchanged_bytes_compared": 5898993664,
     "old_images_unchanged": true,
-    "zram_default_off": true,
     "boot_and_userdata_payload_readback": true
   },
   "source_provenance": "CRC-override core materials from dsno, supplied by the user; exact corresponding source/patch versions were not supplied. Upstream source links remain references.",
@@ -42,7 +41,7 @@
     "url": "https://dsno.tistory.com/m/",
     "identified_by": "user"
   },
-  "packaging_source_image": "action-pi-knulli-v1.0.4-crc-ko.img",
+  "packaging_source_image": "action-pi-knulli-v1.0.5-crc-ko.img",
   "ppsspp_version": "1.20.4",
   "zram_default_enabled": false,
   "bennugd": {

@@ -71,3 +71,7 @@ Publish build/ppsspp-1.20.4, LICENSES/ppsspp-1.20.4, tools/package-v1.0.4.py, up
 ## v1.0.5
 
 Added kernel/zram, LICENSES/zram, overlay/boot/ACTIONPI_ZRAM, standard/CRC core loader sources, config/bennugd/SOURCE.json, packaging script and v1.0.5 manifests. Binaries are in the IMG and source archives are release assets; private backups are not public.
+
+## v1.0.6 — 2026-10-27
+
+Pinned sources, patches and build recipes for the three Vulkan cores are in src/flycast-vulkan; the standard release includes flycast-v1.0.6-sources.tar containing the full source archives. config/flycast-vulkan/SOURCES.json records identities and checksums. The scoped loader retains rotation through Vulkan reinitialization using SONAME/NODELETE. tools/package-v1.0.6.py consumes only the clean v1.0.5 images and checked payload; the kernel, existing archive settings and CRC cores are preserved.

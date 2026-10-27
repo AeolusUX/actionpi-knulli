@@ -112,3 +112,7 @@ ACTIONPI_IMAGE_DIR에 두 v1.0.3 IMG를, ACTIONPI_PPSSPP_BUNDLE에 빌드한 앱
 ## v1.0.5
 
 kernel/zram에 실제 외부 모듈 소스·정규화/실기 추출 설정·소스 식별·빌드 스크립트·용량 API 패치를 공개했습니다. 일반판 릴리스에 SOURCE.json이 가리키는 고정 Orange Pi 전체 소스를 첨부하며 CRC판도 같은 소스를 사용합니다. 제조사 원본 커널의 정확한 대응 트리라는 주장은 아닙니다. tools/package-v1.0.5.py는 두 v1.0.4 IMG와 검증한 ZRAM .ko 묶음·제공 BennuGD 바이너리를 입력으로 사용합니다. 허용한 BOOT 파일과 코어/로더 항목만 추가하고 ZRAM 초기 꺼짐, 기존 tar 항목 및 수정 허용 영역 밖의 이미지 바이트 동일성을 확인합니다. 실기 개인 설정·백업·로그·접속 정보는 입력하지 않습니다.
+
+## v1.0.6 — 2026-10-27
+
+Vulkan 세 코어의 고정 소스·패치·빌드 방법은 src/flycast-vulkan에 공개하며 전체 소스 압축파일 묶음은 일반판 릴리스의 flycast-v1.0.6-sources.tar에 있습니다. config/flycast-vulkan/SOURCES.json에 출처·체크섬을 기록했습니다. 해상도 변경 보정은 전용 로더의 SONAME/NODELETE로 유지합니다. tools/package-v1.0.6.py는 클린 v1.0.5 이미지와 검증된 payload만 입력으로 사용합니다. 새 이미지의 커널·기존 사용자 설정·CRC 코어는 보존합니다.

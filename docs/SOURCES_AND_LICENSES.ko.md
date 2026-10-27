@@ -75,3 +75,7 @@ PPSSPP는 GPL-2.0-or-later이며 공식 v1.20.4 전체 소스와 그 안의 FFmp
 재빌드한 ZRAM·zsmalloc·LZO 모듈은 고정 Orange Pi Linux 트리에서 왔습니다. 전체 원본 소스 압축파일과 실제 외부 모듈 소스·설정·패치·빌드 절차·Linux 고유 라이선스를 kernel/zram 및 LICENSES/zram에 공개합니다. 이번 재빌드 모듈의 소스와 아직 확인되지 않은 제조사 원래 커널 소스는 구분합니다. BennuGD는 config/bennugd/SOURCE.json에 해시를 기록한 제공 바이너리이며 정확한 소스 리비전·빌드 절차는 제공받지 못했습니다. 상위 링크를 정확한 대응 소스로 주장하지 않으며 프로젝트 MIT 연결 코드 라이선스로 이 코어를 재허가하지 않습니다. dsno님 출처는 별도 CRC판의 아케이드 코어에만 해당합니다.
 
 BennuGD 참고 프로젝트: [BennuGD_libretro](https://github.com/diekleinekuh/BennuGD_libretro). 이 링크는 제공 바이너리의 정확한 대응 소스를 확인했다는 의미가 아닙니다.
+
+## v1.0.6 — 2026-10-27
+
+Vulkan 세 코어의 고정 소스·패치·빌드 방법은 src/flycast-vulkan에 공개하며 전체 소스 압축파일 묶음은 일반판 릴리스의 flycast-v1.0.6-sources.tar에 있습니다. config/flycast-vulkan/SOURCES.json에 출처·체크섬을 기록했습니다. 해상도 변경 보정은 전용 로더의 SONAME/NODELETE로 유지합니다. tools/package-v1.0.6.py는 클린 v1.0.5 이미지와 검증된 payload만 입력으로 사용합니다. 새 이미지의 커널·기존 사용자 설정·CRC 코어는 보존합니다.

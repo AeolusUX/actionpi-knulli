@@ -92,3 +92,7 @@ Install the application, assets and forwarding libraries in /userdata/system/pps
 ## v1.0.5
 
 S00bootcustom bind-mounts only the zramswap service wrapper from BOOT; its log must be on BOOT because /var/run is created later at S04populate. S99user services still obey the existing setting. Early boot startup waits for a stable menu before loading the five checked modules. A durable pending marker blocks a repeated incomplete startup, and ACTIONPI_ZRAM/DISABLED is a recovery switch. No original module or modprobe index is overwritten. The BennuGD override uses SHARE custom.sh at S99; standard loads only BennuGD while CRC retains the two existing arcade overrides and the MAME alias.
+
+## v1.0.6 — 2026-10-27
+
+Pinned sources, patches and build recipes for the three Vulkan cores are in src/flycast-vulkan; the standard release includes flycast-v1.0.6-sources.tar containing the full source archives. config/flycast-vulkan/SOURCES.json records identities and checksums. The scoped loader retains rotation through Vulkan reinitialization using SONAME/NODELETE. tools/package-v1.0.6.py consumes only the clean v1.0.5 images and checked payload; the kernel, existing archive settings and CRC cores are preserved.

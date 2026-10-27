@@ -1,0 +1,42 @@
+{
+  "boot/ACTIONPI_FIXES/actionpi_app_launcher.py": {
+    "bytes": 4523,
+    "sha256": "df0f0ef90dcf09856b3105312a20272dd4f0e9092285c784f9655cbf55a2eb8d"
+  },
+  "boot/ACTIONPI_FIXES/actionpi_flycast_vulkan.py": {
+    "bytes": 7174,
+    "sha256": "7987b6c121b7bf0aa8a384853b8625f75cbffecf100d3aa5c3f3b85b9817014a"
+  },
+  "boot/ACTIONPI_FIXES/home_exit.py": {
+    "bytes": 3006,
+    "sha256": "6fa84fe640d790c0983f66be7c209f05dd7b5a32d34155e1b68bd6f12b9ad6ac"
+  },
+  "boot/ACTIONPI_FIXES/v116_ppsspp_session.py": {
+    "bytes": 5940,
+    "sha256": "ad8dd3214aa75053e46a663a1eeb76afae252817796f79293533adc869b29f37"
+  },
+  "boot/MALI_MENU_TRIAL/v116_ppsspp_session.py": {
+    "bytes": 5940,
+    "sha256": "ad8dd3214aa75053e46a663a1eeb76afae252817796f79293533adc869b29f37"
+  },
+  "userdata/system/flycast-vulkan/cores/flycast-standard-vulkan_libretro.so": {
+    "bytes": 38591072,
+    "sha256": "69d9d8411211680b6670b0d97415f65b9df9c42a71bc10e18fd328fb6fc7e297"
+  },
+  "userdata/system/flycast-vulkan/cores/flycast-vl-vulkan_libretro.so": {
+    "bytes": 25311048,
+    "sha256": "2a1244fec3e87dd6c66b7c926ab5ccc9b66e384cbb5bdd66588db0ea7d40d7be"
+  },
+  "userdata/system/flycast-vulkan/cores/flycast-xtreme-vulkan_libretro.so": {
+    "bytes": 30519208,
+    "sha256": "c54b843d169d92e6126e30d6762d8b0db0d25ce9e65808889a16139318e2be0f"
+  },
+  "userdata/system/flycast-vulkan/rotation/libvulkan.so": {
+    "bytes": 75072,
+    "sha256": "9ff405b7d5be3a9b23bb933aacd35a6e9250bc8723f30e79fad42b9ac769d383"
+  },
+  "userdata/system/flycast-vulkan/rotation/libvulkan.so.1": {
+    "bytes": 75072,
+    "sha256": "9ff405b7d5be3a9b23bb933aacd35a6e9250bc8723f30e79fad42b9ac769d383"
+  }
+}

@@ -1,3 +1,8 @@
+# ACTIONPI_FLYCAST_VULKAN_DISPATCH
+import sys as _af_sys
+_af_sys.path.insert(0,'/boot/ACTIONPI_FIXES')
+from actionpi_flycast_vulkan import handle as _af_handle
+if _af_handle(_af_sys.argv[1:]):raise SystemExit(0)
 import hashlib,json,os,re,shutil,signal,struct,subprocess,sys,time
 from pathlib import Path
 APP=Path('/userdata/system/ppsspp-1.20.4') # ACTIONPI_PPSSPP_1204_DEFAULT

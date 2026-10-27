@@ -6,6 +6,21 @@ Public release numbering starts at **v1.0.0**.
 
 
 
+
+## v1.0.6 — 2026-10-27
+
+- **Flycast Vulkan:** standard, VL and Xtreme now use Vulkan with correctly oriented gameplay and RetroArch menus, plus normal HOME exit and return to ES without rebooting.
+- **Standard Flycast 2.7:** update the standard core to the official v2.7 source release. VL and Xtreme retain their existing source revisions.
+- **Strong recommendation:** hands-on testing on the Action Pi showed a significant performance improvement when switching the standard Flycast core from OpenGL to Vulkan, with much smoother gameplay. **We strongly recommend using the standard Flycast core as your first choice.** This observed gain comes from the Vulkan switch; it is not a measured 2.7-versus-2.5 benchmark or a guarantee for every game.
+- **Resolution-change rotation fix:** retain the scoped rotation loader when RetroArch reinitializes Vulkan after an internal-resolution change. The shared fix is installed for all three cores. OpenGL shaders are disabled for these Vulkan sessions; other emulators keep their existing settings.
+- Existing Wi-Fi, PPSSPP, Mali menu, Ozone, PortMaster, rumble, brightness, ZRAM and BennuGD improvements are retained.
+
+- **Flycast Vulkan 적용:** 일반·VL·Xtreme을 Vulkan으로 실행하며 게임·RetroArch 메뉴 회전 보정, HOME 종료와 재부팅 없는 ES 메뉴 복귀를 연결했습니다.
+- **일반 Flycast 2.7 업데이트:** 일반 코어만 공식 v2.7 소스로 업데이트했습니다. VL·Xtreme의 소스 버전은 유지했습니다.
+- **일반 코어 강력 추천:** 액션파이 실기에서 일반 Flycast 코어를 OpenGL에서 Vulkan으로 전환한 뒤 큰 폭의 성능 향상과 훨씬 부드러운 게임 화면을 직접 확인했습니다. **일반 Flycast 코어를 우선 사용하실 것을 강력히 권장합니다.** 확인된 향상은 Vulkan 전환 결과이며 2.7과 2.5의 정량 비교나 모든 게임의 성능 보장은 아닙니다.
+- **해상도 변경 시 회전 유지:** 내부 해상도를 바꾸며 RetroArch가 Vulkan을 재초기화할 때 회전 보정 로더가 빠지는 문제를 수정했습니다. 세 코어에 공통 적용했습니다. 해당 Vulkan 실행에서는 GL 셰이더를 끄며 다른 에뮬레이터의 설정은 유지합니다.
+- 기존 Wi-Fi·PPSSPP·Mali 메뉴·Ozone·PortMaster·진동·밝기·ZRAM·BennuGD 보완을 유지합니다.
+
 ## v1.0.5 — 2026-10-27
 
 - **ZRAM service repaired:** the Services menu now starts/stops runtime-tested modules for this kernel, with the setting retained after reboot. ZRAM is **off by default**. It starts after the menu settles, uses lzo-rle, exposes logical swap of half the detected RAM and caps compressed RAM usage at a quarter of RAM (up to 512 MiB). RAM is allocated on demand. This helps memory-pressure situations; it does not guarantee higher FPS.

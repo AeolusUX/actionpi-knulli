@@ -113,3 +113,7 @@ Set ACTIONPI_IMAGE_DIR to both v1.0.3 IMG files and ACTIONPI_PPSSPP_BUNDLE to th
 ## v1.0.5
 
 kernel/zram contains the actual external module sources, normalized/recovered configurations, source identity, build script and capacity compatibility patch. The standard release includes the full pinned Orange Pi source archive identified by SOURCE.json; CRC uses the same source asset linked from the standard release. This is not claimed to be the original vendor kernel tree. tools/package-v1.0.5.py consumes both v1.0.4 IMG files, the verified ZRAM .ko bundle and supplied BennuGD binary. It adds only whitelisted BOOT files and core/loader archive entries, keeps ZRAM off initially and verifies all unchanged tar members and image bytes outside the permitted regions. No live device settings, backups, logs or credentials are inputs.
+
+## v1.0.6 — 2026-10-27
+
+Pinned sources, patches and build recipes for the three Vulkan cores are in src/flycast-vulkan; the standard release includes flycast-v1.0.6-sources.tar containing the full source archives. config/flycast-vulkan/SOURCES.json records identities and checksums. The scoped loader retains rotation through Vulkan reinitialization using SONAME/NODELETE. tools/package-v1.0.6.py consumes only the clean v1.0.5 images and checked payload; the kernel, existing archive settings and CRC cores are preserved.

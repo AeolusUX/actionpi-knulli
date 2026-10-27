@@ -95,3 +95,7 @@ custom.sh는 일회성 로그 정리와 진동 보정을 실행하고 끝납니�
 ## v1.0.5
 
 S00bootcustom에서 BOOT의 zramswap wrapper 한 파일만 기존 서비스에 bind mount합니다. /var/run은 S04populate에서 나중에 생성되므로 이른 연결 로그는 BOOT에 둡니다. 기존 S99 사용자 서비스는 같은 설정값을 따르며 메뉴가 안정된 뒤 검증 모듈 5개를 올립니다. 시작 도중 중단된 기록이 있으면 다음 부팅에서 재시도를 차단하고 ACTIONPI_ZRAM/DISABLED로 복구할 수 있습니다. 기존 모듈과 modprobe 인덱스는 덮어쓰지 않습니다. BennuGD는 SHARE의 custom.sh/S99에서 연결하며 일반판은 BennuGD만, CRC판은 기존 아케이드 두 코어·MAME 별칭도 유지합니다.
+
+## v1.0.6 — 2026-10-27
+
+Vulkan 세 코어의 고정 소스·패치·빌드 방법은 src/flycast-vulkan에 공개하며 전체 소스 압축파일 묶음은 일반판 릴리스의 flycast-v1.0.6-sources.tar에 있습니다. config/flycast-vulkan/SOURCES.json에 출처·체크섬을 기록했습니다. 해상도 변경 보정은 전용 로더의 SONAME/NODELETE로 유지합니다. tools/package-v1.0.6.py는 클린 v1.0.5 이미지와 검증된 payload만 입력으로 사용합니다. 새 이미지의 커널·기존 사용자 설정·CRC 코어는 보존합니다.

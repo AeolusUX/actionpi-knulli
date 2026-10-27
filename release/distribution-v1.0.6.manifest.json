@@ -1,0 +1,42 @@
+{
+  "version": "v1.0.6",
+  "edition": "standard",
+  "image": "action-pi-knulli-v1.0.6.img",
+  "bytes": 6069178368,
+  "sha256": "fcc87396aa584440d3c93e50ca3b8bec00e5ec2f29219391c2ceaacacd87fb5f",
+  "source_image": "action-pi-knulli-v1.0.5.img",
+  "source_sha256": "2b0120fe41d11e78ecca1b3c2e0fbb02b86f55e14240ec5ac15e109947751bfe",
+  "changed_files": {
+    "ACTIONPI_FIXES/actionpi_app_launcher.py": "df0f0ef90dcf09856b3105312a20272dd4f0e9092285c784f9655cbf55a2eb8d",
+    "ACTIONPI_FIXES/actionpi_flycast_vulkan.py": "7987b6c121b7bf0aa8a384853b8625f75cbffecf100d3aa5c3f3b85b9817014a",
+    "ACTIONPI_FIXES/home_exit.py": "6fa84fe640d790c0983f66be7c209f05dd7b5a32d34155e1b68bd6f12b9ad6ac",
+    "ACTIONPI_FIXES/v116_ppsspp_session.py": "ad8dd3214aa75053e46a663a1eeb76afae252817796f79293533adc869b29f37",
+    "MALI_MENU_TRIAL/v116_ppsspp_session.py": "ad8dd3214aa75053e46a663a1eeb76afae252817796f79293533adc869b29f37",
+    "STABLE_V119/settings.tar.gz": "fd2be5ce33e6b7d3334a8e3f4e1b77bac74ece633a4c5e809739679c76c64abf",
+    "STABLE_V119/payload.json": "b0f1b9c8db64be468282efd5105790bb180a3426cd4c2551c823e1497a5e4f7b"
+  },
+  "added_or_updated_userdata": {
+    "system/flycast-vulkan/cores/flycast-standard-vulkan_libretro.so": "69d9d8411211680b6670b0d97415f65b9df9c42a71bc10e18fd328fb6fc7e297",
+    "system/flycast-vulkan/cores/flycast-vl-vulkan_libretro.so": "2a1244fec3e87dd6c66b7c926ab5ccc9b66e384cbb5bdd66588db0ea7d40d7be",
+    "system/flycast-vulkan/cores/flycast-xtreme-vulkan_libretro.so": "c54b843d169d92e6126e30d6762d8b0db0d25ce9e65808889a16139318e2be0f",
+    "system/flycast-vulkan/rotation/libvulkan.so": "9ff405b7d5be3a9b23bb933aacd35a6e9250bc8723f30e79fad42b9ac769d383",
+    "system/flycast-vulkan/rotation/libvulkan.so.1": "9ff405b7d5be3a9b23bb933aacd35a6e9250bc8723f30e79fad42b9ac769d383",
+    "system/flycast-vulkan/FILES.json": "a67c24daa9ecd483a9543b3427ad91701c4d92676468869240e7d6f5914c2c09"
+  },
+  "defaults": {
+    "language": "en_US",
+    "wifi_enabled": false,
+    "saved_wifi_credentials": false,
+    "telemetry_enabled": false
+  },
+  "checks": {
+    "unchanged_tar_members_preserved": true,
+    "crc_arcade_cores_preserved": false,
+    "kernel_mali_wifi_ppsspp_zram_unchanged": true,
+    "private_configuration_copied": false,
+    "unchanged_bytes_compared": 5959532544,
+    "old_images_unchanged": true,
+    "boot_and_userdata_payload_readback": true
+  },
+  "hardware_validation": "Standard 2.7 Vulkan gameplay/demo and menu output, resolution-change reinitialization rotation and clean return to ES captured. Earlier standard/VL/Xtreme Vulkan directly played by maintainer. Fresh-flash installation and individual VL/Xtreme resolution changes not repeated."
+}

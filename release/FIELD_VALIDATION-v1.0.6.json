@@ -1,0 +1,7 @@
+{
+  "version": "v1.0.6",
+  "scope_en": "The maintainer directly played standard/VL/Xtreme Vulkan and reported improved clarity and performance, especially with the standard core. Standard 2.7 was checked remotely for game/demo and menu output, actual Vulkan reinitialization after a resolution increase, preserved orientation and clean return to ES on the same boot. Individual VL/Xtreme resolution changes, physical audio/input on 2.7, a 2.7 performance comparison, a fresh SD flash of these final images and all hardware batches were not retested.",
+  "scope_ko": "제작자가 일반·VL·Xtreme Vulkan을 직접 플레이해 화질·성능 향상을 확인했으며 특히 일반 코어의 큰 개선을 보고했습니다. 일반 2.7은 원격으로 게임/데모·메뉴 표시, 해상도 증가에 따른 실제 Vulkan 재초기화 후 방향 유지와 같은 부팅의 정상 ES 복귀를 확인했습니다. VL·Xtreme의 개별 해상도 변경, 2.7의 실제 소리·물리 입력·성능 비교, 최종 이미지의 새 SD 플래싱과 모든 생산분은 추가 시험하지 않았습니다.",
+  "performance_recommendation_basis": "Maintainer hands-on report for standard OpenGL-to-Vulkan switch, before v2.7 update; no quantified v2.7 comparison",
+  "fresh_final_image_flash_tested": false
+}
