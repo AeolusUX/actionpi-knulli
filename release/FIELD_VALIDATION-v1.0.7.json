@@ -1,0 +1,8 @@
+{
+  "version": "v1.0.7",
+  "date": "2026-10-28",
+  "scope_en": "On the maintainer device, PSP OutRun 2006 and standard Flycast Crazy Taxi 2 were launched from their ES game lists, exited normally, and returned to the respective PSP/Dreamcast lists without another reboot; captures confirmed both lists. Initial startup remained unchanged after the installation reboot. Preference restoration was checked with both absent and explicit-false settings while preserving other settings. VL/Xtreme use the same supervisor path; their individual launches and a fresh SD flash of these final images were not repeated.",
+  "scope_ko": "실기 ES의 각 게임 목록에서 PSP OutRun 2006과 일반 Flycast Crazy Taxi 2를 실행·정상 종료하고, 재부팅 없이 각각 PSP·Dreamcast 목록으로 돌아오는 것을 캡처로 확인했습니다. 설치 후 재부팅에서는 기존 첫 화면 설정이 유지됐고, 원래 값이 없거나 false인 설정의 복원과 다른 설정 보존을 확인했습니다. VL·Xtreme은 같은 감독 경로를 사용하며 개별 실행과 최종 이미지의 새 SD 플래싱 시험은 반복하지 않았습니다.",
+  "fresh_final_image_flash_tested": false,
+  "game_cursor_or_subfolder_restored": false
+}

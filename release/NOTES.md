@@ -1,4 +1,4 @@
-# Action Pi KNULLI v1.0.6
+# Action Pi KNULLI v1.0.7
 
 ## English
 
@@ -6,11 +6,10 @@ Unofficial KNULLI adaptation for the Helegaly Action Pi. Mali runs the menu and 
 
 ### What changed
 
-- **Flycast Vulkan:** standard, VL and Xtreme now use Vulkan with correctly oriented gameplay and RetroArch menus, plus normal HOME exit and return to ES without rebooting.
-- **Standard Flycast 2.7:** update the standard core to the official v2.7 source release. VL and Xtreme retain their existing source revisions.
-- **Strong recommendation:** hands-on testing on the Action Pi showed a significant performance improvement when switching the standard Flycast core from OpenGL to Vulkan, with much smoother gameplay. **We strongly recommend using the standard Flycast core as your first choice.** This observed gain comes from the Vulkan switch; it is not a measured 2.7-versus-2.5 benchmark or a guarantee for every game. (Depending on the game, VL or Xtreme may perform better, so compare the cores and choose the one that works best for your game.)
-- **Resolution-change rotation fix:** retain the scoped rotation loader when RetroArch reinitializes Vulkan after an internal-resolution change. The shared fix is installed for all three cores. OpenGL shaders are disabled for these Vulkan sessions; other emulators keep their existing settings.
-- Existing Wi-Fi, PPSSPP, Mali menu, Ozone, PortMaster, rumble, brightness, ZRAM and BennuGD improvements are retained.
+- **Return to the game list:** after closing PPSSPP or Flycast Vulkan, ES now reopens the saved system’s game list instead of the top-level system selector.
+- **Normal startup preserved:** game-list startup is temporary for the return session. The original startup preference is restored when ES closes, or at the next supervisor start after an interrupted session. Other ES settings are retained.
+- **Selection limit:** the game list opens at its first entry; the exited game’s cursor position and subfolder are not restored.
+- Existing Mali, PPSSPP Vulkan, Flycast Vulkan/standard core 2.7, rotation, Wi-Fi, Ozone, PortMaster, rumble, brightness, ZRAM and BennuGD functionality is retained. Standard Flycast is a good first choice, but VL or Xtreme may perform better in some games; compare the cores for your game.
 
 ### Installation
 
@@ -22,19 +21,19 @@ Brightness: **hold SELECT + Volume +/−**. Exit PPSSPP: **hold SELECT+START for
 
 ### Verification and technical documentation
 
-The maintainer directly played standard/VL/Xtreme Vulkan and reported improved clarity and performance, especially with the standard core. Standard 2.7 was checked remotely for game/demo and menu output, actual Vulkan reinitialization after a resolution increase, preserved orientation and clean return to ES on the same boot. Individual VL/Xtreme resolution changes, physical audio/input on 2.7, a 2.7 performance comparison, a fresh SD flash of these final images and all hardware batches were not retested.
+On the maintainer device, PSP OutRun 2006 and standard Flycast Crazy Taxi 2 were launched from their ES game lists, exited normally, and returned to the respective PSP/Dreamcast lists without another reboot; captures confirmed both lists. Initial startup remained unchanged after the installation reboot. Preference restoration was checked with both absent and explicit-false settings while preserving other settings. VL/Xtreme use the same supervisor path; their individual launches and a fresh SD flash of these final images were not repeated.
 
-- [History](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/HISTORY.md)
-- [Architecture](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/ARCHITECTURE.md)
-- [Build and packaging](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/BUILD.md)
-- [Published files](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/PUBLIC_FILES.md)
-- [Sources and licenses](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/SOURCES_AND_LICENSES.md)
-- [Installation](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/RELEASE.md)
-- [Verification scope](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/TESTING.md)
+- [History](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/HISTORY.md)
+- [Architecture](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/ARCHITECTURE.md)
+- [Build and packaging](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/BUILD.md)
+- [Published files](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/PUBLIC_FILES.md)
+- [Sources and licenses](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/SOURCES_AND_LICENSES.md)
+- [Installation](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/RELEASE.md)
+- [Verification scope](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/TESTING.md)
 
 Board integration is based on [upstream KNULLI's Action Pi board configuration](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi). This is an adaptation of an inherited image, not a complete from-source firmware build.
 
-Raw IMG: 6,069,178,368 bytes. SHA256: fcc87396aa584440d3c93e50ca3b8bec00e5ec2f29219391c2ceaacacd87fb5f.
+Raw IMG: 6,069,178,368 bytes. SHA256: 56ea1f86b6e7dea4ba512059d1018eaad98e5e50d8922576cd0468f2a8c9c80f.
 
 ---
 
@@ -44,11 +43,10 @@ Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. 같은 부팅�
 
 ### 수정 내역
 
-- **Flycast Vulkan 적용:** 일반·VL·Xtreme을 Vulkan으로 실행하며 게임·RetroArch 메뉴 회전 보정, HOME 종료와 재부팅 없는 ES 메뉴 복귀를 연결했습니다.
-- **일반 Flycast 2.7 업데이트:** 일반 코어만 공식 v2.7 소스로 업데이트했습니다. VL·Xtreme의 소스 버전은 유지했습니다.
-- **일반 코어 강력 추천:** 액션파이 실기에서 일반 Flycast 코어를 OpenGL에서 Vulkan으로 전환한 뒤 큰 폭의 성능 향상과 훨씬 부드러운 게임 화면을 직접 확인했습니다. **일반 Flycast 코어를 우선 사용하실 것을 강력히 권장합니다.** 확인된 향상은 Vulkan 전환 결과이며 2.7과 2.5의 정량 비교나 모든 게임의 성능 보장은 아닙니다. (게임에 따라 VL이나 Xtreme이 더 유리할 수 있으니 직접 비교해 보고 알맞은 코어를 선택해 주세요.)
-- **해상도 변경 시 회전 유지:** 내부 해상도를 바꾸며 RetroArch가 Vulkan을 재초기화할 때 회전 보정 로더가 빠지는 문제를 수정했습니다. 세 코어에 공통 적용했습니다. 해당 Vulkan 실행에서는 GL 셰이더를 끄며 다른 에뮬레이터의 설정은 유지합니다.
-- 기존 Wi-Fi·PPSSPP·Mali 메뉴·Ozone·PortMaster·진동·밝기·ZRAM·BennuGD 보완을 유지합니다.
+- **게임 종료 후 목록 복귀:** PPSSPP·Flycast Vulkan을 종료하면 ES 상위 기종 선택 화면 대신 저장된 해당 기종의 게임 목록으로 돌아갑니다.
+- **평소 부팅 설정 유지:** 게임 종료 후 복귀할 때만 임시로 게임 목록을 열며, ES 종료 후 원래 시작 설정을 복원합니다. 비정상 종료된 경우 다음 감독자 시작 때 복원하고 다른 ES 설정은 유지합니다.
+- **선택 위치 제한:** 목록은 첫 항목부터 표시하며 종료한 게임의 커서·하위 폴더 위치까지 복원하는 기능은 아닙니다.
+- 기존 Mali·PPSSPP Vulkan·Flycast Vulkan/일반 코어 2.7·회전·Wi-Fi·Ozone·PortMaster·진동·밝기·ZRAM·BennuGD 기능은 유지합니다. 일반 Flycast를 우선 권장하지만 게임에 따라 VL이나 Xtreme이 더 유리할 수 있으니 비교해서 선택해 주세요.
 
 ### 설치
 
@@ -60,16 +58,16 @@ Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. 같은 부팅�
 
 ### 검증 범위와 기술 문서
 
-제작자가 일반·VL·Xtreme Vulkan을 직접 플레이해 화질·성능 향상을 확인했으며 특히 일반 코어의 큰 개선을 보고했습니다. 일반 2.7은 원격으로 게임/데모·메뉴 표시, 해상도 증가에 따른 실제 Vulkan 재초기화 후 방향 유지와 같은 부팅의 정상 ES 복귀를 확인했습니다. VL·Xtreme의 개별 해상도 변경, 2.7의 실제 소리·물리 입력·성능 비교, 최종 이미지의 새 SD 플래싱과 모든 생산분은 추가 시험하지 않았습니다.
+실기 ES의 각 게임 목록에서 PSP OutRun 2006과 일반 Flycast Crazy Taxi 2를 실행·정상 종료하고, 재부팅 없이 각각 PSP·Dreamcast 목록으로 돌아오는 것을 캡처로 확인했습니다. 설치 후 재부팅에서는 기존 첫 화면 설정이 유지됐고, 원래 값이 없거나 false인 설정의 복원과 다른 설정 보존을 확인했습니다. VL·Xtreme은 같은 감독 경로를 사용하며 개별 실행과 최종 이미지의 새 SD 플래싱 시험은 반복하지 않았습니다.
 
-- [작업 이력](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/HISTORY.ko.md)
-- [작동 구조](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/ARCHITECTURE.ko.md)
-- [빌드·이미지 제작](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/BUILD.ko.md)
-- [공개 파일](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/PUBLIC_FILES.ko.md)
-- [출처·라이선스](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/SOURCES_AND_LICENSES.ko.md)
-- [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/RELEASE.ko.md)
-- [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6/docs/TESTING.ko.md)
+- [작업 이력](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/HISTORY.ko.md)
+- [작동 구조](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/ARCHITECTURE.ko.md)
+- [빌드·이미지 제작](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/BUILD.ko.md)
+- [공개 파일](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/PUBLIC_FILES.ko.md)
+- [출처·라이선스](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/SOURCES_AND_LICENSES.ko.md)
+- [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/RELEASE.ko.md)
+- [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/TESTING.ko.md)
 
 보드 구성은 상위 KNULLI의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)을 기반으로 했습니다. 기존 이미지를 수정한 배포판이며 모든 구성요소를 소스에서 완전히 재빌드한 펌웨어는 아닙니다.
 
-압축 해제 IMG: 6,069,178,368바이트. SHA256: fcc87396aa584440d3c93e50ca3b8bec00e5ec2f29219391c2ceaacacd87fb5f.
+압축 해제 IMG: 6,069,178,368바이트. SHA256: 56ea1f86b6e7dea4ba512059d1018eaad98e5e50d8922576cd0468f2a8c9c80f.

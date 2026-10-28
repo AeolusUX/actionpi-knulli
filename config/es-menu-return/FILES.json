@@ -1,0 +1,10 @@
+{
+  "boot/MALI_MENU_TRIAL/actionpi_es_menu_return.py": {
+    "bytes": 2339,
+    "sha256": "2481289136e9c170e536cede5bd2f2468e7123504e8efcd2e1dfa009c6926179"
+  },
+  "boot/MALI_MENU_TRIAL/mali_session.py": {
+    "bytes": 7677,
+    "sha256": "3fb9e44d51079a1a454095aa221c724729afffe4439b3774579138d464c86555"
+  }
+}

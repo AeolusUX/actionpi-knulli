@@ -6,7 +6,7 @@
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
-**Action Pi KNULLI v1.0.6**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
+**Action Pi KNULLI v1.0.7**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
 압축 이미지를 지원하지 않는 프로그램에서는 먼저 압축을 풀고 SD 전체에 굽습니다.
 선택한 SD의 내용은 지워집니다.
 
@@ -14,8 +14,8 @@
 
 | 종류 | 선택 |
 | --- | --- |
-| 기본 배포판 | [일반판 v1.0.6](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6) |
-| CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
+| 기본 배포판 | [일반판 v1.0.7](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7) |
+| CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
 
 CRC 적용판은 FBNeo·MAME2003 Plus와 재부팅 자동 적용을 추가한 변형입니다. 두 판의 체크섬이 다릅니다. CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다.
 
@@ -66,6 +66,15 @@ KNULLI 보드 구성은 상위 프로젝트의 [Action Pi 보드 설정](https:/
 모든 구성요소를 이 저장소만으로 완전히 재빌드할 수 있다고 주장하지 않습니다.
 
 ## 버전별 업데이트
+
+### v1.0.7 변경 사항
+
+- **게임 종료 후 목록 복귀:** PPSSPP·Flycast Vulkan을 종료하면 ES 상위 기종 선택 화면 대신 저장된 해당 기종의 게임 목록으로 돌아갑니다.
+- **평소 부팅 설정 유지:** 게임 종료 후 복귀할 때만 임시로 게임 목록을 열며, ES 종료 후 원래 시작 설정을 복원합니다. 비정상 종료된 경우 다음 감독자 시작 때 복원하고 다른 ES 설정은 유지합니다.
+- **선택 위치 제한:** 목록은 첫 항목부터 표시하며 종료한 게임의 커서·하위 폴더 위치까지 복원하는 기능은 아닙니다.
+- 기존 Mali·PPSSPP Vulkan·Flycast Vulkan/일반 코어 2.7·회전·Wi-Fi·Ozone·PortMaster·진동·밝기·ZRAM·BennuGD 기능은 유지합니다. 일반 Flycast를 우선 권장하지만 게임에 따라 VL이나 Xtreme이 더 유리할 수 있으니 비교해서 선택해 주세요.
+
+실기 ES의 각 게임 목록에서 PSP OutRun 2006과 일반 Flycast Crazy Taxi 2를 실행·정상 종료하고, 재부팅 없이 각각 PSP·Dreamcast 목록으로 돌아오는 것을 캡처로 확인했습니다. 설치 후 재부팅에서는 기존 첫 화면 설정이 유지됐고, 원래 값이 없거나 false인 설정의 복원과 다른 설정 보존을 확인했습니다. VL·Xtreme은 같은 감독 경로를 사용하며 개별 실행과 최종 이미지의 새 SD 플래싱 시험은 반복하지 않았습니다.
 
 ### v1.0.6 변경 사항
 
@@ -119,8 +128,8 @@ AIC·RTL8723DS Wi-Fi 지원과 재부팅 후 연결, 에뮬레이터·도구·�
 
 ## Downloads / 다운로드
 
-### [일반판 v1.0.6 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6)
+### [일반판 v1.0.7 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7)
 
-### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.6](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6-crc-ko)
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.7](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7-crc-ko)
 
 CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).

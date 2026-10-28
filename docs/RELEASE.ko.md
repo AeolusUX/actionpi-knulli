@@ -20,7 +20,7 @@
    네트워크 정보를 입력합니다.
 
 압축 해제한 이미지의 SHA256:
-`fcc87396aa584440d3c93e50ca3b8bec00e5ec2f29219391c2ceaacacd87fb5f`.
+`56ea1f86b6e7dea4ba512059d1018eaad98e5e50d8922576cd0468f2a8c9c80f`.
 배포판 구성 명세와 바이너리 구성 파일의 해시는 `release/`에 있습니다.
 
 소스 트리는 Git에 보관하고 큰 펌웨어 파일은 Releases에 올립니다.

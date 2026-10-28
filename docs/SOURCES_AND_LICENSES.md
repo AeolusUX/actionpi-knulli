@@ -78,3 +78,7 @@ BennuGD reference project: [BennuGD_libretro](https://github.com/diekleinekuh/Be
 ## v1.0.6 — 2026-10-27
 
 Pinned sources, patches and build recipes for the three Vulkan cores are in src/flycast-vulkan; the standard release includes flycast-v1.0.6-sources.tar containing the full source archives. config/flycast-vulkan/SOURCES.json records identities and checksums. The scoped loader retains rotation through Vulkan reinitialization using SONAME/NODELETE. tools/package-v1.0.6.py consumes only the clean v1.0.5 images and checked payload; the kernel, existing archive settings and CRC cores are preserved.
+
+## v1.0.7
+
+MALI_MENU_TRIAL/mali_session.py uses actionpi_es_menu_return.py to temporarily enable StartupOnGameList only when ES returns after a game. LastSystem is saved by normal ES shutdown. Only the original startup option is journaled and restored on ES exit or the next supervisor start. Game cursor/subfolder restoration is not implemented. tools/package-v1.0.7.py changes only two BOOT Python files and version metadata on the clean v1.0.6 images, preserving settings.tar.gz, cores and kernel. Runtime recovery journals, personal settings and test captures are not packaging inputs.

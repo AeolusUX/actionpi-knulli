@@ -752,8 +752,8 @@
     "sha256": "fd2be5ce33e6b7d3334a8e3f4e1b77bac74ece633a4c5e809739679c76c64abf"
   },
   "STABLE_V119/payload.json": {
-    "bytes": 1138,
-    "sha256": "b0f1b9c8db64be468282efd5105790bb180a3426cd4c2551c823e1497a5e4f7b"
+    "bytes": 1208,
+    "sha256": "1ca5015aba145c4618aa889294b2556b05a4c863b3e140dad87545e67d41e500"
   },
   "boot-custom.sh": {
     "bytes": 308,
@@ -766,5 +766,13 @@
   "ACTIONPI_FIXES/home_exit.py": {
     "bytes": 3006,
     "sha256": "6fa84fe640d790c0983f66be7c209f05dd7b5a32d34155e1b68bd6f12b9ad6ac"
+  },
+  "MALI_MENU_TRIAL/actionpi_es_menu_return.py": {
+    "bytes": 2339,
+    "sha256": "2481289136e9c170e536cede5bd2f2468e7123504e8efcd2e1dfa009c6926179"
+  },
+  "MALI_MENU_TRIAL/mali_session.py": {
+    "bytes": 7677,
+    "sha256": "3fb9e44d51079a1a454095aa221c724729afffe4439b3774579138d464c86555"
   }
 }

@@ -1,6 +1,7 @@
 """v116 fixed-Mali menu/game supervisor. No driver switching or per-game reboot."""
 import json,os,signal,subprocess,sys,time
 from pathlib import Path
+from actionpi_es_menu_return import prepare as prepare_menu_return, restore as restore_menu_return
 from mali_menu_trial import environment,guard,master_available,snapshot,require,BASE
 
 B=Path('/boot/PPSSPP_VULKAN');SESSION=B/'transaction/session'
@@ -43,8 +44,10 @@ def stop_menu(proc,folder):
     require(proc.returncode==0,'Menu exit failed: '+str(proc.returncode))
     require(master_available()['available'],'Menu retained DRM master')
     same_owner();snapshot(folder,'after')
+    restore_menu_return()
 
 def supervise():
+    restore_menu_return()
     guard();require(not SESSION.exists(),'Session already exists');SESSION.mkdir()
     proc=None;rotation=1;counter=0;cycles=[];result={'boot_id':BOOTID,'status':'running'}
     launcher=Path('/usr/bin/emulatorlauncher');saved=Path('/run/actionpi-emulatorlauncher-original')
@@ -57,6 +60,7 @@ def supervise():
             counter+=1;folder=SESSION/('menu-%02d'%counter);folder.mkdir()
             env=environment();env['LD_PRELOAD']=str(BASE/'mali_menu_audit.so');env['ACTIONPI_MENU_STOP']=str(folder/'stop')
             env['ACTIONPI_MALI_SESSION']='1'
+            if cycles:prepare_menu_return()
             cmd=['/usr/bin/emulationstation','--screenrotate',str(rotation)]
             with (folder/'menu.log').open('wb') as log:
                 proc=subprocess.Popen(cmd,cwd='/userdata',env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
@@ -106,6 +110,7 @@ def supervise():
         if proc and proc.poll() is None:
             try:stop_menu(proc,folder)
             except BaseException as e:result['cleanup_error']=repr(e)
+        restore_menu_return()
         result['cycles']=cycles;atomic(SESSION/'result.json',result)
 
 def main():

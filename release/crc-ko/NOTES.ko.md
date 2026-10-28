@@ -1,16 +1,15 @@
-# 한국 사용자용 · CRC 무시 코어 적용판 v1.0.6
+# 한국 사용자용 · CRC 무시 코어 적용판 v1.0.7
 
 한글 패치 아케이드 게임용 FBNeo·MAME2003 Plus CRC 무시 코어가 필요한 분을 위한 별도 배포판입니다. 기본 배포판과 이미지·체크섬을 분리했습니다.
 
 CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다. 이번 버전에서 두 코어 바이너리는 변경하지 않았습니다.
 
-## v1.0.6 수정 내역
+## v1.0.7 수정 내역
 
-- **Flycast Vulkan 적용:** 일반·VL·Xtreme을 Vulkan으로 실행하며 게임·RetroArch 메뉴 회전 보정, HOME 종료와 재부팅 없는 ES 메뉴 복귀를 연결했습니다.
-- **일반 Flycast 2.7 업데이트:** 일반 코어만 공식 v2.7 소스로 업데이트했습니다. VL·Xtreme의 소스 버전은 유지했습니다.
-- **일반 코어 강력 추천:** 액션파이 실기에서 일반 Flycast 코어를 OpenGL에서 Vulkan으로 전환한 뒤 큰 폭의 성능 향상과 훨씬 부드러운 게임 화면을 직접 확인했습니다. **일반 Flycast 코어를 우선 사용하실 것을 강력히 권장합니다.** 확인된 향상은 Vulkan 전환 결과이며 2.7과 2.5의 정량 비교나 모든 게임의 성능 보장은 아닙니다. (게임에 따라 VL이나 Xtreme이 더 유리할 수 있으니 직접 비교해 보고 알맞은 코어를 선택해 주세요.)
-- **해상도 변경 시 회전 유지:** 내부 해상도를 바꾸며 RetroArch가 Vulkan을 재초기화할 때 회전 보정 로더가 빠지는 문제를 수정했습니다. 세 코어에 공통 적용했습니다. 해당 Vulkan 실행에서는 GL 셰이더를 끄며 다른 에뮬레이터의 설정은 유지합니다.
-- 기존 Wi-Fi·PPSSPP·Mali 메뉴·Ozone·PortMaster·진동·밝기·ZRAM·BennuGD 보완을 유지합니다.
+- **게임 종료 후 목록 복귀:** PPSSPP·Flycast Vulkan을 종료하면 ES 상위 기종 선택 화면 대신 저장된 해당 기종의 게임 목록으로 돌아갑니다.
+- **평소 부팅 설정 유지:** 게임 종료 후 복귀할 때만 임시로 게임 목록을 열며, ES 종료 후 원래 시작 설정을 복원합니다. 비정상 종료된 경우 다음 감독자 시작 때 복원하고 다른 ES 설정은 유지합니다.
+- **선택 위치 제한:** 목록은 첫 항목부터 표시하며 종료한 게임의 커서·하위 폴더 위치까지 복원하는 기능은 아닙니다.
+- 기존 Mali·PPSSPP Vulkan·Flycast Vulkan/일반 코어 2.7·회전·Wi-Fi·Ozone·PortMaster·진동·밝기·ZRAM·BennuGD 기능은 유지합니다. 일반 Flycast를 우선 권장하지만 게임에 따라 VL이나 Xtreme이 더 유리할 수 있으니 비교해서 선택해 주세요.
 
 코어는 재부팅할 때마다 자동 연결되며 save-overlay는 필요 없습니다. MAME2003 Plus의 mame078plus 이름도 처리합니다.
 
@@ -24,21 +23,21 @@ CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용
 
 ## 확인 범위와 출처
 
-제작자가 일반·VL·Xtreme Vulkan을 직접 플레이해 화질·성능 향상을 확인했으며 특히 일반 코어의 큰 개선을 보고했습니다. 일반 2.7은 원격으로 게임/데모·메뉴 표시, 해상도 증가에 따른 실제 Vulkan 재초기화 후 방향 유지와 같은 부팅의 정상 ES 복귀를 확인했습니다. VL·Xtreme의 개별 해상도 변경, 2.7의 실제 소리·물리 입력·성능 비교, 최종 이미지의 새 SD 플래싱과 모든 생산분은 추가 시험하지 않았습니다.
+실기 ES의 각 게임 목록에서 PSP OutRun 2006과 일반 Flycast Crazy Taxi 2를 실행·정상 종료하고, 재부팅 없이 각각 PSP·Dreamcast 목록으로 돌아오는 것을 캡처로 확인했습니다. 설치 후 재부팅에서는 기존 첫 화면 설정이 유지됐고, 원래 값이 없거나 false인 설정의 복원과 다른 설정 보존을 확인했습니다. VL·Xtreme은 같은 감독 경로를 사용하며 개별 실행과 최종 이미지의 새 SD 플래싱 시험은 반복하지 않았습니다.
 
 제공된 두 코어와 자동 연결은 기존 확인 결과를 유지하며 새 이미지에서 코어 해시 동일성을 확인했습니다. 정확히 일치하는 수정 코어 소스와 CRC 패치는 제공받지 못했으며 상위 소스 링크를 정확한 대응 소스로 주장하지 않습니다.
 
-- [CRC판 상세 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6-crc-ko/docs/CRC_KOREAN.ko.md)
-- [작업 이력](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6-crc-ko/docs/HISTORY.ko.md)
-- [작동 구조](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6-crc-ko/docs/ARCHITECTURE.ko.md)
-- [빌드·이미지 제작](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6-crc-ko/docs/BUILD.ko.md)
-- [공개 파일](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6-crc-ko/docs/PUBLIC_FILES.ko.md)
-- [출처·라이선스](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6-crc-ko/docs/SOURCES_AND_LICENSES.ko.md)
-- [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6-crc-ko/docs/RELEASE.ko.md)
-- [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.6-crc-ko/docs/TESTING.ko.md)
+- [CRC판 상세 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7-crc-ko/docs/CRC_KOREAN.ko.md)
+- [작업 이력](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7-crc-ko/docs/HISTORY.ko.md)
+- [작동 구조](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7-crc-ko/docs/ARCHITECTURE.ko.md)
+- [빌드·이미지 제작](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7-crc-ko/docs/BUILD.ko.md)
+- [공개 파일](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7-crc-ko/docs/PUBLIC_FILES.ko.md)
+- [출처·라이선스](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7-crc-ko/docs/SOURCES_AND_LICENSES.ko.md)
+- [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7-crc-ko/docs/RELEASE.ko.md)
+- [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7-crc-ko/docs/TESTING.ko.md)
 
-압축 해제 IMG: 6,069,178,368바이트. SHA256: a0931b5048fb78fb196ab42f09e17022388eb579cc998a4baedc644d7c519f4d. CRC판 전용 체크섬을 사용하세요.
+압축 해제 IMG: 6,069,178,368바이트. SHA256: 5b089f73c611c700a327a5516a120e7dc53f4a215cc977aa3125c33479836388. CRC판 전용 체크섬을 사용하세요.
 
 BennuGD는 별도로 제공받은 코어이며 dsno님 출처 표기는 FBNeo·MAME CRC 무시 코어에만 해당합니다. BennuGD의 정확한 대응 소스·빌드 정보는 제공받지 못했습니다.
 
-Flycast 대응 소스: [일반판의 flycast-v1.0.6-sources.tar](https://github.com/pikachu220v/actionpi-knulli/releases/download/v1.0.6/flycast-v1.0.6-sources.tar). 펌웨어 이미지가 아닌 소스 묶음입니다.
+Flycast 대응 소스: [일반판의 flycast-v1.0.6-sources.tar](https://github.com/pikachu220v/actionpi-knulli/releases/download/v1.0.7/flycast-v1.0.6-sources.tar). 펌웨어 이미지가 아닌 소스 묶음입니다.

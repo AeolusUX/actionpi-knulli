@@ -15,8 +15,8 @@ Choose your edition:
 
 | Edition | Release download |
 | --- | --- |
-| Standard / 일반판 | [Action Pi KNULLI v1.0.6](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6) |
-| 한국 사용자용 CRC 무시 코어 적용판 | [CRC 적용판 v1.0.6 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6-crc-ko) |
+| Standard / 일반판 | [Action Pi KNULLI v1.0.7](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7) |
+| 한국 사용자용 CRC 무시 코어 적용판 | [CRC 적용판 v1.0.7 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7-crc-ko) |
 
 Use the `.img.xz` asset and matching SHA256 file. Extract the image if your flashing
 application does not accept XZ, then write the image to the **whole SD card**.
@@ -106,6 +106,15 @@ that helped establish the vendor-stack direction.
 
 ## Release history
 
+### v1.0.7 changes
+
+- **Return to the game list:** after closing PPSSPP or Flycast Vulkan, ES now reopens the saved system’s game list instead of the top-level system selector.
+- **Normal startup preserved:** game-list startup is temporary for the return session. The original startup preference is restored when ES closes, or at the next supervisor start after an interrupted session. Other ES settings are retained.
+- **Selection limit:** the game list opens at its first entry; the exited game’s cursor position and subfolder are not restored.
+- Existing Mali, PPSSPP Vulkan, Flycast Vulkan/standard core 2.7, rotation, Wi-Fi, Ozone, PortMaster, rumble, brightness, ZRAM and BennuGD functionality is retained. Standard Flycast is a good first choice, but VL or Xtreme may perform better in some games; compare the cores for your game.
+
+On the maintainer device, PSP OutRun 2006 and standard Flycast Crazy Taxi 2 were launched from their ES game lists, exited normally, and returned to the respective PSP/Dreamcast lists without another reboot; captures confirmed both lists. Initial startup remained unchanged after the installation reboot. Preference restoration was checked with both absent and explicit-false settings while preserving other settings. VL/Xtreme use the same supervisor path; their individual launches and a fresh SD flash of these final images were not repeated.
+
 ### v1.0.6 changes
 
 - **Flycast Vulkan:** standard, VL and Xtreme now use Vulkan with correctly oriented gameplay and RetroArch menus, plus normal HOME exit and return to ES without rebooting.
@@ -158,8 +167,8 @@ Wi-Fi reboot persistence, AIC/RTL8723DS support, emulator/tool/game rotation and
 
 ## Downloads / 다운로드
 
-### [일반판 v1.0.6 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6)
+### [일반판 v1.0.7 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7)
 
-### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.6](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.6-crc-ko)
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.7](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7-crc-ko)
 
 CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).
