@@ -1,8 +1,8 @@
-# Action Pi KNULLI adaptation
+# Action Pi Knulli adaptation
 
-Unofficial KNULLI adaptation for **Helegaly Action Pi**, documenting the work needed
+Unofficial Knulli adaptation for **Helegaly Action Pi**, documenting the work needed
 to run a Mali-based EmulationStation menu and PPSSPP Vulkan on the same boot.
-This is a community adaptation, not an official KNULLI release or a universal
+This is a community adaptation, not an official Knulli release or a universal
 TrimUI Smart Pro S firmware.
 
 [한국어 안내](README.ko.md) · [Development history](docs/HISTORY.md) ·
@@ -15,7 +15,7 @@ Choose your edition:
 
 | Edition | Release download |
 | --- | --- |
-| Standard / 일반판 | [Action Pi KNULLI v1.0.7](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7) |
+| Standard / 일반판 | [Action Pi Knulli v1.0.7](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7) |
 | 한국 사용자용 CRC 무시 코어 적용판 | [CRC 적용판 v1.0.7 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7-crc-ko) |
 
 Use the `.img.xz` asset and matching SHA256 file. Extract the image if your flashing
@@ -74,7 +74,7 @@ distribution defaults and file integrity were checked offline. On 2026-10-24,
 the owner downloaded the published v1.0.0 image, wrote it to an SD card,
 installed it on the device and confirmed normal operation. See [test coverage](docs/TESTING.md).
 
-The KNULLI board-integration base is the upstream [Action Pi board configuration](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)
+The Knulli board-integration base is the upstream [Action Pi board configuration](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)
 on `knulli-main` (`board/allwinner/a527/helegany-action-pi`).
 
 The exact vendor source of the original 5.15.147 kernel has **not** been identified.
@@ -99,7 +99,7 @@ distinguish these cases explicitly.
 
 Original project glue is provided under the scoped MIT terms in `LICENSE`;
 kernel-derived and third-party files retain their own terms. No blanket MIT
-license is applied to the firmware. Credits: KNULLI/Batocera, Linux/Allwinner/
+license is applied to the firmware. Credits: Knulli/Batocera, Linux/Allwinner/
 Orange Pi/Radxa, Arm, SDL, PPSSPP, Libretro/Flycast, PortMaster and the
 [Ultramarine handheld work](https://github.com/Ultramarine-Linux/ultramarine-handheld)
 that helped establish the vendor-stack direction.
@@ -147,7 +147,7 @@ The owner confirmed PPSSPP 1.20.4 still launches correctly after reboot. On-devi
 - **Rumble:** use a 25 kHz motor PWM carrier and compensate low-strength effects. Crazy Taxi 1/2 with Flycast VL/Xtreme now provides noticeable small rumble with reduced high-pitched motor-related noise on the tested device.
 - **Brightness shortcut:** hold SELECT, then use Volume +/−. Normal volume and HOME behavior are retained; held adjustment works.
 - **Brightness overlay:** show a sun icon, percentage and bar above the menu or game, then hide it about 2.2 seconds after adjustment. It uses an unused display plane and runs only while visible; no idle overlay service is added.
-- **Background cleanup:** disable KNULLI usage-statistics reporting by default and stop the obsolete repeating boot-log copy on devices carrying it. Omit old diagnostic maps from the image.
+- **Background cleanup:** disable Knulli usage-statistics reporting by default and stop the obsolete repeating boot-log copy on devices carrying it. Omit old diagnostic maps from the image.
 - Existing Mali menu/PPSSPP Vulkan, Wi-Fi, screen rotation, Ozone and PortMaster functionality is retained.
 
 On-device tests confirmed rumble strength/noise and persistence after reboot, disabled statistics/repeating logging after reboot, and the brightness shortcut's direction, hold and normal-volume behavior. The owner confirmed the brightness overlay in ES and PPSSPP, automatic hiding, and game exit/menu return; remote inspection confirmed the overlay worker exits. The overlay uses a shared display path, but every emulator and hardware batch was not individually retested. The owner subsequently rebooted the device and confirmed all applied changes still work, including the brightness shortcut and overlay. These newly packaged installation images have not been independently reflashed.

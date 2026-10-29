@@ -1,8 +1,8 @@
-# Action Pi KNULLI v1.0.7
+# Action Pi Knulli v1.0.7
 
 ## English
 
-Unofficial KNULLI adaptation for the Helegaly Action Pi. Mali runs the menu and PPSSPP Vulkan in the same boot.
+Unofficial Knulli adaptation for the Helegaly Action Pi. Mali runs the menu and PPSSPP Vulkan in the same boot.
 
 ### What changed
 
@@ -31,7 +31,7 @@ On the maintainer device, PSP OutRun 2006 and standard Flycast Crazy Taxi 2 were
 - [Installation](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/RELEASE.md)
 - [Verification scope](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/TESTING.md)
 
-Board integration is based on [upstream KNULLI's Action Pi board configuration](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi). This is an adaptation of an inherited image, not a complete from-source firmware build.
+Board integration is based on [upstream Knulli's Action Pi board configuration](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi). This is an adaptation of an inherited image, not a complete from-source firmware build.
 
 Raw IMG: 6,069,178,368 bytes. SHA256: 56ea1f86b6e7dea4ba512059d1018eaad98e5e50d8922576cd0468f2a8c9c80f.
 
@@ -39,7 +39,7 @@ Raw IMG: 6,069,178,368 bytes. SHA256: 56ea1f86b6e7dea4ba512059d1018eaad98e5e50d8
 
 ## 한국어
 
-Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. 같은 부팅에서 Mali 메뉴와 PPSSPP Vulkan을 사용합니다.
+Helegaly Action Pi용 비공식 Knulli 수정 배포판입니다. 같은 부팅에서 Mali 메뉴와 PPSSPP Vulkan을 사용합니다.
 
 ### 수정 내역
 
@@ -68,6 +68,6 @@ Helegaly Action Pi용 비공식 KNULLI 수정 배포판입니다. 같은 부팅�
 - [설치 안내](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/RELEASE.ko.md)
 - [검증 범위](https://github.com/pikachu220v/actionpi-knulli/blob/v1.0.7/docs/TESTING.ko.md)
 
-보드 구성은 상위 KNULLI의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)을 기반으로 했습니다. 기존 이미지를 수정한 배포판이며 모든 구성요소를 소스에서 완전히 재빌드한 펌웨어는 아닙니다.
+보드 구성은 상위 Knulli의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)을 기반으로 했습니다. 기존 이미지를 수정한 배포판이며 모든 구성요소를 소스에서 완전히 재빌드한 펌웨어는 아닙니다.
 
 압축 해제 IMG: 6,069,178,368바이트. SHA256: 56ea1f86b6e7dea4ba512059d1018eaad98e5e50d8922576cd0468f2a8c9c80f.

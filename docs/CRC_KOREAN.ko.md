@@ -14,7 +14,7 @@ CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용
 
 - FBNeo와 MAME2003 Plus를 제공받은 CRC 무시 코어로 교체합니다. 게임 실행 시 해당 코어를 선택해 주세요.
 - SHARE 준비 후 S99 사용자 시작 훅이 코어를 매번 자동 연결합니다. 재부팅 후에도 적용되며 save-overlay는 필요하지 않습니다.
-- KNULLI에서 쓰는 MAME2003 Plus 이름인 mame078plus에도 연결합니다.
+- Knulli에서 쓰는 MAME2003 Plus 이름인 mame078plus에도 연결합니다.
 - Wi-Fi·Mali·PPSSPP Vulkan·Ozone·화면 방향·PortMaster와 메뉴 시작 guard 수정은 일반판 v1.0.3와 같습니다.
 - 시스템 기본 언어 등 초기 설정은 일반판과 같습니다. 게임 ROM은 포함하지 않습니다.
 

@@ -14,10 +14,10 @@
 | Mali 커널 드라이버 | Radxa allwinner-bsp 커밋 `2045a3ca2a01f088c0314dc924bda59d154e363e`, `modules/gpu/mali-valhall/driver` | 추적되는 상위 소스를 저장소에 포함. license.txt와 파일별 고지 보존. 후보 빌드 입력 기록 |
 | 제조사 Linux 5.15.147 | 복구 설정, 바이너리 식별 정보, 보호 조건을 둔 수정 소스 포함 | 정확한 원본 제조사 트리와 빌드 출처는 미확인 |
 | 공개 커널 후보 | Orange Pi 커밋 `5b956b750422abd5e9e9c5523540d2aaf41a7939` | 헤더·구조체 배치·소스 비교용. 제조사 바이너리의 정확한 대응 소스라고 주장하지 않음 |
-| KNULLI 통합 | `knulli-main`의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi), A527 이력 `5a7cb1e8e4dd` | 보드 구성 기반. 기존 이미지 전체의 정확한 소스 대응은 확립되지 않음 |
+| Knulli 통합 | `knulli-main`의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi), A527 이력 `5a7cb1e8e4dd` | 보드 구성 기반. 기존 이미지 전체의 정확한 소스 대응은 확립되지 않음 |
 | SDL2 | [release-2.32.8](https://github.com/libsdl-org/SDL/tree/release-2.32.8) | 대상 SDL 2.32.8 확인. 새 보정 기능은 별도 소스 파일로 제공 |
 | Flycast VL 참조 | [libretro/flycast 커밋 4a913e0](https://github.com/libretro/flycast/tree/4a913e063c95d1fae98afc64645831de0bcad57e) | 구형 시그널·JIT 조사에 사용한 소스 참조 |
-| PPSSPP/Flycast/RetroArch/ES | 기존 KNULLI 프로그램. 이 저장소의 수정 소스가 실행·출력 동작을 감쌈 | 기존 바이너리 각각의 정확한 소스·버전 대응을 모두 확보했다고 주장하지 않음 |
+| PPSSPP/Flycast/RetroArch/ES | 기존 Knulli 프로그램. 이 저장소의 수정 소스가 실행·출력 동작을 감쌈 | 기존 바이너리 각각의 정확한 소스·버전 대응을 모두 확보했다고 주장하지 않음 |
 | Mali 사용자 공간 라이브러리 | 기존 제조사 구성. GLES 렌더러에서 r32p0 관찰 | 제조사 독점 바이너리. 커널 드라이버 GPL이 libmali까지 허가하는 것은 아님 |
 | AIC8800DC 모듈·펌웨어 | 정상 작동하는 순정 펌웨어의 파일 재사용 | 수정 작업에서 바이너리 출처를 기록했으나, 정확한 대응 모듈 소스·재배포 조건은 완전히 해결되지 않음 |
 | 기본 BIOS | 기존 기본 루트 파일시스템의 BIOS를 그대로 유지 | 연결 코드 라이선스 적용 대상이 아님. BIOS가 전혀 없는 배포판은 아님 |
@@ -38,7 +38,7 @@
 
 ## 주요 상위 프로젝트와 원출처
 
-- [KNULLI](https://github.com/knulli-cfw/knulli-linux)
+- [Knulli](https://github.com/knulli-cfw/knulli-linux)
 - [고정한 Mali 소스](https://github.com/radxa/allwinner-bsp/tree/2045a3ca2a01f088c0314dc924bda59d154e363e/modules/gpu/mali-valhall/driver)
 - [고정한 Orange Pi 후보](https://github.com/orangepi-xunlong/linux-orangepi/tree/5b956b750422abd5e9e9c5523540d2aaf41a7939)
 - [Arm GNU 13.3.Rel1](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)

@@ -1,12 +1,12 @@
-# Action Pi용 KNULLI 비공식 개선판
+# Action Pi용 Knulli 비공식 개선판
 
-이 저장소는 Action Pi에서 KNULLI 메뉴와 PPSSPP Vulkan을 함께 사용하기 위해
-진행한 작업의 소스와 기록입니다. KNULLI 공식 배포판은 아닙니다.
+이 저장소는 Action Pi에서 Knulli 메뉴와 PPSSPP Vulkan을 함께 사용하기 위해
+진행한 작업의 소스와 기록입니다. Knulli 공식 배포판은 아닙니다.
 
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
-**Action Pi KNULLI v1.0.7**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
+**Action Pi Knulli v1.0.7**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
 압축 이미지를 지원하지 않는 프로그램에서는 먼저 압축을 풀고 SD 전체에 굽습니다.
 선택한 SD의 내용은 지워집니다.
 
@@ -58,7 +58,7 @@ Emulators의 PPSSPP 단독 실행도 게임 파일 없이 같은 Vulkan 메뉴�
 기본 기능과 PortMaster 보정은 실기로 확인했으며 파일·설정·체크섬 검사도 수행했습니다.
 2026년 10월 24일 사용자가 공개된 v1.0.0 이미지를 직접 내려받아 SD 카드에 기록하고
 실기에 설치한 뒤 정상 작동을 확인했습니다.
-KNULLI 보드 구성은 상위 프로젝트의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)을
+Knulli 보드 구성은 상위 프로젝트의 [Action Pi 보드 설정](https://github.com/knulli-cfw/knulli-linux/tree/knulli-main/board/allwinner/a527/helegany-action-pi)을
 기반으로 했습니다. 경로는 `knulli-main`의 `board/allwinner/a527/helegany-action-pi`입니다.
 
 정확한 원본 커널 소스가 확인되지 않은 부분과 소스 출처가 불완전한 바이너리는
