@@ -20,7 +20,7 @@ the cleared free space efficiently.
    details when downloads are needed.
 
 Raw image SHA256:
-`56ea1f86b6e7dea4ba512059d1018eaad98e5e50d8922576cd0468f2a8c9c80f`.
+`5cbba01b7376845167749183975a72b4e9a1f7c32eb8981660928b0239975365`.
 The public manifest and binary component hashes are in `release/`.
 
 The source tree is stored in Git; the large firmware belongs in Releases.
@@ -45,3 +45,8 @@ PPSSPP is now 1.20.4. First-installation waiting time, brightness shortcuts and 
 ## v1.0.5 ZRAM
 
 Toggle zramswap in Services; the default is off. Create an empty BOOT/ACTIONPI_ZRAM/DISABLED file for recovery. BennuGD reconnects at each boot.
+
+
+## v1.0.8
+
+Open/close the Yaba Sanshiro standalone 1.20.51 GLES settings menu with **L3 (click the left analog stick)**.

@@ -1,0 +1,22 @@
+{
+  "boot/ACTIONPI_FIXES/actionpi_app_launcher.py": {
+    "bytes": 5038,
+    "sha256": "b78a7d1e3ade83415e590c0a3bc126d22eaaf69b64d975372f1dfe312d0b7f89"
+  },
+  "boot/ACTIONPI_FIXES/yabasanshiro_volume.sh": {
+    "bytes": 885,
+    "sha256": "47184f3f28055880c6a94c7fac1438ab172f06834b56bf78eafeab16b01a9b94"
+  },
+  "boot/ACTIONPI_FIXES/saturn/COPYING.txt": {
+    "bytes": 18340,
+    "sha256": "b07078afe57615fa61e4fb575427919827df14f182e4257ce870c6a44292df41"
+  },
+  "boot/ACTIONPI_FIXES/saturn/run.py": {
+    "bytes": 4290,
+    "sha256": "3fa0d360479e2b1c5bb3af258da65fa41eaf795ba28a1204aea0b824002c3176"
+  },
+  "boot/ACTIONPI_FIXES/saturn/yabasanshiro": {
+    "bytes": 3844408,
+    "sha256": "a6d3f63be8892f3aaaec21d497079d3c3d2534d6cd5a0cf41166ba3ebc36bf1f"
+  }
+}

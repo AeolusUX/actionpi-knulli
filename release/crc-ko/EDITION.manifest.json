@@ -1,12 +1,12 @@
 {
-  "version": "v1.0.7",
+  "version": "v1.0.8",
   "edition": "crc-ko",
-  "release_tag": "v1.0.7-crc-ko",
-  "image": "action-pi-knulli-v1.0.7-crc-ko.img",
+  "release_tag": "v1.0.8-crc-ko",
+  "image": "action-pi-knulli-v1.0.8-crc-ko.img",
   "bytes": 6069178368,
-  "sha256": "5b089f73c611c700a327a5516a120e7dc53f4a215cc977aa3125c33479836388",
-  "base_image": "action-pi-knulli-v1.0.7.img",
-  "base_sha256": "56ea1f86b6e7dea4ba512059d1018eaad98e5e50d8922576cd0468f2a8c9c80f",
+  "sha256": "b4ab37a9d37627dabcb6aa9635a6f8256208b804ee8b447118dd5cddf0ddf63d",
+  "base_image": "action-pi-knulli-v1.0.8.img",
+  "base_sha256": "5cbba01b7376845167749183975a72b4e9a1f7c32eb8981660928b0239975365",
   "cores": {
     "fbneo_libretro.so": {
       "bytes": 83514112,
@@ -19,7 +19,7 @@
   },
   "startup": "S99userservices -> /userdata/system/custom.sh -> custom-cores/load.py; bind mounts; no save-overlay",
   "mame2003_plus_alias": "mame078plus_libretro.so when present",
-  "default_settings": "Same clean English defaults as standard v1.0.7; Wi-Fi and ZRAM off; no saved personal network",
+  "default_settings": "Same clean English defaults as standard v1.0.8; Wi-Fi and ZRAM off; no saved personal network",
   "games_included": false,
   "additional_personal_bios_included": false,
   "save_overlay_required": false,
@@ -29,7 +29,7 @@
     "crc_arcade_cores_preserved": true,
     "kernel_mali_wifi_ppsspp_zram_unchanged": true,
     "private_configuration_copied": false,
-    "unchanged_bytes_compared": 6058651648,
+    "unchanged_bytes_compared": 6054772736,
     "old_images_unchanged": true,
     "boot_and_userdata_payload_readback": true
   },
@@ -41,12 +41,13 @@
     "url": "https://dsno.tistory.com/m/",
     "identified_by": "user"
   },
-  "packaging_source_image": "action-pi-knulli-v1.0.6-crc-ko.img",
+  "packaging_source_image": "action-pi-knulli-v1.0.7-crc-ko.img",
   "ppsspp_version": "1.20.4",
   "zram_default_enabled": false,
   "bennugd": {
     "bytes": 3103560,
     "sha256": "152aeaade426a9c8ccf11d0b34ee3a64278768f1f1fa91a635d7c20efa5cc34b",
     "provenance": "User-supplied binary; exact corresponding source/build not supplied"
-  }
+  },
+  "saturn_standalone_version": "1.20.51"
 }

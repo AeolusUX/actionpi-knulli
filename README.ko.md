@@ -6,7 +6,7 @@
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
-**Action Pi Knulli v1.0.7**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
+**Action Pi Knulli v1.0.8**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
 압축 이미지를 지원하지 않는 프로그램에서는 먼저 압축을 풀고 SD 전체에 굽습니다.
 선택한 SD의 내용은 지워집니다.
 
@@ -14,8 +14,8 @@
 
 | 종류 | 선택 |
 | --- | --- |
-| 기본 배포판 | [일반판 v1.0.7](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7) |
-| CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
+| 기본 배포판 | [일반판 v1.0.8](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8) |
+| CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
 
 CRC 적용판은 FBNeo·MAME2003 Plus와 재부팅 자동 적용을 추가한 변형입니다. 두 판의 체크섬이 다릅니다. CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다.
 
@@ -66,6 +66,17 @@ Knulli 보드 구성은 상위 프로젝트의 [Action Pi 보드 설정](https:/
 모든 구성요소를 이 저장소만으로 완전히 재빌드할 수 있다고 주장하지 않습니다.
 
 ## 버전별 업데이트
+
+### v1.0.8 변경 사항
+
+- **야바산시로 스탠드얼론 1.9.0 → 1.20.51 업데이트:** 공식 엔진과 프런트엔드를 Linux ARM64/GLES용으로 적용했습니다. ARM64 JIT와 액션파이 회전 보정을 유지하며 RetroArch 새턴 코어는 변경하지 않았습니다.
+- **게임 중 설정 메뉴는 L3(왼쪽 아날로그 스틱 클릭)로 열고 닫습니다.**
+- **소리 지직·틱틱 잡음 수정:** 소리 생성 시점을 누적 기준으로 계산하여 Linux 스케줄러의 대기 지연이 계속 쌓이는 문제를 고쳤습니다. 오디오 버퍼 확대나 출력 방식 변경 없이 실기에서 확인된 BIOS·게임 잡음을 해결했습니다.
+- **조작과 FPS 메뉴 수정:** 게임 버튼·D패드·스틱 매핑을 적용하고 Show/Hide FPS의 표시·숨김과 충돌 문제를 수정했습니다. GLES 설정 메뉴 그리기와 렌더링 스레드의 초기화도 보완했습니다.
+- **시험 파일 정리:** 최신 GLES판을 정식 실행 경로로 연결했습니다. 구형 시험 연결과 실패한 새턴 Vulkan 실험은 배포에 포함하지 않습니다.
+- 기존 Mali·PPSSPP Vulkan·Flycast Vulkan/일반 코어 2.7·Wi-Fi·회전·Ozone·PortMaster·밝기·진동·ZRAM·BennuGD는 유지합니다. 새턴 스탠드얼론은 Vulkan이 아닌 **GLES**입니다.
+
+사용자가 최신 스탠드얼론의 게임 버튼·D패드·스틱, L3 설정 메뉴와 FPS 표시를 확인했고, 마지막 소리 타이밍 수정 후 BIOS·게임 잡음이 전혀 없어졌다고 확인했습니다. 짧은 측정에서 소리 생성·전달이 44.1kHz에 가까워졌고 버퍼 비움이 관찰되지 않았습니다. 최종 v1.0.8 이미지를 다시 SD에 굽거나 별도로 재부팅하여 확인하지는 않았습니다. 앞서 보고된 마법기사 레이어스의 음절 반복은 이번 수정 뒤 재확인하지 않았으므로 해결됐다고 표기하지 않습니다.
 
 ### v1.0.7 변경 사항
 

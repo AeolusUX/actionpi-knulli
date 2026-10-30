@@ -1,0 +1,9 @@
+{
+  "version": "v1.0.8",
+  "date": "2026-10-31",
+  "scope_en": "The user confirmed the latest standalone game buttons, D-pad, sticks, L3 menu and FPS toggle, and reported that BIOS/game crackles disappeared after the final sound timing fix. Measured audio generation/delivery returned close to 44.1 kHz without observed empty-ring samples in the short measurement. The final v1.0.8 images have not been freshly flashed or separately reboot-tested. The earlier Magic Knight Rayearth syllable-repetition issue has not been rechecked after this fix; it is not claimed resolved.",
+  "scope_ko": "사용자가 최신 스탠드얼론의 게임 버튼·D패드·스틱, L3 설정 메뉴와 FPS 표시를 확인했고, 마지막 소리 타이밍 수정 후 BIOS·게임 잡음이 전혀 없어졌다고 확인했습니다. 짧은 측정에서 소리 생성·전달이 44.1kHz에 가까워졌고 버퍼 비움이 관찰되지 않았습니다. 최종 v1.0.8 이미지를 다시 SD에 굽거나 별도로 재부팅하여 확인하지는 않았습니다. 앞서 보고된 마법기사 레이어스의 음절 반복은 이번 수정 뒤 재확인하지 않았으므로 해결됐다고 표기하지 않습니다.",
+  "fresh_final_image_flash_tested": false,
+  "saturn_vulkan_included": false,
+  "rayearth_syllable_repetition_rechecked": false
+}

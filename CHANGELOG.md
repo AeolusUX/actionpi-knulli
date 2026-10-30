@@ -8,6 +8,23 @@ Public release numbering starts at **v1.0.0**.
 
 
 
+
+## v1.0.8 — 2026-10-31
+
+- **Yaba Sanshiro standalone updated from 1.9.0 to 1.20.51:** the official engine and frontend are adapted for Linux ARM64/GLES, with the ARM64 JIT enabled and Action Pi rotation retained. The RetroArch Saturn core is unchanged.
+- **In-game settings: press L3 (click the left analog stick) to open or close the standalone menu.**
+- **Audio crackles corrected:** the realtime sound generator now keeps cumulative deadlines instead of accumulating Linux scheduler delays. This fixes the verified BIOS/game crackles without increasing the audio buffer or changing the output backend.
+- **Controls and FPS menu fixed:** game buttons, D-pad and sticks are mapped correctly; the Show/Hide FPS setting works without the previous crash. GLES menu drawing and render-thread initialization are corrected.
+- **Trial cleanup:** the latest GLES executable has a permanent launch path. Old trial routes and the failed Saturn Vulkan experiment are excluded from this release.
+- Existing Mali, PPSSPP Vulkan, Flycast Vulkan/standard core 2.7, Wi-Fi, rotation, Ozone, PortMaster, brightness, rumble, ZRAM and BennuGD are retained. Saturn standalone uses **GLES**, not Vulkan.
+
+- **야바산시로 스탠드얼론 1.9.0 → 1.20.51 업데이트:** 공식 엔진과 프런트엔드를 Linux ARM64/GLES용으로 적용했습니다. ARM64 JIT와 액션파이 회전 보정을 유지하며 RetroArch 새턴 코어는 변경하지 않았습니다.
+- **게임 중 설정 메뉴는 L3(왼쪽 아날로그 스틱 클릭)로 열고 닫습니다.**
+- **소리 지직·틱틱 잡음 수정:** 소리 생성 시점을 누적 기준으로 계산하여 Linux 스케줄러의 대기 지연이 계속 쌓이는 문제를 고쳤습니다. 오디오 버퍼 확대나 출력 방식 변경 없이 실기에서 확인된 BIOS·게임 잡음을 해결했습니다.
+- **조작과 FPS 메뉴 수정:** 게임 버튼·D패드·스틱 매핑을 적용하고 Show/Hide FPS의 표시·숨김과 충돌 문제를 수정했습니다. GLES 설정 메뉴 그리기와 렌더링 스레드의 초기화도 보완했습니다.
+- **시험 파일 정리:** 최신 GLES판을 정식 실행 경로로 연결했습니다. 구형 시험 연결과 실패한 새턴 Vulkan 실험은 배포에 포함하지 않습니다.
+- 기존 Mali·PPSSPP Vulkan·Flycast Vulkan/일반 코어 2.7·Wi-Fi·회전·Ozone·PortMaster·밝기·진동·ZRAM·BennuGD는 유지합니다. 새턴 스탠드얼론은 Vulkan이 아닌 **GLES**입니다.
+
 ## v1.0.7 — 2026-10-28
 
 - **Return to the game list:** after closing PPSSPP or Flycast Vulkan, ES now reopens the saved system’s game list instead of the top-level system selector.

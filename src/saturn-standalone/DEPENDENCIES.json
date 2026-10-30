@@ -1,0 +1,90 @@
+[
+  {
+    "url": "https://deb.debian.org/debian/pool/main/e/eigen3/libeigen3-dev_3.4.0-4_all.deb",
+    "path": "downloads\\libeigen3-dev_3.4.0-4_all.deb",
+    "bytes": 1040780,
+    "sha256": "1a167bb381acb90c1d8450a8f3e66a09d216dbc64b33ac8a082a0912513ef939",
+    "package": "libeigen3-dev",
+    "version": "3.4.0-4"
+  },
+  {
+    "url": "https://deb.debian.org/debian/pool/main/libp/libpng1.6/libpng-dev_1.6.39-2+deb12u5_arm64.deb",
+    "path": "downloads\\libpng-dev_1.6.39-2+deb12u5_arm64.deb",
+    "bytes": 355624,
+    "sha256": "f02dc017801713dfd11aaa7e72d705f747570e029fd242c29af072d64474ddfc",
+    "package": "libpng-dev",
+    "version": "1.6.39-2+deb12u5"
+  },
+  {
+    "url": "https://deb.debian.org/debian/pool/main/o/openssl/libssl-dev_3.0.20-1~deb12u2_arm64.deb",
+    "path": "downloads\\libssl-dev_3.0.20-1~deb12u2_arm64.deb",
+    "bytes": 2312256,
+    "sha256": "c6941a83bebd83d2a1cd2db56418062d8f48b3200786aacafa194b75a93a3702",
+    "package": "libssl-dev",
+    "version": "3.0.20-1~deb12u2"
+  },
+  {
+    "url": "https://deb.debian.org/debian/pool/main/s/sqlite3/libsqlite3-dev_3.40.1-2+deb12u2_arm64.deb",
+    "path": "downloads\\libsqlite3-dev_3.40.1-2+deb12u2_arm64.deb",
+    "bytes": 979352,
+    "sha256": "cca1f981b5c4aedd7468478ebf538d8cb3465a3bad37710f8a85d661e1d046bf",
+    "package": "libsqlite3-dev",
+    "version": "3.40.1-2+deb12u2"
+  },
+  {
+    "url": "https://deb.debian.org/debian/pool/main/z/zlib/zlib1g-dev_1.2.13.dfsg-1_arm64.deb",
+    "path": "downloads\\zlib1g-dev_1.2.13.dfsg-1_arm64.deb",
+    "bytes": 912840,
+    "sha256": "afb60f0bae432f2f0edfe2d674e99c1a13a147c9aa2b52f2f23e3df19ece76f5",
+    "package": "zlib1g-dev",
+    "version": "1:1.2.13.dfsg-1"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/nlohmann/json/v3.2.0/single_include/nlohmann/json.hpp",
+    "path": "downloads\\json.hpp",
+    "bytes": 651058,
+    "sha256": "ce6b5610a051ec6795fa11c33854abebb086f0fd67c311f5921c3c07f9531b44"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/api/GLES3/gl3.h",
+    "path": "downloads\\gl3.h",
+    "bytes": 81600,
+    "sha256": "a0e4880142bd059bd4d7446f257920b5020b8bbb0a86eb0149cbd1ea2fcf8cb0"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/api/GLES3/gl31.h",
+    "path": "downloads\\gl31.h",
+    "bytes": 106392,
+    "sha256": "bb17bfde4aeba912d3686a0cc68ac04710ddacbcc5df7354994927747357daf3"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/api/GLES3/gl32.h",
+    "path": "downloads\\gl32.h",
+    "bytes": 127272,
+    "sha256": "f203257863a7de3fce851efa61490907171db82082381d05f86f5d9bd39e8e17"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/api/GLES3/gl3platform.h",
+    "path": "downloads\\gl3platform.h",
+    "bytes": 642,
+    "sha256": "a9e060dae5a2b11c5a889b679692b7089a10a7e03ebfbb6cf28217f6e322fb08"
+  },
+  {
+    "path": "runtime-libs/libssl.so.3",
+    "source": "/usr/lib/libssl.so.3",
+    "sha256": "356950d3a14548b44c5c505b125ed3501885be3f18c5648305b4ae5b61e3529e",
+    "bytes": 999512
+  },
+  {
+    "path": "runtime-libs/libcrypto.so.3",
+    "source": "/usr/lib/libcrypto.so.3",
+    "sha256": "2cce83cdb6f493ee2635a1d3259d9e45fc6a57794cb204d2fefc6779eb9b9d31",
+    "bytes": 5119672
+  },
+  {
+    "path": "runtime-libs/libsqlite3.so.0",
+    "source": "/usr/lib/libsqlite3.so.0.8.6",
+    "sha256": "184eb39926106e65d54f8cd09065fffd7fc0c777730efb98d3ebb31ce5110262",
+    "bytes": 1421520
+  }
+]

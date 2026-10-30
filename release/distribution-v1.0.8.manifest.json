@@ -1,0 +1,34 @@
+{
+  "version": "v1.0.8",
+  "edition": "standard",
+  "image": "action-pi-knulli-v1.0.8.img",
+  "bytes": 6069178368,
+  "sha256": "5cbba01b7376845167749183975a72b4e9a1f7c32eb8981660928b0239975365",
+  "source_image": "action-pi-knulli-v1.0.7.img",
+  "source_sha256": "56ea1f86b6e7dea4ba512059d1018eaad98e5e50d8922576cd0468f2a8c9c80f",
+  "changed_files": {
+    "ACTIONPI_FIXES/actionpi_app_launcher.py": "b78a7d1e3ade83415e590c0a3bc126d22eaaf69b64d975372f1dfe312d0b7f89",
+    "ACTIONPI_FIXES/yabasanshiro_volume.sh": "47184f3f28055880c6a94c7fac1438ab172f06834b56bf78eafeab16b01a9b94",
+    "ACTIONPI_FIXES/saturn/COPYING.txt": "b07078afe57615fa61e4fb575427919827df14f182e4257ce870c6a44292df41",
+    "ACTIONPI_FIXES/saturn/run.py": "3fa0d360479e2b1c5bb3af258da65fa41eaf795ba28a1204aea0b824002c3176",
+    "ACTIONPI_FIXES/saturn/yabasanshiro": "a6d3f63be8892f3aaaec21d497079d3c3d2534d6cd5a0cf41166ba3ebc36bf1f",
+    "STABLE_V119/payload.json": "d9e22d35a2872ad3f9609e2ce046360cc168f1b3fd8ad13d4aeeb4887473341e"
+  },
+  "added_or_updated_userdata": {},
+  "defaults": {
+    "language": "en_US",
+    "wifi_enabled": false,
+    "saved_wifi_credentials": false,
+    "telemetry_enabled": false
+  },
+  "checks": {
+    "unchanged_tar_members_preserved": true,
+    "crc_arcade_cores_preserved": false,
+    "kernel_mali_wifi_ppsspp_zram_unchanged": true,
+    "private_configuration_copied": false,
+    "unchanged_bytes_compared": 6054772736,
+    "old_images_unchanged": true,
+    "boot_and_userdata_payload_readback": true
+  },
+  "hardware_validation": "Yaba Sanshiro standalone 1.20.51 GLES: user confirmed game controls, D-pad, sticks, L3 menu, FPS toggle and removal of BIOS/game audio crackles. Audio supply measured near 44.1 kHz after deadline correction. Final packaged images have not been freshly flashed; Magic Knight Rayearth syllable repetition was not rechecked."
+}

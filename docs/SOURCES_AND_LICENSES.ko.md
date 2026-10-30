@@ -83,3 +83,7 @@ Vulkan 세 코어의 고정 소스·패치·빌드 방법은 src/flycast-vulkan�
 ## v1.0.7
 
 MALI_MENU_TRIAL/mali_session.py는 게임 종료 후 재진입 때만 actionpi_es_menu_return.py를 통해 StartupOnGameList를 임시 적용합니다. LastSystem은 ES의 정상 종료 저장을 이용합니다. 원래 옵션만 작은 복구 기록에 보관하며 ES 종료/다음 시작에 복원합니다. 게임 커서·하위 폴더 복원은 구현하지 않았습니다. tools/package-v1.0.7.py는 v1.0.6 클린 이미지에서 BOOT Python 파일 두 개와 버전 명세만 변경하며 settings.tar.gz·코어·커널은 바꾸지 않습니다. 런타임 복구 기록·개인 설정·시험 캡처는 배포 입력이 아닙니다.
+
+## v1.0.8
+
+야바산시로 1.20.51 GLES는 BOOT의 ACTIONPI_FIXES/saturn에 저장하고 actionpi_app_launcher.py로 실행합니다. 쓰기 가능한 HOME은 /userdata/system/configs/yabasanshiro-1.20.51입니다. 실행기는 ES에서 누락된 입력 매핑을 생성하고 실제 L3 매핑과 기존 회전 보정기를 사용합니다. 내장 ARM64 JIT가 이전 1.9.0 보조 모듈을 대체하며 볼륨 후크는 사용자 볼륨을 유지합니다. 읽기 전용 기본 rootfs 안의 기존 바이너리는 남지만 평소 실행 경로에서는 사용하지 않습니다. tools/package-v1.0.8.py는 클린 v1.0.7에 BOOT 파일 5개와 버전 정보만 추가·수정하며 설정 아카이브·기본 rootfs·Mali·Wi-Fi·PPSSPP·Flycast·ZRAM은 바이트 단위로 유지합니다. 전체 수정 소스·libchdr·라이선스·빌드 자료는 saturn-standalone-1.20.51-v1.0.8-sources.tar.xz로 첨부하며 의존성과 빌드 조건은 src/saturn-standalone에 기록합니다. 상속된 모든 펌웨어 바이너리의 정확한 소스 출처까지 확인됐다는 뜻은 아닙니다.

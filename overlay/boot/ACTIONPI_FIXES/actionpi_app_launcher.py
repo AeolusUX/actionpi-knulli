@@ -39,6 +39,11 @@ def run(name,args):
             from actionpi_flycast_vulkan import request
             if request(args):return
         preload(env)
+        # ACTIONPI_SATURN_12051: built-in ARM64 JIT, GLES and L3 menu.
+        if name=='yabasanshiro':
+            runner=BASE/'saturn/run.py'
+            if runner.is_file() and runner.with_name('yabasanshiro').is_file():
+                os.execve('/usr/bin/python3',['/usr/bin/python3',str(runner),*args],env)
         if name=='retroarch':
             args,core,driver=ra_args(args)
             env['SDL_NO_SIGNAL_HANDLERS']='1'
@@ -55,6 +60,10 @@ def run(name,args):
 def install():
     assert Path('/boot/boot/knulli.board').read_text().strip()=='helegany-action-pi'
     ORIGINAL.mkdir(exist_ok=True)
+    volume=BASE/'yabasanshiro_volume.sh'
+    if volume.is_file():
+        target=Path('/usr/share/knulli/configgen/scripts/yabasanshiro_volume.sh')
+        shutil.copy2(volume,target);target.chmod(0o755)
     # Avoid desktop glcore/slang selection for the GLES-built hardware cores.
     generator=Path('/usr/lib/python3.12/site-packages/configgen/generators/libretro/libretroGenerator.py')
     if generator.is_file():
@@ -71,6 +80,6 @@ def install():
         if MARK.encode() in head:continue
         if not head.startswith(b'\x7fELF'):continue
         target=ORIGINAL/name
-        if not target.exists():shutil.copy2(path,target)
+        if not target.exists() and not (name=='yabasanshiro' and (BASE/'saturn/yabasanshiro').is_file()):shutil.copy2(path,target)
         wrapper='#!/usr/bin/python3\n'+MARK+'\nimport sys\nsys.path.insert(0,"/boot/ACTIONPI_FIXES")\nfrom actionpi_app_launcher import run\nrun('+repr(name)+',sys.argv[1:])\n'
         path.unlink();path.write_text(wrapper);path.chmod(0o755)
