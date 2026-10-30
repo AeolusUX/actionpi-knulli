@@ -20,7 +20,7 @@ the cleared free space efficiently.
    details when downloads are needed.
 
 Raw image SHA256:
-`5cbba01b7376845167749183975a72b4e9a1f7c32eb8981660928b0239975365`.
+`e98d684166a9a72cc70e10b325ee1034a779e915e9f456f12db5e5bc4975332b`.
 The public manifest and binary component hashes are in `release/`.
 
 The source tree is stored in Git; the large firmware belongs in Releases.
@@ -50,3 +50,8 @@ Toggle zramswap in Services; the default is off. Create an empty BOOT/ACTIONPI_Z
 ## v1.0.8
 
 Open/close the Yaba Sanshiro standalone 1.20.51 GLES settings menu with **L3 (click the left analog stick)**.
+
+
+## v1.0.8 r2
+
+Use `action-pi-knulli-v1.0.8-r2.img.xz`, or `action-pi-knulli-v1.0.8-crc-ko-r2.img.xz` for the CRC edition, to receive the confirmed input fixes. Download r2 again if you have the earlier v1.0.8 image.

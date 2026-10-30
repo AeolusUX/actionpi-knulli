@@ -11,6 +11,10 @@ Public release numbering starts at **v1.0.0**.
 
 ## v1.0.8 — 2026-10-31
 
+- **Image refresh r2 — Saturn controller compatibility:** the standalone now honors the ordinary digital/3D analog pad selector. This fixes the confirmed START-button issue in affected games. In ordinary pad mode, the left stick and physical D-pad can both drive digital directions while preserving the ordinary Saturn controller protocol. Held inputs are merged so releasing one source does not release the other; diagonals, a center deadzone and saved axis inversion are supported. True 3D mode retains its analog input.
+
+- **이미지 갱신 r2 — 새턴 패드 호환성:** 스탠드얼론이 일반 패드·3D 아날로그 패드 선택을 올바르게 따르도록 수정해 일부 게임에서 확인된 START 무반응을 해결했습니다. 일반 패드 모드에서도 왼쪽 스틱과 D패드를 모두 방향 이동에 사용할 수 있습니다. 게임에는 일반 새턴 패드로 전달하며, 한쪽 입력만 놓아도 다른 쪽의 눌림을 유지합니다. 대각선·중앙 데드존·저장된 축 반전을 지원하며 실제 3D 모드의 아날로그 입력은 유지합니다.
+
 - **Yaba Sanshiro standalone updated from 1.9.0 to 1.20.51:** the official engine and frontend are adapted for Linux ARM64/GLES, with the ARM64 JIT enabled and Action Pi rotation retained. The RetroArch Saturn core is unchanged.
 - **In-game settings: press L3 (click the left analog stick) to open or close the standalone menu.**
 - **Audio crackles corrected:** the realtime sound generator now keeps cumulative deadlines instead of accumulating Linux scheduler delays. This fixes the verified BIOS/game crackles without increasing the audio buffer or changing the output backend.

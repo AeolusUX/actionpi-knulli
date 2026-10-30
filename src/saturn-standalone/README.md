@@ -1,6 +1,6 @@
 # Yaba Sanshiro 1.20.51 / Action Pi GLES
 
-The `saturn-standalone-1.20.51-v1.0.8-sources.tar.xz` release asset contains
+The `saturn-standalone-1.20.51-v1.0.8-r2-sources.tar.xz` release asset contains
 the actual modified source tree used for the shipped ARM64 executable, pinned
 libchdr, upstream notices, build references and a rebuild helper. The official
 source is https://d1t36rsydvwkyk.cloudfront.net/yabasanshiro-src-1.20.51.tar.gz
@@ -10,6 +10,13 @@ GLES is enabled, Vulkan disabled, SH2 DevMiyax JIT enabled, SCSP2 and OpenAL
 disabled. The SDL output backend and realtime SCSP generator are retained.
 Changes cover the Linux frontend, L3 menu, GLES menu drawing, control mapping,
 render-thread FPS initialization and absolute-deadline audio pacing.
+
+Image revision r2 additionally honors the digital/3D pad selector and merges
+the saved physical D-pad and analog-stick mappings into digital directions.
+It keeps the ordinary Saturn pad protocol (including START compatibility).
+The direction merge handles held-source releases, diagonals, opposite directions,
+deadzone and axis inversion; true 3D mode keeps its existing analog handling.
+The helper and host behavior check are included alongside the source.
 
 `existing-source-changes.patch` records changes to existing UTF-8 C/C++/CMake
 files only; it is not a substitute for the full source asset, which also contains

@@ -10020,7 +10020,7 @@
 +  return 0;
  }--- a/yabause/src/retro_arena/InputManager.cpp
 +++ b/yabause/src/retro_arena/InputManager.cpp
-@@ -1,1560 +1,1583 @@
+@@ -1,1560 +1,1612 @@
 -/*
 -        Copyright 2019 devMiyax(smiyaxdev@gmail.com)
 -
@@ -11634,6 +11634,8 @@
 +#include <iomanip>
 +
 +#include "common.h"
++#include "actionpi_digital_directions.h"
++static ActionPiDigitalDirections actionpi_directions;
 +
 +#if defined(_MSC_VER) && _MSC_VER < 1500 // VC++ 8.0 and below
 +#define std::snprintf _snprintf
@@ -11878,6 +11880,7 @@
 +int mapKeys( const json & configs, std::string config_fname, std::vector<MenuInput> & menu_inputs_){
 +  void * padbits;
 +  int user = 0;
++  actionpi_directions.reset();
 +  PerPortReset();
 +
 +  if( SDL_NumJoysticks() == 0 ){
@@ -11940,7 +11943,12 @@
 +
 +      auto p1pad = p1["pad"];
 +
-+      padbits = Per3DPadAdd(&PORTDATA1);
++      // Modern per-button mappings must honor the same selector as the
++      // legacy path. Advertising a 3D pad unconditionally breaks games that
++      // expect the original digital controller.
++      const bool analog_mode = p1.value("padmode", 0) != 0;
++      padbits = analog_mode ? (void*)Per3DPadAdd(&PORTDATA1)
++                           : (void*)PerPadAdd(&PORTDATA1);
 +      if (p1pad.find("up") != p1pad.end()) {
 +        auto joyId = findJoyIdFromGuid(p1pad["up"]["deviceGUID"]);
 +        PerSetKey(genidjson(user, joyId, p1pad["up"]), PERPAD_UP, padbits);
@@ -12012,6 +12020,26 @@
 +        auto joyId = findJoyIdFromGuid(p1pad["analogr"]["deviceGUID"]);
 +        PerSetKey(genidAnalogjson(user, joyId, p1pad["analogr"]), PERANALOG_AXIS3, padbits);
 +        InputManager::getInstance()->_analogType[joyId] = 0;
++      }
++      // ACTIONPI_DIGITAL_STICK: keep ordinary pad compatibility and sample
++      // both sources together, rather than mapping two independent releases.
++      if (!analog_mode) {
++        const char* names[] = {"up", "down", "left", "right", "analogx", "analogy"};
++        bool complete = true;
++        for (auto name : names) if (p1pad.find(name) == p1pad.end()) complete = false;
++        if (complete) {
++          auto binding = [](const json& b) {
++            ActionPiDirectionBinding r;
++            const std::string type = b["type"].get<std::string>();
++            r.type = type == "button" ? 1 : type == "hat" ? 2 : type == "axis" ? 3 : type == "key" ? 4 : 0;
++            r.device = findJoyIdFromGuid(b["deviceGUID"]);
++            r.id = b["id"].get<int>(); r.value = b["value"].get<int>();
++            return r;
++          };
++          std::array<ActionPiDirectionBinding,4> dirs = {{binding(p1pad["up"]), binding(p1pad["down"]), binding(p1pad["left"]), binding(p1pad["right"])}};
++          actionpi_directions.configure((PerPad_struct*)padbits, dirs,
++              binding(p1pad["analogx"]), binding(p1pad["analogy"]));
++        }
 +      }
 +    }
 +  }
@@ -12772,6 +12800,7 @@
 +    }
 +  }
 +
++  actionpi_directions.update();
 +  // return success
 +  return 0;
 +}

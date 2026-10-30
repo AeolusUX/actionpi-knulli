@@ -6,7 +6,7 @@
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
-**Action Pi Knulli v1.0.8**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
+**Action Pi Knulli v1.0.8의 r2 이미지**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
 압축 이미지를 지원하지 않는 프로그램에서는 먼저 압축을 풀고 SD 전체에 굽습니다.
 선택한 SD의 내용은 지워집니다.
 
@@ -14,7 +14,7 @@
 
 | 종류 | 선택 |
 | --- | --- |
-| 기본 배포판 | [일반판 v1.0.8](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8) |
+| 기본 배포판 | [일반판 v1.0.8 · r2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8) |
 | CRC 무시 코어 적용판 | [한국 사용자용 별도 릴리스](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8-crc-ko) · [상세 안내](docs/CRC_KOREAN.ko.md) |
 
 CRC 적용판은 FBNeo·MAME2003 Plus와 재부팅 자동 적용을 추가한 변형입니다. 두 판의 체크섬이 다릅니다. CRC 무시 코어는 **[dsno님 자료](https://dsno.tistory.com/m/)**를 사용했습니다.
@@ -68,6 +68,10 @@ Knulli 보드 구성은 상위 프로젝트의 [Action Pi 보드 설정](https:/
 ## 버전별 업데이트
 
 ### v1.0.8 변경 사항
+
+- **이미지 갱신 r2 — 새턴 패드 호환성:** 스탠드얼론이 일반 패드·3D 아날로그 패드 선택을 올바르게 따르도록 수정해 일부 게임에서 확인된 START 무반응을 해결했습니다. 일반 패드 모드에서도 왼쪽 스틱과 D패드를 모두 방향 이동에 사용할 수 있습니다. 게임에는 일반 새턴 패드로 전달하며, 한쪽 입력만 놓아도 다른 쪽의 눌림을 유지합니다. 대각선·중앙 데드존·저장된 축 반전을 지원하며 실제 3D 모드의 아날로그 입력은 유지합니다.
+
+사용자가 실기에서 START 호환성 수정과 스틱·D패드 병용의 정상 작동을 확인했습니다. 입력 병합·손을 놓는 순서·대각선·반대 방향·데드존·축 반전·장치 분리·START 유지·실제 아날로그 모드 우회를 집중 검사했습니다. 최종 r2 이미지를 새 SD에 굽는 시험은 반복하지 않았습니다.
 
 - **야바산시로 스탠드얼론 1.9.0 → 1.20.51 업데이트:** 공식 엔진과 프런트엔드를 Linux ARM64/GLES용으로 적용했습니다. ARM64 JIT와 액션파이 회전 보정을 유지하며 RetroArch 새턴 코어는 변경하지 않았습니다.
 - **게임 중 설정 메뉴는 L3(왼쪽 아날로그 스틱 클릭)로 열고 닫습니다.**
@@ -139,8 +143,8 @@ AIC·RTL8723DS Wi-Fi 지원과 재부팅 후 연결, 에뮬레이터·도구·�
 
 ## Downloads / 다운로드
 
-### [일반판 v1.0.8 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8)
+### [일반판 v1.0.8 · r2 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8)
 
-### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.8](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8-crc-ko)
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.8 · r2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8-crc-ko)
 
 CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).

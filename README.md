@@ -15,8 +15,8 @@ Choose your edition:
 
 | Edition | Release download |
 | --- | --- |
-| Standard / 일반판 | [Action Pi Knulli v1.0.8](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8) |
-| 한국 사용자용 CRC 무시 코어 적용판 | [CRC 적용판 v1.0.8 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8-crc-ko) |
+| Standard / 일반판 | [Action Pi Knulli v1.0.8 · r2 image](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8) |
+| 한국 사용자용 CRC 무시 코어 적용판 | [CRC 적용판 v1.0.8 · r2 다운로드](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8-crc-ko) |
 
 Use the `.img.xz` asset and matching SHA256 file. Extract the image if your flashing
 application does not accept XZ, then write the image to the **whole SD card**.
@@ -108,6 +108,10 @@ that helped establish the vendor-stack direction.
 
 ### v1.0.8 changes
 
+- **Image refresh r2 — Saturn controller compatibility:** the standalone now honors the ordinary digital/3D analog pad selector. This fixes the confirmed START-button issue in affected games. In ordinary pad mode, the left stick and physical D-pad can both drive digital directions while preserving the ordinary Saturn controller protocol. Held inputs are merged so releasing one source does not release the other; diagonals, a center deadzone and saved axis inversion are supported. True 3D mode retains its analog input.
+
+The user confirmed the START compatibility fix, followed by normal operation of the merged stick and D-pad input on the device. A focused host check covered held-source release ordering, diagonals, opposite directions, deadzone, inversion, disconnect, START preservation and bypass in true analog mode. Final r2 images have not been freshly flashed.
+
 - **Yaba Sanshiro standalone updated from 1.9.0 to 1.20.51:** the official engine and frontend are adapted for Linux ARM64/GLES, with the ARM64 JIT enabled and Action Pi rotation retained. The RetroArch Saturn core is unchanged.
 - **In-game settings: press L3 (click the left analog stick) to open or close the standalone menu.**
 - **Audio crackles corrected:** the realtime sound generator now keeps cumulative deadlines instead of accumulating Linux scheduler delays. This fixes the verified BIOS/game crackles without increasing the audio buffer or changing the output backend.
@@ -178,8 +182,8 @@ Wi-Fi reboot persistence, AIC/RTL8723DS support, emulator/tool/game rotation and
 
 ## Downloads / 다운로드
 
-### [일반판 v1.0.8 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8)
+### [일반판 v1.0.8 · r2 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8)
 
-### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.8](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8-crc-ko)
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.8 · r2](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8-crc-ko)
 
 CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).

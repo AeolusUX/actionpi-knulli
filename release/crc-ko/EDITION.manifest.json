@@ -2,11 +2,11 @@
   "version": "v1.0.8",
   "edition": "crc-ko",
   "release_tag": "v1.0.8-crc-ko",
-  "image": "action-pi-knulli-v1.0.8-crc-ko.img",
+  "image": "action-pi-knulli-v1.0.8-crc-ko-r2.img",
   "bytes": 6069178368,
-  "sha256": "b4ab37a9d37627dabcb6aa9635a6f8256208b804ee8b447118dd5cddf0ddf63d",
-  "base_image": "action-pi-knulli-v1.0.8.img",
-  "base_sha256": "5cbba01b7376845167749183975a72b4e9a1f7c32eb8981660928b0239975365",
+  "sha256": "50493a9ab82b21a99fadce48dfd44380a584edf6f367d4361666b2fef80ac169",
+  "base_image": "action-pi-knulli-v1.0.8-r2.img",
+  "base_sha256": "e98d684166a9a72cc70e10b325ee1034a779e915e9f456f12db5e5bc4975332b",
   "cores": {
     "fbneo_libretro.so": {
       "bytes": 83514112,
@@ -29,9 +29,11 @@
     "crc_arcade_cores_preserved": true,
     "kernel_mali_wifi_ppsspp_zram_unchanged": true,
     "private_configuration_copied": false,
-    "unchanged_bytes_compared": 6054772736,
+    "unchanged_bytes_compared": 6054825984,
     "old_images_unchanged": true,
-    "boot_and_userdata_payload_readback": true
+    "boot_and_userdata_payload_readback": true,
+    "digital_pad_protocol_preserved": true,
+    "stick_dpad_merge_host_test_passed": true
   },
   "source_provenance": "CRC-override core materials from dsno, supplied by the user; exact corresponding source/patch versions were not supplied. Upstream source links remain references.",
   "loader_source_sha256": "ca8f581717eba6d8f26c2291e336f31ff43af17ff483ccc3f89aa408296608e3",
@@ -41,7 +43,7 @@
     "url": "https://dsno.tistory.com/m/",
     "identified_by": "user"
   },
-  "packaging_source_image": "action-pi-knulli-v1.0.7-crc-ko.img",
+  "packaging_source_image": "action-pi-knulli-v1.0.8-crc-ko.img",
   "ppsspp_version": "1.20.4",
   "zram_default_enabled": false,
   "bennugd": {
@@ -49,5 +51,6 @@
     "sha256": "152aeaade426a9c8ccf11d0b34ee3a64278768f1f1fa91a635d7c20efa5cc34b",
     "provenance": "User-supplied binary; exact corresponding source/build not supplied"
   },
-  "saturn_standalone_version": "1.20.51"
+  "saturn_standalone_version": "1.20.51",
+  "image_revision": "r2"
 }

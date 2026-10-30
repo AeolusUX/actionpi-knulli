@@ -1,7 +1,7 @@
 {
-  "archive": "saturn-standalone-1.20.51-v1.0.8-sources.tar.xz",
-  "archive_sha256": "df3648a3a86e6886611f5d84022c4899b3c64125c6629015640e00e894006745",
-  "bytes": 66442264,
+  "archive": "saturn-standalone-1.20.51-v1.0.8-r2-sources.tar.xz",
+  "archive_sha256": "4a7cb616044242457c939d7128176e22b43f001803cbf7a98561e25de64c2bf8",
+  "bytes": 66459108,
   "upstream_source": "yabasanshiro-src-1.20.51.tar.gz",
   "upstream_sha256": "ef9abad152af10f812c5876ae9337e8a92314766421e2fa92737b548639163c4",
   "modified_existing_files": [
@@ -22,7 +22,7 @@
     "yabause/src/retro_arena/nanogui-sdl/src/screen.cpp",
     "yabause/src/scsp.cpp"
   ],
-  "archive_files": 4640,
+  "archive_files": 4643,
   "libchdr_commit": "5a642352731a5abb1322bf0749b0e1822ebb393a",
-  "binary_sha256": "a6d3f63be8892f3aaaec21d497079d3c3d2534d6cd5a0cf41166ba3ebc36bf1f"
+  "binary_sha256": "f6119fd510066b14781c32849b858056c62f31f87827170b6a0113560e55c6eb"
 }

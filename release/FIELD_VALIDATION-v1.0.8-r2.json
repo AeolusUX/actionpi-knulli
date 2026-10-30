@@ -1,0 +1,10 @@
+{
+  "version": "v1.0.8",
+  "image_revision": "r2",
+  "date": "2026-10-31",
+  "scope_en": "The user confirmed the START compatibility fix, followed by normal operation of the merged stick and D-pad input on the device. A focused host check covered held-source release ordering, diagonals, opposite directions, deadzone, inversion, disconnect, START preservation and bypass in true analog mode. Final r2 images have not been freshly flashed.",
+  "scope_ko": "사용자가 실기에서 START 호환성 수정과 스틱·D패드 병용의 정상 작동을 확인했습니다. 입력 병합·손을 놓는 순서·대각선·반대 방향·데드존·축 반전·장치 분리·START 유지·실제 아날로그 모드 우회를 집중 검사했습니다. 최종 r2 이미지를 새 SD에 굽는 시험은 반복하지 않았습니다.",
+  "fresh_final_image_flash_tested": false,
+  "digital_pad_mode_start_confirmed_by_user": true,
+  "merged_stick_dpad_confirmed_by_user": true
+}
