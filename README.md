@@ -178,8 +178,8 @@ Wi-Fi reboot persistence, AIC/RTL8723DS support, emulator/tool/game rotation and
 
 ## Downloads / 다운로드
 
-### [일반판 v1.0.7 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7)
+### [일반판 v1.0.8 / Standard edition](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8)
 
-### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.7](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.7-crc-ko)
+### [한국 사용자용 — CRC 무시 코어 적용판 v1.0.8](https://github.com/pikachu220v/actionpi-knulli/releases/tag/v1.0.8-crc-ko)
 
 CRC 무시 코어: [dsno님 자료](https://dsno.tistory.com/m/). [CRC판 한국어 안내](docs/CRC_KOREAN.ko.md).
