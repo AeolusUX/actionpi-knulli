@@ -6,7 +6,7 @@
 ## 다운로드
 
 [Releases](https://github.com/pikachu220v/actionpi-knulli/releases)의
-**Action Pi Knulli v1.0.8의 r2 이미지**을 사용하세요. `.img.xz`와 체크섬을 제공합니다.
+**Action Pi Knulli v1.0.8의 r2 이미지**를 사용하세요. `.img.xz`와 체크섬을 제공합니다.
 압축 이미지를 지원하지 않는 프로그램에서는 먼저 압축을 풀고 SD 전체에 굽습니다.
 선택한 SD의 내용은 지워집니다.
 
